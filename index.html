@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Golden-Egg Collection</title>
+
+<meta name="description"
+     content="Golden-Egg — Digital Art NFT Collection">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b0b;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 70px 20px 50px;
+      text-align: center;
+      border-bottom: 1px solid #292929;
+    }
+
+    header h1 {
+      font-size: 48px;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      color: #aaa;
+      font-size: 17px;
+    }
+
+    .network {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 7px 14px;
+      border: 1px solid #555;
+      border-radius: 20px;
+      font-size: 13px;
+      color: #ccc;
+    }
+
+    main {
+      max-width: 1150px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 55px;
+    }
+
+    .intro h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .intro p {
+      color: #aaa;
+    }
+
+    .collection {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #151515;
+      border: 1px solid #292929;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #555;
+    }
+
+    .image-container {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #080808;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .nft-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .loading {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .error {
+      color: #888;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+      display: none;
+    }
+
+    .card-content {
+      padding: 24px;
+    }
+
+    .card-content h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .description {
+      color: #999;
+      margin-bottom: 20px;
+    }
+
+    .info {
+      font-size: 14px;
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+
+    .label {
+      color: #777;
+      display: inline-block;
+      min-width: 90px;
+    }
+
+    .links {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #eee;
+      border: 1px solid #444;
+      padding: 9px 13px;
+      border-radius: 8px;
+      font-size: 13px;
+      transition: background 0.2s ease;
+    }
+
+    .links a:hover {
+      background: #292929;
+    }
+
+    .contract {
+      margin-top: 55px;
+      padding: 30px;
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .contract h2 {
+      margin-bottom: 15px;
+    }
+
+    .contract-address {
+      font-family: monospace;
+      color: #bbb;
+      word-break: break-all;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #292929;
+      color: #666;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 36px;
+      }
+
+      main {
+        padding: 40px 15px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+<header>
+  <h1>Golden-Egg</h1>
+  <p>Digital Art NFT Collection</p>
+  <div class="network">Ethereum Sepolia Testnet</div>
+</header>
+
+<main>
+
+  <section class="intro">
+    <h2>Golden-Egg Collection</h2>
+
+```
+<p>
+  A digital art collection created as part of the Golden-Egg NFT project.
+  Each artwork is connected to on-chain ownership and decentralized IPFS metadata.
+</p>
+```
+
+  </section>
+
+  <section class="collection">
+
+```
+<!-- =====================================================
+     GOLDEN-EGG #1
+     ===================================================== -->
+
+<article class="card">
+
+  <div class="image-container">
+
+    <div class="loading" id="loading-1">
+      Loading artwork...
+    </div>
+
+    <img
+      id="image-1"
+      class="nft-image"
+      alt="Golden-Egg #1"
+    >
+
+    <div class="error" id="error-1">
+      Unable to load artwork.
+      <br><br>
+      Please use the Image link below.
+    </div>
+
+  </div>
+
+
+  <div class="card-content">
+
+    <h3>Golden-Egg #1</h3>
+
+    <p class="description">
+      A digital artwork from the Golden-Egg collection.
+    </p>
+
+    <div class="info">
+      <span class="label">Token ID:</span>
+      1
+    </div>
+
+    <div class="info">
+      <span class="label">Standard:</span>
+      ERC-721
+    </div>
+
+    <div class="info">
+      <span class="label">Network:</span>
+      Ethereum Sepolia
+    </div>
+
+    <div class="info">
+      <span class="label">Metadata:</span>
+      IPFS
+    </div>
+
+    <div class="links">
+
+      <a
+        href="https://dweb.link/ipfs/bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa"
+        target="_blank"
+        rel="noopener noreferrer">
+        Metadata
+      </a>
+
+      <a
+        href="https://dweb.link/ipfs/bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q"
+        target="_blank"
+        rel="noopener noreferrer">
+        Image
+      </a>
+
+    </div>
+
+  </div>
+
+</article>
+
+
+
+<!-- =====================================================
+     GOLDEN-EGG #2
+     ===================================================== -->
+
+<article class="card">
+
+  <div class="image-container">
+
+    <div class="loading" id="loading-2">
+      Loading artwork...
+    </div>
+
+    <img
+      id="image-2"
+      class="nft-image"
+      alt="Golden-Egg #2"
+    >
+
+    <div class="error" id="error-2">
+      Unable to load artwork.
+      <br><br>
+      Please use the Image link below.
+    </div>
+
+  </div>
+
+
+  <div class="card-content">
+
+    <h3>Golden-Egg #2</h3>
+
+    <p class="description">
+      A digital artwork from the Golden-Egg collection.
+    </p>
+
+    <div class="info">
+      <span class="label">Token ID:</span>
+      2
+    </div>
+
+    <div class="info">
+      <span class="label">Standard:</span>
+      ERC-721
+    </div>
+
+    <div class="info">
+      <span class="label">Network:</span>
+      Ethereum Sepolia
+    </div>
+
+    <div class="info">
+      <span class="label">Metadata:</span>
+      IPFS
+    </div>
+
+    <div class="links">
+
+      <a
+        href="https://dweb.link/ipfs/bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4"
+        target="_blank"
+        rel="noopener noreferrer">
+        Metadata
+      </a>
+
+      <a
+        href="https://dweb.link/ipfs/bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku"
+        target="_blank"
+        rel="noopener noreferrer">
+        Image
+      </a>
+
+    </div>
+
+  </div>
+
+</article>
+```
+
+  </section>
+
+  <!-- =====================================================
+       SMART CONTRACT
+       ===================================================== -->
+
+  <section class="contract">
+
+```
+<h2>Smart Contract</h2>
+
+<p class="contract-address">
+  0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
+</p>
+
+<div class="info">
+  <span class="label">Collection:</span>
+  Golden-Egg
+</div>
+
+<div class="info">
+  <span class="label">Symbol:</span>
+  GEGG
+</div>
+
+<div class="info">
+  <span class="label">Standard:</span>
+  ERC-721
+</div>
+
+<div class="info">
+  <span class="label">Network:</span>
+  Ethereum Sepolia
+</div>
+
+<div class="links">
+
+  <a
+    href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
+    target="_blank"
+    rel="noopener noreferrer">
+    View Contract
+  </a>
+
+  <a
+    href="https://sepolia.etherscan.io/tx/0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794"
+    target="_blank"
+    rel="noopener noreferrer">
+    Mint Transaction #2
+  </a>
+
+</div>
+```
+
+  </section>
+
+</main>
+
+<footer>
+  Golden-Egg Collection © 2026
+</footer>
+
+<script>
+
+  /*
+   * =========================================================
+   * IPFS MULTI-GATEWAY LOADER
+   * =========================================================
+   *
+   * The browser tries several public IPFS gateways.
+   * If one gateway fails, the next gateway is tested.
+   */
+
+  const nftImages = {
+
+    1: {
+      element: document.getElementById("image-1"),
+      loading: document.getElementById("loading-1"),
+      error: document.getElementById("error-1"),
+
+      cid: "bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q"
+    },
+
+    2: {
+      element: document.getElementById("image-2"),
+      loading: document.getElementById("loading-2"),
+      error: document.getElementById("error-2"),
+
+      cid: "bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku"
+    }
+
+  };
+
+
+  const gateways = [
+
+    "https://dweb.link/ipfs/",
+
+    "https://w3s.link/ipfs/",
+
+    "https://nftstorage.link/ipfs/",
+
+    "https://ipfs.io/ipfs/",
+
+    "https://cloudflare-ipfs.com/ipfs/"
+
+  ];
+
+
+  function tryGateway(nft, index = 0) {
+
+    if (index >= gateways.length) {
+
+      nft.loading.style.display = "none";
+      nft.error.style.display = "block";
+
+      return;
+    }
+
+
+    const url = gateways[index] + nft.cid;
+
+
+    const testImage = new Image();
+
+
+    testImage.onload = function() {
+
+      nft.element.src = url;
+
+      nft.element.style.display = "block";
+
+      nft.loading.style.display = "none";
+
+    };
+
+
+    testImage.onerror = function() {
+
+      console.log(
+        "Gateway failed:",
+        gateways[index]
+      );
+
+      tryGateway(nft, index + 1);
+
+    };
+
+
+    testImage.src = url;
+
+  }
+
+
+  /*
+   * Start loading both NFTs
+   */
+
+  tryGateway(nftImages[1]);
+
+  tryGateway(nftImages[2]);
+
+</script>
+
+</body>
+</html>
