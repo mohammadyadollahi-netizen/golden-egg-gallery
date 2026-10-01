@@ -59,7 +59,7 @@
 
     .intro {
       text-align: center;
-      max-width: 750px;
+      max-width: 760px;
       margin: 0 auto 55px;
     }
 
@@ -99,27 +99,13 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      position: relative;
     }
 
     .nft-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: none;
-    }
-
-    .loading {
-      color: #777;
-      font-size: 14px;
-    }
-
-    .error {
-      color: #888;
-      text-align: center;
-      padding: 25px;
-      font-size: 14px;
-      display: none;
+      display: block;
     }
 
     .card-content {
@@ -221,9 +207,10 @@
 <main>
 
   <section class="intro">
-    <h2>Golden-Egg Collection</h2>
 
 ```
+<h2>Golden-Egg Collection</h2>
+
 <p>
   A digital art collection created as part of the Golden-Egg NFT project.
   Each artwork is connected to on-chain ownership and decentralized IPFS metadata.
@@ -235,29 +222,17 @@
   <section class="collection">
 
 ```
-<!-- =====================================================
-     GOLDEN-EGG #1
-     ===================================================== -->
+<!-- Golden-Egg #1 -->
 
 <article class="card">
 
   <div class="image-container">
 
-    <div class="loading" id="loading-1">
-      Loading artwork...
-    </div>
-
     <img
-      id="image-1"
       class="nft-image"
+      src="images/golden-egg-1.PNG"
       alt="Golden-Egg #1"
     >
-
-    <div class="error" id="error-1">
-      Unable to load artwork.
-      <br><br>
-      Please use the Image link below.
-    </div>
 
   </div>
 
@@ -303,7 +278,7 @@
         href="https://dweb.link/ipfs/bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q"
         target="_blank"
         rel="noopener noreferrer">
-        Image
+        IPFS Image
       </a>
 
     </div>
@@ -313,30 +288,17 @@
 </article>
 
 
-
-<!-- =====================================================
-     GOLDEN-EGG #2
-     ===================================================== -->
+<!-- Golden-Egg #2 -->
 
 <article class="card">
 
   <div class="image-container">
 
-    <div class="loading" id="loading-2">
-      Loading artwork...
-    </div>
-
     <img
-      id="image-2"
       class="nft-image"
+      src="images/golden-egg-2.PNG"
       alt="Golden-Egg #2"
     >
-
-    <div class="error" id="error-2">
-      Unable to load artwork.
-      <br><br>
-      Please use the Image link below.
-    </div>
 
   </div>
 
@@ -382,7 +344,7 @@
         href="https://dweb.link/ipfs/bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku"
         target="_blank"
         rel="noopener noreferrer">
-        Image
+        IPFS Image
       </a>
 
     </div>
@@ -394,9 +356,7 @@
 
   </section>
 
-  <!-- =====================================================
-       SMART CONTRACT
-       ===================================================== -->
+  <!-- Smart Contract -->
 
   <section class="contract">
 
@@ -453,108 +413,6 @@
 <footer>
   Golden-Egg Collection © 2026
 </footer>
-
-<script>
-
-  /*
-   * =========================================================
-   * IPFS MULTI-GATEWAY LOADER
-   * =========================================================
-   *
-   * The browser tries several public IPFS gateways.
-   * If one gateway fails, the next gateway is tested.
-   */
-
-  const nftImages = {
-
-    1: {
-      element: document.getElementById("image-1"),
-      loading: document.getElementById("loading-1"),
-      error: document.getElementById("error-1"),
-
-      cid: "bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q"
-    },
-
-    2: {
-      element: document.getElementById("image-2"),
-      loading: document.getElementById("loading-2"),
-      error: document.getElementById("error-2"),
-
-      cid: "bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku"
-    }
-
-  };
-
-
-  const gateways = [
-
-    "https://dweb.link/ipfs/",
-
-    "https://w3s.link/ipfs/",
-
-    "https://nftstorage.link/ipfs/",
-
-    "https://ipfs.io/ipfs/",
-
-    "https://cloudflare-ipfs.com/ipfs/"
-
-  ];
-
-
-  function tryGateway(nft, index = 0) {
-
-    if (index >= gateways.length) {
-
-      nft.loading.style.display = "none";
-      nft.error.style.display = "block";
-
-      return;
-    }
-
-
-    const url = gateways[index] + nft.cid;
-
-
-    const testImage = new Image();
-
-
-    testImage.onload = function() {
-
-      nft.element.src = url;
-
-      nft.element.style.display = "block";
-
-      nft.loading.style.display = "none";
-
-    };
-
-
-    testImage.onerror = function() {
-
-      console.log(
-        "Gateway failed:",
-        gateways[index]
-      );
-
-      tryGateway(nft, index + 1);
-
-    };
-
-
-    testImage.src = url;
-
-  }
-
-
-  /*
-   * Start loading both NFTs
-   */
-
-  tryGateway(nftImages[1]);
-
-  tryGateway(nftImages[2]);
-
-</script>
 
 </body>
 </html>
