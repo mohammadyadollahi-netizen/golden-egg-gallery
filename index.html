@@ -1,14 +1,15 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Golden-Egg Collection</title>
-
-<meta name="description"
-     content="Golden-Egg — Digital Art NFT Collection">
+  <title>Golden-Egg NFT Gallery</title>
+  <meta
+    name="description"
+    content="Golden-Egg digital art NFT collection on Ethereum Sepolia."
+  >
 
   <style>
     * {
@@ -19,71 +20,86 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #0b0b0b;
+      background: #080808;
       color: #f5f5f5;
       line-height: 1.6;
+    }
+
+    a {
+      color: #ffd54a;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     header {
       padding: 70px 20px 50px;
       text-align: center;
-      border-bottom: 1px solid #292929;
+      border-bottom: 1px solid #222;
+      background: linear-gradient(
+        180deg,
+        #161616 0%,
+        #080808 100%
+      );
     }
 
     header h1 {
-      font-size: 48px;
-      letter-spacing: 3px;
+      font-size: 3rem;
       margin-bottom: 12px;
+      letter-spacing: 1px;
     }
 
     header p {
       color: #aaa;
-      font-size: 17px;
+      font-size: 1.05rem;
     }
 
     .network {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 18px;
       padding: 7px 14px;
-      border: 1px solid #555;
+      border: 1px solid #333;
       border-radius: 20px;
-      font-size: 13px;
-      color: #ccc;
+      color: #bbb;
+      font-size: 0.85rem;
     }
 
-    main {
-      max-width: 1150px;
-      margin: auto;
-      padding: 60px 20px;
+    .container {
+      width: min(1150px, 92%);
+      margin: 0 auto;
     }
 
     .intro {
       text-align: center;
-      max-width: 760px;
-      margin: 0 auto 55px;
+      padding: 50px 20px 30px;
     }
 
     .intro h2 {
-      font-size: 30px;
+      font-size: 2rem;
       margin-bottom: 15px;
     }
 
     .intro p {
+      max-width: 760px;
+      margin: auto;
       color: #aaa;
     }
 
-    .collection {
+    .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 30px;
+      padding: 30px 0 60px;
     }
 
     .card {
-      background: #151515;
-      border: 1px solid #292929;
+      background: #111;
+      border: 1px solid #252525;
       border-radius: 18px;
       overflow: hidden;
-      transition: transform 0.25s ease, border-color 0.25s ease;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .card:hover {
@@ -91,21 +107,12 @@
       border-color: #555;
     }
 
-    .image-container {
+    .artwork {
       width: 100%;
-      aspect-ratio: 1 / 1;
-      background: #080808;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .nft-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
       display: block;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      background: #151515;
     }
 
     .card-content {
@@ -113,306 +120,422 @@
     }
 
     .card-content h3 {
-      font-size: 24px;
+      font-size: 1.5rem;
       margin-bottom: 8px;
     }
 
     .description {
-      color: #999;
-      margin-bottom: 20px;
+      color: #aaa;
+      margin-bottom: 22px;
     }
 
     .info {
-      font-size: 14px;
-      margin-bottom: 8px;
-      word-break: break-word;
+      border-top: 1px solid #292929;
+      padding-top: 18px;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 10px;
+      padding: 7px 0;
+      font-size: 0.9rem;
     }
 
     .label {
       color: #777;
-      display: inline-block;
-      min-width: 90px;
+    }
+
+    .value {
+      color: #ddd;
+      overflow-wrap: anywhere;
     }
 
     .links {
-      margin-top: 22px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      margin-top: 20px;
     }
 
-    .links a {
-      text-decoration: none;
-      color: #eee;
+    .button {
+      display: inline-block;
+      padding: 9px 14px;
       border: 1px solid #444;
-      padding: 9px 13px;
       border-radius: 8px;
-      font-size: 13px;
-      transition: background 0.2s ease;
+      font-size: 0.85rem;
+      background: #181818;
     }
 
-    .links a:hover {
-      background: #292929;
+    .button:hover {
+      background: #222;
+      text-decoration: none;
     }
 
-    .contract {
-      margin-top: 55px;
-      padding: 30px;
+    .contract-section {
+      padding: 20px 0 70px;
+    }
+
+    .contract-box {
       background: #111;
-      border: 1px solid #292929;
-      border-radius: 16px;
-      text-align: center;
+      border: 1px solid #252525;
+      border-radius: 18px;
+      padding: 30px;
     }
 
-    .contract h2 {
-      margin-bottom: 15px;
-    }
-
-    .contract-address {
-      font-family: monospace;
-      color: #bbb;
-      word-break: break-all;
+    .contract-box h2 {
       margin-bottom: 20px;
+      font-size: 1.7rem;
+    }
+
+    .contract-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 30px;
+    }
+
+    .contract-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #222;
+    }
+
+    .contract-item strong {
+      display: block;
+      color: #777;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
     }
 
     footer {
+      border-top: 1px solid #222;
       text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid #292929;
+      padding: 30px 20px;
       color: #666;
-      font-size: 13px;
+      font-size: 0.85rem;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 800px) {
       header h1 {
-        font-size: 36px;
+        font-size: 2.3rem;
       }
 
-      main {
-        padding: 40px 15px;
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .contract-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+      header {
+        padding-top: 50px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .info-row {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .card-content,
+      .contract-box {
+        padding: 20px;
       }
     }
   </style>
-
 </head>
 
 <body>
 
-<header>
-  <h1>Golden-Egg</h1>
-  <p>Digital Art NFT Collection</p>
-  <div class="network">Ethereum Sepolia Testnet</div>
-</header>
+  <header>
+    <h1>Golden-Egg</h1>
+    <p>Digital Art NFT Collection</p>
+    <div class="network">Ethereum Sepolia Testnet</div>
+  </header>
 
-<main>
+  <main class="container">
 
-  <section class="intro">
+    <section class="intro">
+      <h2>Golden-Egg Collection</h2>
+      <p>
+        A collection of digital artworks created as NFTs using
+        Ethereum-compatible blockchain technology and IPFS-based metadata.
+      </p>
+    </section>
 
-```
-<h2>Golden-Egg Collection</h2>
+    <section class="gallery">
 
-<p>
-  A digital art collection created as part of the Golden-Egg NFT project.
-  Each artwork is connected to on-chain ownership and decentralized IPFS metadata.
-</p>
-```
+      <!-- Golden-Egg #1 -->
+      <article class="card">
 
-  </section>
+        <img
+          class="artwork"
+          src="golden-egg-1.png"
+          alt="Golden-Egg NFT #1"
+        >
 
-  <section class="collection">
+        <div class="card-content">
 
-```
-<!-- Golden-Egg #1 -->
+          <h3>Golden-Egg #1</h3>
 
-<article class="card">
+          <p class="description">
+            A digital artwork from the Golden-Egg collection.
+          </p>
 
-  <div class="image-container">
+          <div class="info">
 
-    <img
-      class="nft-image"
-      src="golden-egg-1.png"
-      alt="Golden-Egg #1"
-    >
+            <div class="info-row">
+              <div class="label">Token ID</div>
+              <div class="value">1</div>
+            </div>
 
-  </div>
+            <div class="info-row">
+              <div class="label">Standard</div>
+              <div class="value">ERC-721</div>
+            </div>
+
+            <div class="info-row">
+              <div class="label">Network</div>
+              <div class="value">Ethereum Sepolia</div>
+            </div>
+
+            <div class="info-row">
+              <div class="label">Metadata</div>
+              <div class="value">
+                bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="label">Image CID</div>
+              <div class="value">
+                bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q
+              </div>
+            </div>
+
+          </div>
+
+          <div class="links">
+
+            <a
+              class="button"
+              href="https://dweb.link/ipfs/bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa"
+              target="_blank"
+              rel="noopener"
+            >
+              Metadata
+            </a>
+
+            <a
+              class="button"
+              href="https://dweb.link/ipfs/bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q"
+              target="_blank"
+              rel="noopener"
+            >
+              IPFS Image
+            </a>
+
+            <a
+              class="button"
+              href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=1"
+              target="_blank"
+              rel="noopener"
+            >
+              Etherscan
+            </a>
+
+          </div>
+
+        </div>
+      </article>
 
 
-  <div class="card-content">
+      <!-- Golden-Egg #2 -->
+      <article class="card">
 
-    <h3>Golden-Egg #1</h3>
+        <img
+          class="artwork"
+          src="golden-egg-2.png"
+          alt="Golden-Egg NFT #2"
+        >
 
-    <p class="description">
-      A digital artwork from the Golden-Egg collection.
+        <div class="card-content">
+
+          <h3>Golden-Egg #2</h3>
+
+          <p class="description">
+            A digital artwork from the Golden-Egg collection.
+          </p>
+
+          <div class="info">
+
+            <div class="info-row">
+              <div class="label">Token ID</div>
+              <div class="value">2</div>
+            </div>
+
+            <div class="info-row">
+              <div class="label">Standard</div>
+              <div class="value">ERC-721</div>
+            </div>
+
+            <div class="info-row">
+              <div class="label">Network</div>
+              <div class="value">Ethereum Sepolia</div>
+            </div>
+
+            <div class="info-row">
+              <div class="label">Metadata</div>
+              <div class="value">
+                bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="label">Image CID</div>
+              <div class="value">
+                bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="label">Transaction</div>
+              <div class="value">
+                cf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794
+              </div>
+            </div>
+
+          </div>
+
+          <div class="links">
+
+            <a
+              class="button"
+              href="https://dweb.link/ipfs/bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4"
+              target="_blank"
+              rel="noopener"
+            >
+              Metadata
+            </a>
+
+            <a
+              class="button"
+              href="https://dweb.link/ipfs/bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku"
+              target="_blank"
+              rel="noopener"
+            >
+              IPFS Image
+            </a>
+
+            <a
+              class="button"
+              href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2"
+              target="_blank"
+              rel="noopener"
+            >
+              Etherscan
+            </a>
+
+            <a
+              class="button"
+              href="https://sepolia.etherscan.io/tx/0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794"
+              target="_blank"
+              rel="noopener"
+            >
+              Transaction
+            </a>
+
+          </div>
+
+        </div>
+      </article>
+
+    </section>
+
+
+    <!-- Smart Contract -->
+    <section class="contract-section">
+
+      <div class="contract-box">
+
+        <h2>Smart Contract</h2>
+
+        <div class="contract-grid">
+
+          <div class="contract-item">
+            <strong>Collection</strong>
+            Golden-Egg
+          </div>
+
+          <div class="contract-item">
+            <strong>Symbol</strong>
+            GEGG
+          </div>
+
+          <div class="contract-item">
+            <strong>Standard</strong>
+            ERC-721
+          </div>
+
+          <div class="contract-item">
+            <strong>Network</strong>
+            Ethereum Sepolia Testnet
+          </div>
+
+          <div class="contract-item">
+            <strong>Contract Address</strong>
+            <a
+              href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
+              target="_blank"
+              rel="noopener"
+            >
+              0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
+            </a>
+          </div>
+
+          <div class="contract-item">
+            <strong>Owner</strong>
+            0x71C508b0B799D5941B91DA7966029C53c1d6F692
+          </div>
+
+        </div>
+
+        <div class="links">
+
+          <a
+            class="button"
+            href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
+            target="_blank"
+            rel="noopener"
+          >
+            View Contract
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <p>
+      Golden-Egg NFT Collection · ERC-721 · Ethereum Sepolia
     </p>
-
-    <div class="info">
-      <span class="label">Token ID:</span>
-      1
-    </div>
-
-    <div class="info">
-      <span class="label">Standard:</span>
-      ERC-721
-    </div>
-
-    <div class="info">
-      <span class="label">Network:</span>
-      Ethereum Sepolia
-    </div>
-
-    <div class="info">
-      <span class="label">Metadata:</span>
-      IPFS
-    </div>
-
-    <div class="links">
-
-      <a
-        href="https://dweb.link/ipfs/bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa"
-        target="_blank"
-        rel="noopener noreferrer">
-        Metadata
-      </a>
-
-      <a
-        href="https://dweb.link/ipfs/bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q"
-        target="_blank"
-        rel="noopener noreferrer">
-        IPFS Image
-      </a>
-
-    </div>
-
-  </div>
-
-</article>
-
-
-<!-- Golden-Egg #2 -->
-
-<article class="card">
-
-  <div class="image-container">
-
-    <img
-      class="nft-image"
-      src="golden-egg-2.png"
-      alt="Golden-Egg #2"
-    >
-
-  </div>
-
-
-  <div class="card-content">
-
-    <h3>Golden-Egg #2</h3>
-
-    <p class="description">
-      A digital artwork from the Golden-Egg collection.
+    <p>
+      Digital artwork and blockchain metadata stored using IPFS.
     </p>
-
-    <div class="info">
-      <span class="label">Token ID:</span>
-      2
-    </div>
-
-    <div class="info">
-      <span class="label">Standard:</span>
-      ERC-721
-    </div>
-
-    <div class="info">
-      <span class="label">Network:</span>
-      Ethereum Sepolia
-    </div>
-
-    <div class="info">
-      <span class="label">Metadata:</span>
-      IPFS
-    </div>
-
-    <div class="links">
-
-      <a
-        href="https://dweb.link/ipfs/bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4"
-        target="_blank"
-        rel="noopener noreferrer">
-        Metadata
-      </a>
-
-      <a
-        href="https://dweb.link/ipfs/bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku"
-        target="_blank"
-        rel="noopener noreferrer">
-        IPFS Image
-      </a>
-
-    </div>
-
-  </div>
-
-</article>
-```
-
-  </section>
-
-  <!-- Smart Contract -->
-
-  <section class="contract">
-
-```
-<h2>Smart Contract</h2>
-
-<p class="contract-address">
-  0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
-</p>
-
-<div class="info">
-  <span class="label">Collection:</span>
-  Golden-Egg
-</div>
-
-<div class="info">
-  <span class="label">Symbol:</span>
-  GEGG
-</div>
-
-<div class="info">
-  <span class="label">Standard:</span>
-  ERC-721
-</div>
-
-<div class="info">
-  <span class="label">Network:</span>
-  Ethereum Sepolia
-</div>
-
-<div class="links">
-
-  <a
-    href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
-    target="_blank"
-    rel="noopener noreferrer">
-    View Contract
-  </a>
-
-  <a
-    href="https://sepolia.etherscan.io/tx/0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794"
-    target="_blank"
-    rel="noopener noreferrer">
-    Mint Transaction #2
-  </a>
-
-</div>
-```
-
-  </section>
-
-</main>
-
-<footer>
-  Golden-Egg Collection © 2026
-</footer>
+  </footer>
 
 </body>
 </html>
+```
