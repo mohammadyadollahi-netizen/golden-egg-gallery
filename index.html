@@ -1,14 +1,14 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Golden-Egg NFT Gallery</title>
+  <title>Golden-Egg Collection</title>
+
   <meta
     name="description"
-    content="Golden-Egg digital art NFT collection on Ethereum Sepolia."
+    content="Golden-Egg is a digital art NFT collection on Ethereum Sepolia, powered by ERC-721 and IPFS."
   >
 
   <style>
@@ -18,15 +18,29 @@
       padding: 0;
     }
 
+    :root {
+      --bg: #070707;
+      --panel: #101010;
+      --panel-2: #151515;
+      --border: #292929;
+      --text: #f5f5f5;
+      --muted: #999;
+      --gold: #f4c95d;
+      --gold-light: #ffe7a3;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #080808;
-      color: #f5f5f5;
+      background:
+        radial-gradient(circle at top, #1b1608 0%, var(--bg) 38%),
+        var(--bg);
+      color: var(--text);
       line-height: 1.6;
+      min-height: 100vh;
     }
 
     a {
-      color: #ffd54a;
+      color: var(--gold);
       text-decoration: none;
     }
 
@@ -35,120 +49,184 @@
     }
 
     header {
-      padding: 70px 20px 50px;
       text-align: center;
-      border-bottom: 1px solid #222;
-      background: linear-gradient(
-        180deg,
-        #161616 0%,
-        #080808 100%
-      );
+      padding: 80px 20px 55px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 0.75rem;
+      margin-bottom: 14px;
     }
 
     header h1 {
-      font-size: 3rem;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      letter-spacing: 2px;
       margin-bottom: 12px;
-      letter-spacing: 1px;
     }
 
     header p {
-      color: #aaa;
+      color: var(--muted);
       font-size: 1.05rem;
     }
 
     .network {
       display: inline-block;
-      margin-top: 18px;
-      padding: 7px 14px;
-      border: 1px solid #333;
-      border-radius: 20px;
-      color: #bbb;
-      font-size: 0.85rem;
+      margin-top: 20px;
+      padding: 8px 15px;
+      border: 1px solid #4a3b16;
+      border-radius: 999px;
+      color: var(--gold-light);
+      background: rgba(244, 201, 93, 0.05);
+      font-size: 0.82rem;
     }
 
     .container {
-      width: min(1150px, 92%);
-      margin: 0 auto;
+      width: min(1180px, 92%);
+      margin: auto;
     }
 
     .intro {
       text-align: center;
-      padding: 50px 20px 30px;
+      padding: 55px 20px 25px;
     }
 
     .intro h2 {
-      font-size: 2rem;
-      margin-bottom: 15px;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 12px;
     }
 
     .intro p {
       max-width: 760px;
       margin: auto;
-      color: #aaa;
+      color: var(--muted);
+    }
+
+    .progress-box {
+      margin: 30px auto 10px;
+      max-width: 620px;
+      padding: 18px 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .progress-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 0.88rem;
+      margin-bottom: 10px;
+    }
+
+    .progress-top span:first-child {
+      color: var(--muted);
+    }
+
+    .progress-top span:last-child {
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #202020;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 66.666%;
+      height: 100%;
+      background: linear-gradient(90deg, #b98b20, var(--gold));
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 30px;
-      padding: 30px 0 60px;
+      padding: 35px 0 55px;
     }
 
     .card {
-      background: #111;
-      border: 1px solid #252525;
-      border-radius: 18px;
+      background: rgba(16, 16, 16, 0.96);
+      border: 1px solid var(--border);
+      border-radius: 20px;
       overflow: hidden;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
       transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      border-color: #555;
+      transform: translateY(-6px);
+      border-color: #4b4b4b;
     }
 
     .artwork {
       width: 100%;
-      display: block;
       aspect-ratio: 1 / 1;
       object-fit: cover;
-      background: #151515;
+      display: block;
+      background: #141414;
     }
 
     .card-content {
       padding: 24px;
     }
 
-    .card-content h3 {
-      font-size: 1.5rem;
+    .title-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: center;
       margin-bottom: 8px;
     }
 
+    .title-row h3 {
+      font-size: 1.45rem;
+    }
+
+    .token-badge {
+      font-size: 0.75rem;
+      color: var(--gold-light);
+      border: 1px solid #4d401e;
+      border-radius: 999px;
+      padding: 5px 9px;
+      white-space: nowrap;
+    }
+
     .description {
-      color: #aaa;
+      color: var(--muted);
       margin-bottom: 22px;
     }
 
     .info {
-      border-top: 1px solid #292929;
-      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
     }
 
     .info-row {
       display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 10px;
+      grid-template-columns: 115px 1fr;
+      gap: 12px;
       padding: 7px 0;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
     }
 
     .label {
-      color: #777;
+      color: #707070;
     }
 
     .value {
-      color: #ddd;
+      color: #dddddd;
       overflow-wrap: anywhere;
+    }
+
+    .verified {
+      color: #b9b9b9;
     }
 
     .links {
@@ -160,83 +238,88 @@
 
     .button {
       display: inline-block;
-      padding: 9px 14px;
-      border: 1px solid #444;
-      border-radius: 8px;
-      font-size: 0.85rem;
+      padding: 9px 13px;
+      border: 1px solid #3d3d3d;
+      border-radius: 9px;
       background: #181818;
+      color: var(--gold);
+      font-size: 0.82rem;
+      transition: background 0.2s ease, border-color 0.2s ease;
     }
 
     .button:hover {
       background: #222;
+      border-color: #655320;
       text-decoration: none;
     }
 
-    .contract-section {
-      padding: 20px 0 70px;
+    .collection-section {
+      padding: 5px 0 60px;
     }
 
-    .contract-box {
-      background: #111;
-      border: 1px solid #252525;
-      border-radius: 18px;
+    .collection-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
       padding: 30px;
     }
 
-    .contract-box h2 {
-      margin-bottom: 20px;
-      font-size: 1.7rem;
+    .collection-box h2 {
+      margin-bottom: 22px;
+      font-size: 1.65rem;
     }
 
     .contract-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px 30px;
+      gap: 12px 28px;
     }
 
     .contract-item {
-      padding: 12px 0;
+      padding: 14px 0;
       border-bottom: 1px solid #222;
     }
 
     .contract-item strong {
       display: block;
-      color: #777;
-      font-size: 0.8rem;
       text-transform: uppercase;
+      letter-spacing: 0.7px;
+      font-size: 0.72rem;
+      color: #6f6f6f;
       margin-bottom: 4px;
-      letter-spacing: 0.5px;
+    }
+
+    .contract-item span {
+      overflow-wrap: anywhere;
+    }
+
+    .future {
+      margin-top: 20px;
+      padding: 16px 18px;
+      border: 1px dashed #3f351e;
+      border-radius: 12px;
+      color: var(--muted);
+      background: rgba(244, 201, 93, 0.025);
     }
 
     footer {
-      border-top: 1px solid #222;
+      border-top: 1px solid var(--border);
       text-align: center;
-      padding: 30px 20px;
+      padding: 32px 20px;
       color: #666;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
     }
 
-    @media (max-width: 800px) {
-      header h1 {
-        font-size: 2.3rem;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-
+    @media (max-width: 820px) {
+      .gallery,
       .contract-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 520px) {
       header {
-        padding-top: 50px;
-      }
-
-      header h1 {
-        font-size: 2rem;
+        padding-top: 55px;
       }
 
       .info-row {
@@ -245,7 +328,7 @@
       }
 
       .card-content,
-      .contract-box {
+      .collection-box {
         padding: 20px;
       }
     }
@@ -255,20 +338,34 @@
 <body>
 
   <header>
+    <div class="eyebrow">Digital Art NFT Collection</div>
     <h1>Golden-Egg</h1>
-    <p>Digital Art NFT Collection</p>
-    <div class="network">Ethereum Sepolia Testnet</div>
+    <p>Two minted artworks. One growing collection.</p>
+    <div class="network">Ethereum Sepolia Testnet · ERC-721</div>
   </header>
 
   <main class="container">
 
     <section class="intro">
       <h2>Golden-Egg Collection</h2>
+
       <p>
-        A collection of digital artworks created as NFTs using
-        Ethereum-compatible blockchain technology and IPFS-based metadata.
+        A digital art collection built with ERC-721 smart contracts,
+        IPFS metadata, and blockchain-based ownership.
       </p>
+
+      <div class="progress-box">
+        <div class="progress-top">
+          <span>Collection Progress</span>
+          <span>2 / 3</span>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+      </div>
     </section>
+
 
     <section class="gallery">
 
@@ -278,23 +375,21 @@
         <img
           class="artwork"
           src="golden-egg-1.png"
-          alt="Golden-Egg NFT #1"
+          alt="Golden-Egg #1"
         >
 
         <div class="card-content">
 
-          <h3>Golden-Egg #1</h3>
+          <div class="title-row">
+            <h3>Golden-Egg #1</h3>
+            <span class="token-badge">Token #1</span>
+          </div>
 
           <p class="description">
             A digital artwork from the Golden-Egg collection.
           </p>
 
           <div class="info">
-
-            <div class="info-row">
-              <div class="label">Token ID</div>
-              <div class="value">1</div>
-            </div>
 
             <div class="info-row">
               <div class="label">Standard</div>
@@ -308,15 +403,22 @@
 
             <div class="info-row">
               <div class="label">Metadata</div>
-              <div class="value">
+              <div class="value verified">
                 bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa
               </div>
             </div>
 
             <div class="info-row">
               <div class="label">Image CID</div>
-              <div class="value">
+              <div class="value verified">
                 bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="label">Owner</div>
+              <div class="value">
+                0x71C508b0B799D5941B91DA7966029C53c1d6F692
               </div>
             </div>
 
@@ -352,7 +454,6 @@
             </a>
 
           </div>
-
         </div>
       </article>
 
@@ -363,23 +464,21 @@
         <img
           class="artwork"
           src="golden-egg-2.png"
-          alt="Golden-Egg NFT #2"
+          alt="Golden-Egg #2"
         >
 
         <div class="card-content">
 
-          <h3>Golden-Egg #2</h3>
+          <div class="title-row">
+            <h3>Golden-Egg #2</h3>
+            <span class="token-badge">Token #2</span>
+          </div>
 
           <p class="description">
             A digital artwork from the Golden-Egg collection.
           </p>
 
           <div class="info">
-
-            <div class="info-row">
-              <div class="label">Token ID</div>
-              <div class="value">2</div>
-            </div>
 
             <div class="info-row">
               <div class="label">Standard</div>
@@ -393,21 +492,28 @@
 
             <div class="info-row">
               <div class="label">Metadata</div>
-              <div class="value">
+              <div class="value verified">
                 bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4
               </div>
             </div>
 
             <div class="info-row">
               <div class="label">Image CID</div>
-              <div class="value">
+              <div class="value verified">
                 bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku
               </div>
             </div>
 
             <div class="info-row">
-              <div class="label">Transaction</div>
+              <div class="label">Owner</div>
               <div class="value">
+                0x71C508b0B799D5941B91DA7966029C53c1d6F692
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="label">Transaction</div>
+              <div class="value verified">
                 cf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794
               </div>
             </div>
@@ -453,58 +559,76 @@
             </a>
 
           </div>
-
         </div>
       </article>
 
     </section>
 
 
-    <!-- Smart Contract -->
-    <section class="contract-section">
+    <!-- Collection / Contract -->
+    <section class="collection-section">
 
-      <div class="contract-box">
+      <div class="collection-box">
 
-        <h2>Smart Contract</h2>
+        <h2>Collection Details</h2>
 
         <div class="contract-grid">
 
           <div class="contract-item">
             <strong>Collection</strong>
-            Golden-Egg
+            <span>Golden-Egg</span>
           </div>
 
           <div class="contract-item">
             <strong>Symbol</strong>
-            GEGG
+            <span>GEGG</span>
           </div>
 
           <div class="contract-item">
             <strong>Standard</strong>
-            ERC-721
+            <span>ERC-721</span>
           </div>
 
           <div class="contract-item">
             <strong>Network</strong>
-            Ethereum Sepolia Testnet
+            <span>Ethereum Sepolia Testnet</span>
           </div>
 
           <div class="contract-item">
-            <strong>Contract Address</strong>
-            <a
-              href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
-              target="_blank"
-              rel="noopener"
-            >
-              0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
-            </a>
+            <strong>Minted NFTs</strong>
+            <span>2</span>
+          </div>
+
+          <div class="contract-item">
+            <strong>Planned Collection Size</strong>
+            <span>3</span>
+          </div>
+
+          <div class="contract-item">
+            <strong>Contract</strong>
+            <span>
+              <a
+                href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
+                target="_blank"
+                rel="noopener"
+              >
+                0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
+              </a>
+            </span>
           </div>
 
           <div class="contract-item">
             <strong>Owner</strong>
-            0x71C508b0B799D5941B91DA7966029C53c1d6F692
+            <span>
+              0x71C508b0B799D5941B91DA7966029C53c1d6F692
+            </span>
           </div>
 
+        </div>
+
+        <div class="future">
+          <strong style="color:#f4c95d;">Next artwork:</strong>
+          Golden-Egg #3 will be added to the collection in a future release.
         </div>
 
         <div class="links">
@@ -515,7 +639,7 @@
             target="_blank"
             rel="noopener"
           >
-            View Contract
+            View Smart Contract
           </a>
 
         </div>
@@ -528,14 +652,8 @@
 
 
   <footer>
-    <p>
-      Golden-Egg NFT Collection · ERC-721 · Ethereum Sepolia
-    </p>
-    <p>
-      Digital artwork and blockchain metadata stored using IPFS.
-    </p>
+    <p>Golden-Egg · Digital Art NFT Collection</p>
+    <p>ERC-721 · Ethereum Sepolia · IPFS</p>
   </footer>
 
 </body>
-</html>
-```
