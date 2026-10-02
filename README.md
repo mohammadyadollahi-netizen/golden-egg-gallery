@@ -287,7 +287,7 @@ https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
 *Collection in progress — 2 / 3*
 
 </div>
-```
+
 ## 📚 Documentation
 
 - [Smart Contract Documentation](./docs/contract.md)
