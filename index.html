@@ -21,7 +21,6 @@
     :root {
       --bg: #070707;
       --panel: #101010;
-      --panel-2: #151515;
       --border: #292929;
       --text: #f5f5f5;
       --muted: #999;
@@ -48,9 +47,35 @@
       text-decoration: underline;
     }
 
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* Top Navigation */
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 35px;
+      font-size: 0.9rem;
+    }
+
+    .top-nav a {
+      color: var(--gold);
+      text-decoration: none;
+      padding: 6px 0;
+    }
+
+    .top-nav a:hover {
+      color: var(--gold-light);
+      text-decoration: underline;
+    }
+
     header {
       text-align: center;
-      padding: 80px 20px 55px;
+      padding: 65px 20px 55px;
       border-bottom: 1px solid var(--border);
     }
 
@@ -78,15 +103,10 @@
       margin-top: 20px;
       padding: 8px 15px;
       border: 1px solid #4a3b16;
-      border-radius: 999px;
+      border-radius: 20px;
       color: var(--gold-light);
       background: rgba(244, 201, 93, 0.05);
       font-size: 0.82rem;
-    }
-
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
     }
 
     .intro {
@@ -319,7 +339,12 @@
 
     @media (max-width: 520px) {
       header {
-        padding-top: 55px;
+        padding-top: 45px;
+      }
+
+      .top-nav {
+        gap: 18px;
+        margin-bottom: 28px;
       }
 
       .info-row {
@@ -338,23 +363,48 @@
 <body>
 
   <header>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+      <a href="index.html">Gallery</a>
+
+      <a href="about.html">About</a>
+
+      <a
+        href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
+        target="_blank"
+        rel="noopener"
+      >
+        GitHub
+      </a>
+    </nav>
+
     <div class="eyebrow">Digital Art NFT Collection</div>
+
     <h1>Golden-Egg</h1>
+
     <p>Two minted artworks. One growing collection.</p>
-    <div class="network">Ethereum Sepolia Testnet · ERC-721</div>
+
+    <div class="network">
+      Ethereum Sepolia Testnet · ERC-721
+    </div>
+
   </header>
+
 
   <main class="container">
 
     <section class="intro">
+
       <h2>Golden-Egg Collection</h2>
 
       <p>
         A digital art collection built with ERC-721 smart contracts,
-        IPFS metadata, and blockchain-based ownership.
+        IPFS-based metadata, and blockchain-based ownership.
       </p>
 
       <div class="progress-box">
+
         <div class="progress-top">
           <span>Collection Progress</span>
           <span>2 / 3</span>
@@ -363,7 +413,9 @@
         <div class="progress-bar">
           <div class="progress-fill"></div>
         </div>
+
       </div>
+
     </section>
 
 
@@ -422,6 +474,13 @@
               </div>
             </div>
 
+            <div class="info-row">
+              <div class="label">Transaction</div>
+              <div class="value verified">
+                0x21c4076fc356d0aee014c1d1696da73fc54fcb3e9be5aebf0aef851ccf6bb8b3
+              </div>
+            </div>
+
           </div>
 
           <div class="links">
@@ -453,7 +512,17 @@
               Etherscan
             </a>
 
+            <a
+              class="button"
+              href="https://sepolia.etherscan.io/tx/0x21c4076fc356d0aee014c1d1696da73fc54fcb3e9be5aebf0aef851ccf6bb8b3"
+              target="_blank"
+              rel="noopener"
+            >
+              Transaction
+            </a>
+
           </div>
+
         </div>
       </article>
 
@@ -514,7 +583,7 @@
             <div class="info-row">
               <div class="label">Transaction</div>
               <div class="value verified">
-                cf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794
+                0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794
               </div>
             </div>
 
@@ -559,6 +628,7 @@
             </a>
 
           </div>
+
         </div>
       </article>
 
@@ -640,6 +710,13 @@
             rel="noopener"
           >
             View Smart Contract
+          </a>
+
+          <a
+            class="button"
+            href="about.html"
+          >
+            About Project
           </a>
 
         </div>
