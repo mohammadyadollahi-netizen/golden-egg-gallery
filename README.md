@@ -293,3 +293,18 @@ https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
 - [Smart Contract Documentation](./docs/contract.md)
 - [Collection Documentation](./docs/collection.md)
 - [Metadata Documentation](./docs/metadata.md)
+
+## 📜 Rights & Licensing
+
+### Source Code
+
+The project source code is available under the MIT License:
+
+- [Code License](./CODE-LICENSE.md)
+
+### Artwork
+
+Golden-Egg artwork and visual assets are not released under the MIT License.
+Artwork usage is subject to the project's artwork rights policy:
+
+- [Artwork Rights](./ARTWORK-RIGHTS.md)
