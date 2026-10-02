@@ -252,22 +252,3 @@ Official Gallery:
 
 https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/
 
-````
-
-### قرار دادن README در GitHub
-
-در repository:
-
-**Add file → Create new file**
-
-نام فایل را دقیقاً بگذار:
-
-```text
-README.md
-````
-
-محتوای بالا را Paste کن و سپس **Commit changes** را بزن.
-
-بعد از Commit، صفحه اصلی repository به شکل یک **Project/Collection صفحه رسمی** نمایش داده می‌شود.
-
-بعد از آن، گام بعدی مناسب این است که **README را تصویری و حرفه‌ای کنیم**؛ مثلاً لوگو/بنر Golden-Egg، تصویر #1 و #2 و جدول Collection را به بالای صفحه اضافه کنیم.
