@@ -1,826 +1,1333 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Golden-Egg Collection</title>
+    <title>Golden-Egg Collection</title>
 
-  <meta
-    name="description"
-    content="Golden-Egg is a digital art NFT collection on Ethereum Sepolia, powered by ERC-721 and IPFS."
-  >
+    <meta
+        name="description"
+        content="Golden-Egg — a digital art collection on Ethereum Sepolia, ERC-721."
+    >
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    :root {
-      --bg: #070707;
-      --panel: #101010;
-      --border: #292929;
-      --text: #f5f5f5;
-      --muted: #999;
-      --gold: #f4c95d;
-      --gold-light: #ffe7a3;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top, #1b1608 0%, var(--bg) 38%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at top, #19150b 0%, #080808 45%, #050505 100%);
+            color: #f5f5f5;
+            min-height: 100vh;
+        }
 
-    a {
-      color: var(--gold);
-      text-decoration: none;
-    }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
+        /* NAVIGATION */
 
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
-    }
+        nav {
+            width: 100%;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+            background: rgba(5, 5, 5, 0.92);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
 
-    .top-nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin-bottom: 35px;
-      font-size: 0.9rem;
-    }
+        .nav-inner {
+            max-width: 1150px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-    .top-nav a {
-      color: var(--gold);
-      text-decoration: none;
-      padding: 6px 0;
-    }
+        .logo {
+            color: #d4af37;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
 
-    .top-nav a:hover {
-      color: var(--gold-light);
-      text-decoration: underline;
-    }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
 
-    header {
-      text-align: center;
-      padding: 65px 20px 55px;
-      border-bottom: 1px solid var(--border);
-    }
+        .nav-links a {
+            color: #aaa;
+            font-size: 14px;
+            transition: 0.25s;
+        }
 
-    .eyebrow {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 0.75rem;
-      margin-bottom: 14px;
-    }
+        .nav-links a:hover {
+            color: #d4af37;
+        }
 
-    header h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-    }
+        /* HERO */
 
-    header p {
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
+        .hero {
+            max-width: 1150px;
+            margin: auto;
+            padding: 90px 25px 70px;
+            text-align: center;
+        }
 
-    .network {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 8px 15px;
-      border: 1px solid #4a3b16;
-      border-radius: 20px;
-      color: var(--gold-light);
-      background: rgba(244, 201, 93, 0.05);
-      font-size: 0.82rem;
-    }
+        .eyebrow {
+            color: #d4af37;
+            font-size: 12px;
+            letter-spacing: 4px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
 
-    .intro {
-      text-align: center;
-      padding: 55px 20px 25px;
-    }
+        .hero h1 {
+            font-size: clamp(48px, 9vw, 92px);
+            line-height: 1;
+            color: #f5d76e;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
 
-    .intro h2 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      margin-bottom: 12px;
-    }
+        .hero p {
+            color: #aaa;
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.8;
+            font-size: 16px;
+        }
 
-    .intro p {
-      max-width: 760px;
-      margin: auto;
-      color: var(--muted);
-    }
+        .network {
+            margin-top: 25px;
+            color: #777;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-    .progress-box {
-      margin: 30px auto 10px;
-      max-width: 620px;
-      padding: 18px 20px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-    }
+        /* COLLECTION */
 
-    .progress-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      font-size: 0.88rem;
-      margin-bottom: 10px;
-    }
+        .collection {
+            max-width: 1150px;
+            margin: auto;
+            padding: 20px 25px 70px;
+        }
 
-    .progress-top span:first-child {
-      color: var(--muted);
-    }
+        .collection-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
 
-    .progress-top span:last-child {
-      color: var(--gold);
-      font-weight: bold;
-    }
+        .collection-header h2 {
+            font-size: 30px;
+        }
 
-    .progress-bar {
-      height: 8px;
-      background: #202020;
-      border-radius: 999px;
-      overflow: hidden;
-    }
+        .collection-header p {
+            color: #888;
+            font-size: 14px;
+            margin-top: 8px;
+        }
 
-    .progress-fill {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, #b98b20, var(--gold));
-    }
+        .progress-area {
+            width: 240px;
+        }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 30px;
-      padding: 35px 0 55px;
-    }
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            color: #999;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
 
-    .card {
-      background: rgba(16, 16, 16, 0.96);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
+        .progress-bar {
+            height: 5px;
+            background: #222;
+            border-radius: 10px;
+            overflow: hidden;
+        }
 
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: #4b4b4b;
-    }
+        .progress-fill {
+            height: 100%;
+            width: 100%;
+            background: #d4af37;
+            border-radius: 10px;
+        }
 
-    .artwork {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      display: block;
-      background: #141414;
-    }
+        /* NFT GRID */
 
-    .card-content {
-      padding: 24px;
-    }
+        .nft-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
 
-    .title-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      align-items: center;
-      margin-bottom: 8px;
-    }
+        .nft-card {
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
 
-    .title-row h3 {
-      font-size: 1.45rem;
-    }
+        .nft-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(212,175,55,0.65);
+        }
 
-    .token-badge {
-      font-size: 0.75rem;
-      color: var(--gold-light);
-      border: 1px solid #4d401e;
-      border-radius: 999px;
-      padding: 5px 9px;
-      white-space: nowrap;
-    }
+        .nft-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+            background: #111;
+        }
 
-    .description {
-      color: var(--muted);
-      margin-bottom: 22px;
-    }
+        .nft-content {
+            padding: 22px;
+        }
 
-    .info {
-      border-top: 1px solid var(--border);
-      padding-top: 16px;
-    }
+        .token-number {
+            color: #d4af37;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
 
-    .info-row {
-      display: grid;
-      grid-template-columns: 115px 1fr;
-      gap: 12px;
-      padding: 7px 0;
-      font-size: 0.88rem;
-    }
+        .nft-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
 
-    .label {
-      color: #707070;
-    }
+        .nft-content p {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
 
-    .value {
-      color: #dddddd;
-      overflow-wrap: anywhere;
-    }
+        .nft-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
 
-    .verified {
-      color: #b9b9b9;
-    }
+        .nft-links a {
+            border: 1px solid rgba(212,175,55,0.35);
+            color: #d4af37;
+            padding: 8px 11px;
+            border-radius: 8px;
+            font-size: 11px;
+            transition: 0.25s;
+        }
 
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 20px;
-    }
+        .nft-links a:hover {
+            background: rgba(212,175,55,0.12);
+            border-color: #d4af37;
+        }
 
-    .button {
-      display: inline-block;
-      padding: 9px 13px;
-      border: 1px solid #3d3d3d;
-      border-radius: 9px;
-      background: #181818;
-      color: var(--gold);
-      font-size: 0.82rem;
-      transition: background 0.2s ease, border-color 0.2s ease;
-    }
+        /* DETAILS */
 
-    .button:hover {
-      background: #222;
-      border-color: #655320;
-      text-decoration: none;
-    }
+        .details {
+            max-width: 1150px;
+            margin: auto;
+            padding: 10px 25px 80px;
+        }
 
-    .collection-section {
-      padding: 5px 0 60px;
-    }
+        .details-box {
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 18px;
+            background: rgba(255,255,255,0.025);
+            padding: 30px;
+        }
 
-    .collection-box {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 30px;
-    }
+        .details-box h2 {
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
 
-    .collection-box h2 {
-      margin-bottom: 22px;
-      font-size: 1.65rem;
-    }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
 
-    .contract-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px 28px;
-    }
+        .detail-row:last-child {
+            border-bottom: none;
+        }
 
-    .contract-item {
-      padding: 14px 0;
-      border-bottom: 1px solid #222;
-    }
+        .detail-label {
+            color: #777;
+            font-size: 13px;
+        }
 
-    .contract-item strong {
-      display: block;
-      text-transform: uppercase;
-      letter-spacing: 0.7px;
-      font-size: 0.72rem;
-      color: #6f6f6f;
-      margin-bottom: 4px;
-    }
+        .detail-value {
+            color: #eee;
+            font-size: 13px;
+            text-align: right;
+            word-break: break-all;
+        }
 
-    .contract-item span {
-      overflow-wrap: anywhere;
-    }
+        .detail-value a {
+            color: #d4af37;
+        }
 
-    footer {
-      border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 32px 20px;
-      color: #666;
-      font-size: 0.82rem;
-    }
+        /* VERIFICATION */
 
-    @media (max-width: 820px) {
-      .gallery,
-      .contract-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+        .verification-section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 0 25px 90px;
+        }
 
-    @media (max-width: 520px) {
-      header {
-        padding-top: 45px;
-      }
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
 
-      .top-nav {
-        gap: 18px;
-        margin-bottom: 28px;
-      }
+        .section-title span {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #d4af37;
+            text-transform: uppercase;
+        }
 
-      .info-row {
-        grid-template-columns: 1fr;
-        gap: 2px;
-      }
+        .section-title h2 {
+            margin: 12px 0;
+            font-size: 32px;
+        }
 
-      .card-content,
-      .collection-box {
-        padding: 20px;
-      }
-    }
-  </style>
+        .section-title p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .verification-box {
+            border: 1px solid rgba(212,175,55,0.25);
+            border-radius: 18px;
+            overflow: hidden;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .verify-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .verify-row:last-child {
+            border-bottom: none;
+        }
+
+        .verify-label {
+            display: block;
+            font-size: 11px;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+
+        .verify-row strong {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .status {
+            min-width: 100px;
+            text-align: center;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .status.success {
+            color: #d4af37;
+            border: 1px solid rgba(212,175,55,0.45);
+            background: rgba(212,175,55,0.08);
+        }
+
+        .status.pending {
+            color: #aaa;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .status.failed {
+            color: #ff7777;
+            border: 1px solid rgba(255,100,100,0.35);
+            background: rgba(255,100,100,0.08);
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid rgba(212,175,55,0.15);
+            padding: 35px 25px;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+
+        footer span {
+            color: #d4af37;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+
+            .nft-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .collection-header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .progress-area {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .nav-inner {
+                padding: 15px 18px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 65px 20px 55px;
+            }
+
+            .collection,
+            .details,
+            .verification-section {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .nft-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .details-box {
+                padding: 20px;
+            }
+
+            .detail-row {
+                flex-direction: column;
+                gap: 7px;
+            }
+
+            .detail-value {
+                text-align: left;
+            }
+
+            .verify-row {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .status {
+                min-width: auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <header>
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-    <nav class="top-nav">
-      <a href="index.html">Gallery</a>
+<nav>
+    <div class="nav-inner">
 
-      <a href="about.html">About</a>
+        <a href="index.html" class="logo">
+            GOLDEN-EGG
+        </a>
 
-      <a
-        href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
-        target="_blank"
-        rel="noopener"
-      >
-        GitHub
-      </a>
-    </nav>
+        <div class="nav-links">
+            <a href="index.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
+               target="_blank">
+                GitHub
+            </a>
+        </div>
 
-    <div class="eyebrow">Digital Art NFT Collection</div>
+    </div>
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+    <div class="eyebrow">
+        Digital Art Collection
+    </div>
 
     <h1>Golden-Egg</h1>
 
-    <p>Three minted artworks. The collection is complete.</p>
+    <p>
+        Three minted artworks forming a growing digital art collection
+        recorded on the Ethereum blockchain.
+    </p>
 
     <div class="network">
-      Ethereum Sepolia Testnet · ERC-721
+        Ethereum Sepolia Testnet · ERC-721
     </div>
 
-  </header>
+</header>
 
 
-  <main class="container">
+<!-- =========================
+     COLLECTION
+========================= -->
 
-    <section class="intro">
+<section class="collection" id="gallery">
 
-      <h2>Golden-Egg Collection</h2>
+    <div class="collection-header">
 
-      <p>
-        A digital art collection built with ERC-721 smart contracts,
-        IPFS-based metadata, and blockchain-based ownership.
-      </p>
+        <div>
+            <h2>Collection</h2>
 
-      <div class="progress-box">
-
-        <div class="progress-top">
-          <span>Collection Progress</span>
-          <span>3 / 3</span>
+            <p>
+                Three minted artworks. The collection is complete.
+            </p>
         </div>
 
-        <div class="progress-bar">
-          <div class="progress-fill"></div>
+        <div class="progress-area">
+
+            <div class="progress-text">
+                <span>Collection Progress</span>
+                <span>3 / 3</span>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+
         </div>
 
-      </div>
-
-    </section>
+    </div>
 
 
-    <section class="gallery">
+    <div class="nft-grid">
 
-      <!-- Golden-Egg #1 -->
-      <article class="card">
+        <!-- =========================
+             GOLDEN-EGG #1
+        ========================== -->
 
-        <img
-          class="artwork"
-          src="golden-egg-1.png"
-          alt="Golden-Egg #1"
-        >
+        <article class="nft-card">
 
-        <div class="card-content">
-
-          <div class="title-row">
-            <h3>Golden-Egg #1</h3>
-            <span class="token-badge">Token #1</span>
-          </div>
-
-          <p class="description">
-            A digital artwork from the Golden-Egg collection.
-          </p>
-
-          <div class="info">
-
-            <div class="info-row">
-              <div class="label">Standard</div>
-              <div class="value">ERC-721</div>
-            </div>
-
-            <div class="info-row">
-              <div class="label">Network</div>
-              <div class="value">Ethereum Sepolia</div>
-            </div>
-
-            <div class="info-row">
-              <div class="label">Metadata</div>
-              <div class="value verified">
-                bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa
-              </div>
-            </div>
-
-            <div class="info-row">
-              <div class="label">Image CID</div>
-              <div class="value verified">
-                bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q
-              </div>
-            </div>
-
-            <div class="info-row">
-              <div class="label">Owner</div>
-              <div class="value">
-                0x71C508b0B799D5941B91DA7966029C53c1d6F692
-              </div>
-            </div>
-
-            <div class="info-row">
-              <div class="label">Transaction</div>
-              <div class="value verified">
-                0x21c4076fc356d0aee014c1d1696da73fc54fcb3e9be5aebf0aef851ccf6bb8b3
-              </div>
-            </div>
-
-          </div>
-
-          <div class="links">
-
-            <a
-              class="button"
-              href="https://dweb.link/ipfs/bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa"
-              target="_blank"
-              rel="noopener"
+            <img
+                src="https://bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q.ipfs.dweb.link"
+                alt="Golden-Egg #1"
+                class="nft-image"
             >
-              Metadata
-            </a>
 
-            <a
-              class="button"
-              href="https://dweb.link/ipfs/bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q"
-              target="_blank"
-              rel="noopener"
+            <div class="nft-content">
+
+                <div class="token-number">
+                    Token #1
+                </div>
+
+                <h3>Golden-Egg #1</h3>
+
+                <p>
+                    The first digital artwork of the Golden-Egg collection.
+                </p>
+
+                <div class="nft-links">
+
+                    <a
+                        href="https://bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa.ipfs.dweb.link"
+                        target="_blank">
+                        Metadata
+                    </a>
+
+                    <a
+                        href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=1"
+                        target="_blank">
+                        Etherscan
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =========================
+             GOLDEN-EGG #2
+        ========================== -->
+
+        <article class="nft-card">
+
+            <img
+                src="https://bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku.ipfs.dweb.link"
+                alt="Golden-Egg #2"
+                class="nft-image"
             >
-              IPFS Image
-            </a>
 
-            <a
-              class="button"
-              href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=1"
-              target="_blank"
-              rel="noopener"
+            <div class="nft-content">
+
+                <div class="token-number">
+                    Token #2
+                </div>
+
+                <h3>Golden-Egg #2</h3>
+
+                <p>
+                    The second digital artwork of the Golden-Egg collection.
+                </p>
+
+                <div class="nft-links">
+
+                    <a
+                        href="https://bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4.ipfs.dweb.link"
+                        target="_blank">
+                        Metadata
+                    </a>
+
+                    <a
+                        href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2"
+                        target="_blank">
+                        Etherscan
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- =========================
+             GOLDEN-EGG #3
+        ========================== -->
+
+        <article class="nft-card">
+
+            <img
+                src="https://bafybeianohmded6d2qjqy3jrl72jlmrgvryjamme4kys6l6mnjhjpx75rq.ipfs.dweb.link"
+                alt="Golden-Egg #3"
+                class="nft-image"
             >
-              Etherscan
-            </a>
 
-            <a
-              class="button"
-              href="https://sepolia.etherscan.io/tx/0x21c4076fc356d0aee014c1d1696da73fc54fcb3e9be5aebf0aef851ccf6bb8b3"
-              target="_blank"
-              rel="noopener"
-            >
-              Transaction
-            </a>
+            <div class="nft-content">
 
-          </div>
+                <div class="token-number">
+                    Token #3
+                </div>
 
-        </div>
-      </article>
+                <h3>Golden-Egg #3</h3>
 
+                <p>
+                    The third digital artwork of the Golden-Egg collection.
+                </p>
 
-      <!-- Golden-Egg #2 -->
-      <article class="card">
+                <div class="nft-links">
 
-        <img
-          class="artwork"
-          src="golden-egg-2.png"
-          alt="Golden-Egg #2"
-        >
+                    <a
+                        href="https://bafkreiev47cpkieizijczpb5ps7v3nbiave4f2onlzvoxbsdhd43uy4t3q.ipfs.dweb.link"
+                        target="_blank">
+                        Metadata
+                    </a>
 
-        <div class="card-content">
+                    <a
+                        href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=3"
+                        target="_blank">
+                        Etherscan
+                    </a>
 
-          <div class="title-row">
-            <h3>Golden-Egg #2</h3>
-            <span class="token-badge">Token #2</span>
-          </div>
+                </div>
 
-          <p class="description">
-            A digital artwork from the Golden-Egg collection.
-          </p>
-
-          <div class="info">
-
-            <div class="info-row">
-              <div class="label">Standard</div>
-              <div class="value">ERC-721</div>
             </div>
 
-            <div class="info-row">
-              <div class="label">Network</div>
-              <div class="value">Ethereum Sepolia</div>
-            </div>
+        </article>
 
-            <div class="info-row">
-              <div class="label">Metadata</div>
-              <div class="value verified">
-                bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4
-              </div>
-            </div>
+    </div>
 
-            <div class="info-row">
-              <div class="label">Image CID</div>
-              <div class="value verified">
-                bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku
-              </div>
-            </div>
-
-            <div class="info-row">
-              <div class="label">Owner</div>
-              <div class="value">
-                0x71C508b0B799D5941B91DA7966029C53c1d6F692
-              </div>
-            </div>
-
-            <div class="info-row">
-              <div class="label">Transaction</div>
-              <div class="value verified">
-                0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794
-              </div>
-            </div>
-
-          </div>
-
-          <div class="links">
-
-            <a
-              class="button"
-              href="https://dweb.link/ipfs/bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4"
-              target="_blank"
-              rel="noopener"
-            >
-              Metadata
-            </a>
-
-            <a
-              class="button"
-              href="https://dweb.link/ipfs/bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku"
-              target="_blank"
-              rel="noopener"
-            >
-              IPFS Image
-            </a>
-
-            <a
-              class="button"
-              href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2"
-              target="_blank"
-              rel="noopener"
-            >
-              Etherscan
-            </a>
-
-            <a
-              class="button"
-              href="https://sepolia.etherscan.io/tx/0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794"
-              target="_blank"
-              rel="noopener"
-            >
-              Transaction
-            </a>
-
-          </div>
-
-        </div>
-      </article>
+</section>
 
 
-      <!-- Golden-Egg #3 -->
-      <article class="card">
+<!-- =========================
+     COLLECTION DETAILS
+========================= -->
 
-        <img
-          class="artwork"
-          src="golden-egg-3.png"
-          alt="Golden-Egg #3"
-        >
+<section class="details">
 
-        <div class="card-content">
-
-          <div class="title-row">
-            <h3>Golden-Egg #3</h3>
-            <span class="token-badge">Token #3</span>
-          </div>
-
-          <p class="description">
-            A digital artwork from the Golden-Egg collection.
-          </p>
-
-          <div class="info">
-
-            <div class="info-row">
-              <div class="label">Standard</div>
-              <div class="value">ERC-721</div>
-            </div>
-
-            <div class="info-row">
-              <div class="label">Network</div>
-              <div class="value">Ethereum Sepolia</div>
-            </div>
-
-            <div class="info-row">
-              <div class="label">Metadata</div>
-              <div class="value verified">
-                bafkreiev47cpkieizijczpb5ps7v3nbiave4f2onlzvoxbsdhd43uy4t3q
-              </div>
-            </div>
-
-            <div class="info-row">
-              <div class="label">Image CID</div>
-              <div class="value verified">
-                bafybeianohmded6d2qjqy3jrl72jlmrgvryjamme4kys6l6mnjhjpx75rq
-              </div>
-            </div>
-
-            <div class="info-row">
-              <div class="label">Owner</div>
-              <div class="value">
-                0x71C508b0B799D5941B91DA7966029C53c1d6F692
-              </div>
-            </div>
-
-            <div class="info-row">
-              <div class="label">Transaction</div>
-              <div class="value verified">
-                0x8e65b06da7e5672397805856f965c95443ada1d0c380cc6e31f4a1cc954b2e7b
-              </div>
-            </div>
-
-          </div>
-
-          <div class="links">
-
-            <a
-              class="button"
-              href="https://dweb.link/ipfs/bafkreiev47cpkieizijczpb5ps7v3nbiave4f2onlzvoxbsdhd43uy4t3q"
-              target="_blank"
-              rel="noopener"
-            >
-              Metadata
-            </a>
-
-            <a
-              class="button"
-              href="https://dweb.link/ipfs/bafybeianohmded6d2qjqy3jrl72jlmrgvryjamme4kys6l6mnjhjpx75rq"
-              target="_blank"
-              rel="noopener"
-            >
-              IPFS Image
-            </a>
-
-            <a
-              class="button"
-              href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=3"
-              target="_blank"
-              rel="noopener"
-            >
-              Etherscan
-            </a>
-
-            <a
-              class="button"
-              href="https://sepolia.etherscan.io/tx/0x8e65b06da7e5672397805856f965c95443ada1d0c380cc6e31f4a1cc954b2e7b"
-              target="_blank"
-              rel="noopener"
-            >
-              Transaction
-            </a>
-
-          </div>
-
-        </div>
-      </article>
-
-    </section>
-
-
-    <!-- Collection / Contract -->
-    <section class="collection-section">
-
-      <div class="collection-box">
+    <div class="details-box">
 
         <h2>Collection Details</h2>
 
-        <div class="contract-grid">
+        <div class="detail-row">
 
-          <div class="contract-item">
-            <strong>Collection</strong>
-            <span>Golden-Egg</span>
-          </div>
-
-          <div class="contract-item">
-            <strong>Symbol</strong>
-            <span>GEGG</span>
-          </div>
-
-          <div class="contract-item">
-            <strong>Standard</strong>
-            <span>ERC-721</span>
-          </div>
-
-          <div class="contract-item">
-            <strong>Network</strong>
-            <span>Ethereum Sepolia Testnet</span>
-          </div>
-
-          <div class="contract-item">
-            <strong>Minted NFTs</strong>
-            <span>3</span>
-          </div>
-
-          <div class="contract-item">
-            <strong>Planned Collection Size</strong>
-            <span>3</span>
-          </div>
-
-          <div class="contract-item">
-            <strong>Contract</strong>
-            <span>
-              <a
-                href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
-                target="_blank"
-                rel="noopener"
-              >
-                0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
-              </a>
+            <span class="detail-label">
+                Minted NFTs
             </span>
-          </div>
 
-          <div class="contract-item">
-            <strong>Owner</strong>
-            <span>
-              0x71C508b0B799D5941B91DA7966029C53c1d6F692
+            <span class="detail-value">
+                3
             </span>
-          </div>
 
         </div>
 
-        <div class="links">
 
-          <a
-            class="button"
-            href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
-            target="_blank"
-            rel="noopener"
-          >
-            View Smart Contract
-          </a>
+        <div class="detail-row">
 
-          <a
-            class="button"
-            href="about.html"
-          >
-            About Project
-          </a>
+            <span class="detail-label">
+                Collection Size
+            </span>
+
+            <span class="detail-value">
+                3
+            </span>
 
         </div>
 
-      </div>
 
-    </section>
+        <div class="detail-row">
 
-  </main>
+            <span class="detail-label">
+                Blockchain
+            </span>
+
+            <span class="detail-value">
+                Ethereum Sepolia Testnet
+            </span>
+
+        </div>
 
 
-  <footer>
-    <p>Golden-Egg · Digital Art NFT Collection</p>
-    <p>ERC-721 · Ethereum Sepolia · IPFS</p>
-  </footer>
+        <div class="detail-row">
+
+            <span class="detail-label">
+                Standard
+            </span>
+
+            <span class="detail-value">
+                ERC-721
+            </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+            <span class="detail-label">
+                Contract
+            </span>
+
+            <span class="detail-value">
+
+                <a
+                    href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
+                    target="_blank">
+
+                    0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
+
+                </a>
+
+            </span>
+
+        </div>
+
+
+        <div class="detail-row">
+
+            <span class="detail-label">
+                Owner
+            </span>
+
+            <span class="detail-value">
+
+                <a
+                    href="https://sepolia.etherscan.io/address/0x71C508b0B799D5941B91DA7966029C53c1d6F692"
+                    target="_blank">
+
+                    0x71C508b0B799D5941B91DA7966029C53c1d6F692
+
+                </a>
+
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ON-CHAIN VERIFICATION
+========================= -->
+
+<section class="verification-section" id="verification">
+
+    <div class="section-title">
+
+        <span>
+            ON-CHAIN VERIFICATION
+        </span>
+
+        <h2>
+            Blockchain Verification
+        </h2>
+
+        <p>
+            Live verification of the Golden-Egg smart contract and minted NFTs.
+        </p>
+
+    </div>
+
+
+    <div class="verification-box">
+
+
+        <!-- NETWORK -->
+
+        <div class="verify-row">
+
+            <div>
+                <span class="verify-label">
+                    Network
+                </span>
+
+                <strong>
+                    Ethereum Sepolia Testnet
+                </strong>
+            </div>
+
+            <span class="status success">
+                ✓ VERIFIED
+            </span>
+
+        </div>
+
+
+        <!-- STANDARD -->
+
+        <div class="verify-row">
+
+            <div>
+                <span class="verify-label">
+                    Standard
+                </span>
+
+                <strong>
+                    ERC-721
+                </strong>
+            </div>
+
+            <span class="status success">
+                ✓ VERIFIED
+            </span>
+
+        </div>
+
+
+        <!-- CONTRACT -->
+
+        <div class="verify-row">
+
+            <div>
+                <span class="verify-label">
+                    Contract
+                </span>
+
+                <strong id="contractStatus">
+                    Checking...
+                </strong>
+            </div>
+
+            <span
+                class="status pending"
+                id="contractBadge">
+                CHECKING
+            </span>
+
+        </div>
+
+
+        <!-- TOKEN 1 -->
+
+        <div class="verify-row">
+
+            <div>
+                <span class="verify-label">
+                    Token #1
+                </span>
+
+                <strong id="token1Status">
+                    Checking...
+                </strong>
+            </div>
+
+            <span
+                class="status pending"
+                id="token1Badge">
+                CHECKING
+            </span>
+
+        </div>
+
+
+        <!-- TOKEN 2 -->
+
+        <div class="verify-row">
+
+            <div>
+                <span class="verify-label">
+                    Token #2
+                </span>
+
+                <strong id="token2Status">
+                    Checking...
+                </strong>
+            </div>
+
+            <span
+                class="status pending"
+                id="token2Badge">
+                CHECKING
+            </span>
+
+        </div>
+
+
+        <!-- TOKEN 3 -->
+
+        <div class="verify-row">
+
+            <div>
+                <span class="verify-label">
+                    Token #3
+                </span>
+
+                <strong id="token3Status">
+                    Checking...
+                </strong>
+            </div>
+
+            <span
+                class="status pending"
+                id="token3Badge">
+                CHECKING
+            </span>
+
+        </div>
+
+
+        <!-- OWNERSHIP -->
+
+        <div class="verify-row">
+
+            <div>
+                <span class="verify-label">
+                    Ownership
+                </span>
+
+                <strong id="ownershipStatus">
+                    Checking...
+                </strong>
+            </div>
+
+            <span
+                class="status pending"
+                id="ownershipBadge">
+                CHECKING
+            </span>
+
+        </div>
+
+
+        <!-- METADATA -->
+
+        <div class="verify-row">
+
+            <div>
+                <span class="verify-label">
+                    Metadata
+                </span>
+
+                <strong>
+                    IPFS
+                </strong>
+            </div>
+
+            <span class="status success">
+                ✓ VERIFIED
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    Golden-Egg Collection ·
+    <span>ERC-721</span> ·
+    Ethereum Sepolia
+
+</footer>
+
+
+<!-- =========================
+     ETHERS.JS
+========================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+
+
+<script>
+
+    /* =========================================
+       GOLDEN-EGG CONTRACT
+    ========================================= */
+
+    const CONTRACT_ADDRESS =
+        "0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167";
+
+
+    /* =========================================
+       EXPECTED OWNER
+    ========================================= */
+
+    const OWNER_ADDRESS =
+        "0x71C508b0B799D5941B91DA7966029C53c1d6F692";
+
+
+    /* =========================================
+       SEPOLIA RPC
+    ========================================= */
+
+    const SEPOLIA_RPC =
+        "https://ethereum-sepolia-rpc.publicnode.com";
+
+
+    /* =========================================
+       MINIMAL CONTRACT ABI
+    ========================================= */
+
+    const ABI = [
+
+        "function owner() view returns (address)",
+
+        "function ownerOf(uint256 tokenId) view returns (address)",
+
+        "function tokenURI(uint256 tokenId) view returns (string)",
+
+        "function name() view returns (string)",
+
+        "function symbol() view returns (string)"
+
+    ];
+
+
+    /* =========================================
+       STATUS HELPER
+    ========================================= */
+
+    function setStatus(
+        statusId,
+        badgeId,
+        text,
+        success
+    ) {
+
+        const status =
+            document.getElementById(statusId);
+
+        const badge =
+            document.getElementById(badgeId);
+
+
+        status.textContent = text;
+
+
+        if (success) {
+
+            badge.textContent =
+                "✓ VERIFIED";
+
+            badge.className =
+                "status success";
+
+        } else {
+
+            badge.textContent =
+                "FAILED";
+
+            badge.className =
+                "status failed";
+
+        }
+
+    }
+
+
+    /* =========================================
+       BLOCKCHAIN VERIFICATION
+    ========================================= */
+
+    async function verifyGoldenEgg() {
+
+        try {
+
+            console.log(
+                "Starting Golden-Egg verification..."
+            );
+
+
+            /* -------------------------------------
+               CREATE SEPOLIA PROVIDER
+            ------------------------------------- */
+
+            const provider =
+                new ethers.JsonRpcProvider(
+                    SEPOLIA_RPC
+                );
+
+
+            /* -------------------------------------
+               CONNECT TO CONTRACT
+            ------------------------------------- */
+
+            const contract =
+                new ethers.Contract(
+                    CONTRACT_ADDRESS,
+                    ABI,
+                    provider
+                );
+
+
+            /* -------------------------------------
+               CONTRACT NAME + SYMBOL
+            ------------------------------------- */
+
+            const name =
+                await contract.name();
+
+            const symbol =
+                await contract.symbol();
+
+
+            const contractOK =
+                name === "Golden-Egg" &&
+                symbol === "GEGG";
+
+
+            setStatus(
+
+                "contractStatus",
+
+                "contractBadge",
+
+                contractOK
+                    ? "Golden-Egg (GEGG)"
+                    : "Contract data mismatch",
+
+                contractOK
+
+            );
+
+
+            /* -------------------------------------
+               TOKEN VERIFICATION
+            ------------------------------------- */
+
+            const tokenOwners = {};
+
+
+            for (
+                const tokenId of [1, 2, 3]
+            ) {
+
+                try {
+
+                    const tokenOwner =
+                        await contract.ownerOf(
+                            tokenId
+                        );
+
+
+                    tokenOwners[tokenId] =
+                        tokenOwner.toLowerCase();
+
+
+                    setStatus(
+
+                        `token${tokenId}Status`,
+
+                        `token${tokenId}Badge`,
+
+                        `Token #${tokenId} exists`,
+
+                        true
+
+                    );
+
+                }
+
+                catch (error) {
+
+                    console.error(
+                        `Token #${tokenId} verification failed:`,
+                        error
+                    );
+
+
+                    setStatus(
+
+                        `token${tokenId}Status`,
+
+                        `token${tokenId}Badge`,
+
+                        `Token #${tokenId} not found`,
+
+                        false
+
+                    );
+
+                }
+
+            }
+
+
+            /* -------------------------------------
+               CONTRACT OWNER
+            ------------------------------------- */
+
+            const ownerFromContract =
+                await contract.owner();
+
+
+            const contractOwnerOK =
+                ownerFromContract.toLowerCase() ===
+                OWNER_ADDRESS.toLowerCase();
+
+
+            /* -------------------------------------
+               NFT OWNERSHIP
+            ------------------------------------- */
+
+            const nftOwnerOK =
+                [1, 2, 3].every(
+
+                    id =>
+                        tokenOwners[id] ===
+                        OWNER_ADDRESS.toLowerCase()
+
+                );
+
+
+            const ownershipOK =
+                contractOwnerOK &&
+                nftOwnerOK;
+
+
+            setStatus(
+
+                "ownershipStatus",
+
+                "ownershipBadge",
+
+                ownershipOK
+                    ? "Verified owner"
+                    : "Ownership mismatch",
+
+                ownershipOK
+
+            );
+
+
+            console.log(
+                "Golden-Egg verification completed."
+            );
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "Golden-Egg verification error:",
+                error
+            );
+
+
+            setStatus(
+
+                "contractStatus",
+
+                "contractBadge",
+
+                "Verification unavailable",
+
+                false
+
+            );
+
+        }
+
+    }
+
+
+    /* =========================================
+       START VERIFICATION
+    ========================================= */
+
+    verifyGoldenEgg();
+
+</script>
 
 </body>
