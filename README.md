@@ -112,6 +112,8 @@ The initial collection is planned as **3 artworks**.
 [Image](https://dweb.link/ipfs/bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q)
 ·
 [Etherscan](https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=1)
+·
+[Transaction](https://sepolia.etherscan.io/tx/0x21c4076fc356d0aee014c1d1696da73fc54fcb3e9be5aebf0aef851ccf6bb8b3)
 
 </td>
 </tr>
@@ -209,31 +211,33 @@ ipfs://bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku
 
 # ✅ Verification
 
+The current NFTs have been checked using the smart contract's public read functions.
+
 ## Token #1
 
-```text
-tokenURI(1)
+### `tokenURI(1)`
 
+```text
 ipfs://bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa
 ```
 
-```text
-ownerOf(1)
+### `ownerOf(1)`
 
+```text
 0x71C508b0B799D5941B91DA7966029C53c1d6F692
 ```
 
 ## Token #2
 
-```text
-tokenURI(2)
+### `tokenURI(2)`
 
+```text
 ipfs://bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4
 ```
 
-```text
-ownerOf(2)
+### `ownerOf(2)`
 
+```text
 0x71C508b0B799D5941B91DA7966029C53c1d6F692
 ```
 
@@ -369,6 +373,7 @@ golden-egg-gallery/
 * [GitHub Repository](https://github.com/mohammadyadollahi-netizen/golden-egg-gallery/)
 * [Official Gallery](https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/)
 * [Smart Contract](https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167)
+* [Golden-Egg #1 Transaction](https://sepolia.etherscan.io/tx/0x21c4076fc356d0aee014c1d1696da73fc54fcb3e9be5aebf0aef851ccf6bb8b3)
 * [Golden-Egg #2 Transaction](https://sepolia.etherscan.io/tx/0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794)
 
 ---
