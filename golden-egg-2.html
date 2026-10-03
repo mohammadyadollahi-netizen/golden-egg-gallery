@@ -18,9 +18,15 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-    .container { width: min(1180px, 92%); margin: auto; }
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
 
     header {
       border-bottom: 1px solid rgba(255,215,0,.18);
@@ -61,7 +67,9 @@
       color: #ffd700;
     }
 
-    main { padding: 45px 0 75px; }
+    main {
+      padding: 45px 0 75px;
+    }
 
     .back {
       display: inline-block;
@@ -69,7 +77,9 @@
       margin-bottom: 26px;
     }
 
-    .back:hover { color: #ffd700; }
+    .back:hover {
+      color: #ffd700;
+    }
 
     .hero {
       display: grid;
@@ -144,9 +154,13 @@
       font-size: .82rem;
     }
 
-    .badge.gold { color: #ffd700; }
+    .badge.gold {
+      color: #ffd700;
+    }
 
-    .badge-row { margin-bottom: 25px; }
+    .badge-row {
+      margin-bottom: 25px;
+    }
 
     .panel {
       background: rgba(16,16,16,.92);
@@ -164,7 +178,9 @@
       border-bottom: 1px solid #202020;
     }
 
-    .info-row:last-child { border-bottom: 0; }
+    .info-row:last-child {
+      border-bottom: 0;
+    }
 
     .label {
       color: #888;
@@ -177,16 +193,22 @@
       overflow-wrap: anywhere;
     }
 
-    .value a { color: #ffd700; }
+    .value a {
+      color: #ffd700;
+    }
 
-    .value a:hover { text-decoration: underline; }
+    .value a:hover {
+      text-decoration: underline;
+    }
 
     .address {
       font-family: monospace;
       font-size: .82rem;
     }
 
-    .actions { margin-top: 22px; }
+    .actions {
+      margin-top: 22px;
+    }
 
     .btn {
       display: inline-flex;
@@ -218,7 +240,9 @@
       color: #000;
     }
 
-    .section { margin-top: 38px; }
+    .section {
+      margin-top: 38px;
+    }
 
     .verification-grid {
       display: grid;
@@ -244,9 +268,13 @@
       overflow-wrap: anywhere;
     }
 
-    .verify-status.ok { color: #65d68a; }
+    .verify-status.ok {
+      color: #65d68a;
+    }
 
-    .verify-status.fail { color: #e57373; }
+    .verify-status.fail {
+      color: #e57373;
+    }
 
     footer {
       border-top: 1px solid rgba(255,215,0,.14);
@@ -257,7 +285,9 @@
     }
 
     @media (max-width: 850px) {
-      .hero { grid-template-columns: 1fr; }
+      .hero {
+        grid-template-columns: 1fr;
+      }
 
       .verification-grid {
         grid-template-columns: 1fr;
@@ -276,7 +306,9 @@
         gap: 4px;
       }
 
-      main { padding-top: 28px; }
+      main {
+        padding-top: 28px;
+      }
     }
   </style>
 </head>
@@ -285,226 +317,405 @@
 
 <header>
   <div class="container nav">
-    <a class="logo" href="index.html">🥚 Golden-Egg</a>
+
+    <a class="logo" href="index.html">
+      🥚 Golden-Egg
+    </a>
 
     <nav class="nav-links" aria-label="Main navigation">
       <a href="index.html">Gallery</a>
       <a href="collection.html">Collection</a>
       <a href="about.html">About</a>
     </nav>
+
   </div>
 </header>
 
 <main>
+
   <div class="container">
 
-    <a class="back" href="collection.html">← Back to Collection</a>
+    <a class="back" href="collection.html">
+      ← Back to Collection
+    </a>
 
     <section class="hero">
 
+      <!-- Artwork -->
+
       <div class="artwork-box">
-        <img id="artwork" alt="Golden-Egg #2 digital artwork">
-        <div id="imageStatus" class="image-status">Loading artwork...</div>
+
+        <img
+          id="artwork"
+          alt="Golden-Egg #2 digital artwork"
+        >
+
+        <div id="imageStatus" class="image-status">
+          Loading artwork...
+        </div>
+
       </div>
+
+
+      <!-- NFT Information -->
 
       <div>
 
-        <div class="eyebrow">Golden-Egg Collection</div>
+        <div class="eyebrow">
+          Golden-Egg Collection
+        </div>
 
-        <h1>Golden-Egg #2</h1>
+        <h1>
+          Golden-Egg #2
+        </h1>
 
         <p class="subtitle">
           A digital artwork from the Golden-Egg NFT Collection.
         </p>
 
+
         <div class="badge-row">
-          <span class="badge gold">NFT #2</span>
-          <span class="badge">ERC-721</span>
-          <span class="badge">GEGG</span>
-          <span class="badge">Sepolia Testnet</span>
+
+          <span class="badge gold">
+            NFT #2
+          </span>
+
+          <span class="badge">
+            ERC-721
+          </span>
+
+          <span class="badge">
+            GEGG
+          </span>
+
+          <span class="badge">
+            Sepolia Testnet
+          </span>
+
         </div>
+
 
         <div class="panel">
-          <h2>NFT Information</h2>
+
+          <h2>
+            NFT Information
+          </h2>
+
 
           <div class="info-row">
-            <div class="label">Name</div>
-            <div class="value">Golden-Egg</div>
+            <div class="label">
+              Name
+            </div>
+
+            <div class="value">
+              Golden-Egg
+            </div>
           </div>
 
-          <div class="info-row">
-            <div class="label">Token ID</div>
-            <div class="value">2</div>
-          </div>
 
           <div class="info-row">
-            <div class="label">Collection</div>
-            <div class="value">Golden-Egg</div>
+            <div class="label">
+              Token ID
+            </div>
+
+            <div class="value">
+              2
+            </div>
           </div>
 
-          <div class="info-row">
-            <div class="label">Symbol</div>
-            <div class="value">GEGG</div>
-          </div>
 
           <div class="info-row">
-            <div class="label">Standard</div>
-            <div class="value">ERC-721</div>
+            <div class="label">
+              Collection
+            </div>
+
+            <div class="value">
+              Golden-Egg
+            </div>
           </div>
 
+
           <div class="info-row">
-            <div class="label">Network</div>
-            <div class="value">Ethereum Sepolia Testnet</div>
+            <div class="label">
+              Symbol
+            </div>
+
+            <div class="value">
+              GEGG
+            </div>
           </div>
+
+
+          <div class="info-row">
+            <div class="label">
+              Standard
+            </div>
+
+            <div class="value">
+              ERC-721
+            </div>
+          </div>
+
+
+          <div class="info-row">
+            <div class="label">
+              Network
+            </div>
+
+            <div class="value">
+              Ethereum Sepolia Testnet
+            </div>
+          </div>
+
         </div>
+
 
         <div class="actions">
 
-          <a class="btn primary"
-             href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2"
-             target="_blank"
-             rel="noopener noreferrer">
+          <a
+            class="btn primary"
+            href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             View on Etherscan ↗
           </a>
 
-          <a class="btn"
-             href="https://ipfs.io/ipfs/bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4"
-             target="_blank"
-             rel="noopener noreferrer">
+
+          <a
+            class="btn"
+            href="https://ipfs.io/ipfs/bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             View Metadata ↗
           </a>
 
-          <a class="btn"
-             href="https://sepolia.etherscan.io/tx/0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794"
-             target="_blank"
-             rel="noopener noreferrer">
+
+          <a
+            class="btn"
+            href="https://sepolia.etherscan.io/tx/0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Mint Transaction ↗
           </a>
 
         </div>
+
       </div>
 
     </section>
 
+
+    <!-- Blockchain Information -->
+
     <section class="section panel">
 
-      <h2>Blockchain Information</h2>
+      <h2>
+        Blockchain Information
+      </h2>
+
 
       <div class="info-row">
-        <div class="label">Contract</div>
+
+        <div class="label">
+          Contract
+        </div>
 
         <div class="value address">
-          <a href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
-             target="_blank"
-             rel="noopener noreferrer">
+
+          <a
+            href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
           </a>
+
         </div>
+
       </div>
 
+
       <div class="info-row">
-        <div class="label">Owner</div>
+
+        <div class="label">
+          Owner
+        </div>
 
         <div class="value address">
-          <a href="https://sepolia.etherscan.io/address/0x71C508b0B799D5941B91DA7966029C53c1d6F692"
-             target="_blank"
-             rel="noopener noreferrer">
+
+          <a
+            href="https://sepolia.etherscan.io/address/0x71C508b0B799D5941B91DA7966029C53c1d6F692"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             0x71C508b0B799D5941B91DA7966029C53c1d6F692
           </a>
+
         </div>
+
       </div>
 
+
       <div class="info-row">
-        <div class="label">Token Page</div>
+
+        <div class="label">
+          Token Page
+        </div>
 
         <div class="value">
-          <a href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2"
-             target="_blank"
-             rel="noopener noreferrer">
+
+          <a
+            href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Etherscan Token #2 ↗
           </a>
+
         </div>
+
       </div>
 
+
       <div class="info-row">
-        <div class="label">Mint Transaction</div>
+
+        <div class="label">
+          Mint Transaction
+        </div>
 
         <div class="value address">
-          <a href="https://sepolia.etherscan.io/tx/0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794"
-             target="_blank"
-             rel="noopener noreferrer">
+
+          <a
+            href="https://sepolia.etherscan.io/tx/0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794
           </a>
+
         </div>
+
       </div>
 
+
       <div class="info-row">
-        <div class="label">Mint Block</div>
+
+        <div class="label">
+          Mint Block
+        </div>
 
         <div class="value">
-          Not provided
+
+          <a
+            href="https://sepolia.etherscan.io/block/11816645"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            11816645 ↗
+          </a>
+
         </div>
+
       </div>
 
+
       <div class="info-row">
-        <div class="label">Mint Recipient</div>
+
+        <div class="label">
+          Mint Recipient
+        </div>
 
         <div class="value address">
           0x71C508b0B799D5941B91DA7966029C53c1d6F692
         </div>
+
       </div>
 
     </section>
 
+
+    <!-- IPFS Information -->
+
     <section class="section panel">
 
-      <h2>IPFS Information</h2>
+      <h2>
+        IPFS Information
+      </h2>
+
 
       <div class="info-row">
-        <div class="label">Image CID</div>
+
+        <div class="label">
+          Image CID
+        </div>
 
         <div class="value address">
           bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku
         </div>
+
       </div>
 
+
       <div class="info-row">
-        <div class="label">Metadata CID</div>
+
+        <div class="label">
+          Metadata CID
+        </div>
 
         <div class="value address">
           bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4
         </div>
+
       </div>
 
+
       <div class="info-row">
-        <div class="label">Image URI</div>
+
+        <div class="label">
+          Image URI
+        </div>
 
         <div class="value address">
           ipfs://bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku
         </div>
+
       </div>
 
+
       <div class="info-row">
-        <div class="label">Metadata URI</div>
+
+        <div class="label">
+          Metadata URI
+        </div>
 
         <div class="value address">
           ipfs://bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4
         </div>
+
       </div>
+
 
       <div class="actions">
 
-        <a class="btn"
-           href="https://ipfs.io/ipfs/bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku"
-           target="_blank"
-           rel="noopener noreferrer">
+        <a
+          class="btn"
+          href="https://ipfs.io/ipfs/bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Open Image ↗
         </a>
 
-        <a class="btn"
-           href="https://ipfs.io/ipfs/bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4"
-           target="_blank"
-           rel="noopener noreferrer">
+
+        <a
+          class="btn"
+          href="https://ipfs.io/ipfs/bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Open Metadata ↗
         </a>
 
@@ -512,91 +723,160 @@
 
     </section>
 
+
+    <!-- Blockchain Verification -->
+
     <section class="section panel">
 
-      <h2>Blockchain Verification</h2>
+      <h2>
+        Blockchain Verification
+      </h2>
+
 
       <div class="verification-grid">
 
-        <div class="verify-card">
-          <h3>Contract</h3>
-          <div id="contractStatus" class="verify-status">
-            Checking...
-          </div>
-        </div>
 
         <div class="verify-card">
-          <h3>Ownership</h3>
-          <div id="ownerStatus" class="verify-status">
+
+          <h3>
+            Contract
+          </h3>
+
+          <div
+            id="contractStatus"
+            class="verify-status"
+          >
             Checking...
           </div>
+
         </div>
 
+
         <div class="verify-card">
-          <h3>Token #2</h3>
-          <div id="tokenStatus" class="verify-status">
+
+          <h3>
+            Ownership
+          </h3>
+
+          <div
+            id="ownerStatus"
+            class="verify-status"
+          >
             Checking...
           </div>
+
         </div>
+
+
+        <div class="verify-card">
+
+          <h3>
+            Token #2
+          </h3>
+
+          <div
+            id="tokenStatus"
+            class="verify-status"
+          >
+            Checking...
+          </div>
+
+        </div>
+
 
       </div>
 
     </section>
 
+
+    <!-- About Artwork -->
+
     <section class="section panel">
 
-      <h2>About This Artwork</h2>
+      <h2>
+        About This Artwork
+      </h2>
 
       <p style="color:#aaa">
+
         Golden-Egg #2 is part of the Golden-Egg digital art collection.
         Its metadata and artwork are referenced through IPFS, while its
         NFT ownership record is associated with the Ethereum Sepolia testnet.
+
       </p>
 
       <p style="color:#888; margin-top:12px; font-size:.9rem">
+
         This page describes a testnet NFT. It does not imply an Ethereum
         Mainnet asset or a market valuation.
+
       </p>
 
     </section>
 
+
+    <!-- Navigation -->
+
     <section class="actions">
 
-      <a class="btn" href="golden-egg-1.html">
+      <a
+        class="btn"
+        href="golden-egg-1.html"
+      >
         ← Golden-Egg #1
       </a>
 
-      <a class="btn primary" href="collection.html">
+
+      <a
+        class="btn primary"
+        href="collection.html"
+      >
         View Collection
       </a>
 
-      <a class="btn" href="golden-egg-3.html">
+
+      <a
+        class="btn"
+        href="golden-egg-3.html"
+      >
         Golden-Egg #3 →
       </a>
 
     </section>
 
   </div>
+
 </main>
 
+
 <footer>
+
   <div class="container">
+
     Golden-Egg Collection © 2026<br>
+
     Ethereum Sepolia Testnet · ERC-721 · IPFS
+
   </div>
+
 </footer>
 
+
 <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+
 
 <script>
 
   const CONTRACT =
     "0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167";
 
+
   const EXPECTED_OWNER =
     "0x71C508b0B799D5941B91DA7966029C53c1d6F692";
 
+
   const TOKEN_ID = 2;
+
 
   const IMAGE_CID =
     "bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku";
@@ -616,8 +896,10 @@
   const artwork =
     document.getElementById("artwork");
 
+
   const imageStatus =
     document.getElementById("imageStatus");
+
 
   let gatewayIndex = 0;
 
@@ -629,9 +911,11 @@
       imageStatus.textContent =
         "Could not load image. Try Open Image below.";
 
-      imageStatus.style.color = "#e57373";
+      imageStatus.style.color =
+        "#e57373";
 
       return;
+
     }
 
 
@@ -669,8 +953,10 @@
     const contractStatus =
       document.getElementById("contractStatus");
 
+
     const ownerStatus =
       document.getElementById("ownerStatus");
+
 
     const tokenStatus =
       document.getElementById("tokenStatus");
@@ -679,7 +965,8 @@
     const setStatus =
       (element, message, type) => {
 
-        element.textContent = message;
+        element.textContent =
+          message;
 
         element.className =
           `verify-status ${type}`;
@@ -716,17 +1003,20 @@
           "fail"
         );
 
+
         setStatus(
           ownerStatus,
           "Not checked",
           ""
         );
 
+
         setStatus(
           tokenStatus,
           "Not checked",
           ""
         );
+
 
         return;
 
@@ -834,11 +1124,13 @@
         "fail"
       );
 
+
       setStatus(
         ownerStatus,
         "Verification unavailable",
         "fail"
       );
+
 
       setStatus(
         tokenStatus,
