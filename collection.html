@@ -3,35 +3,1008 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Golden-Egg NFT Collection — three ERC-721 artworks on Ethereum Sepolia. Explore verified artwork, metadata and blockchain records.">
+
+<meta name="description"
+content="Golden-Egg NFT Collection — three ERC-721 artworks on Ethereum Sepolia. Explore verified artwork, metadata and blockchain records.">
+
 <title>Golden-Egg — Collection</title>
+
 <style>
-:root{--bg:#070707;--panel:#101010;--panel2:#151515;--gold:#d8ad4c;--gold2:#f3d37a;--text:#f6f2e8;--muted:#a9a39a;--line:rgba(216,173,76,.22);--ok:#72d39a;--max:1180px}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,rgba(216,173,76,.12),transparent 38%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}a{color:inherit;text-decoration:none}.wrap{width:min(92%,var(--max));margin:auto}
-nav{position:sticky;top:0;z-index:10;background:rgba(7,7,7,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.navin{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:800;letter-spacing:.08em;color:var(--gold2)}.links{display:flex;gap:26px;font-size:.94rem}.links a{color:var(--muted)}.links a:hover,.links a.active{color:var(--gold2)}
-.hero{padding:88px 0 52px;text-align:center}.eyebrow{display:inline-flex;border:1px solid var(--line);padding:7px 13px;border-radius:999px;color:var(--gold2);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}.hero h1{font-size:clamp(2.6rem,7vw,5.4rem);line-height:1.02;margin:22px 0 16px;letter-spacing:-.045em}.hero h1 span{color:var(--gold2)}.hero p{max-width:700px;margin:0 auto;color:var(--muted);font-size:1.08rem}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:42px 0}.stat{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015));border:1px solid var(--line);border-radius:16px;padding:20px}.stat strong{display:block;font-size:1.25rem;color:var(--gold2)}.stat small{color:var(--muted)}
-.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:30px 0 22px}.sectionhead h2{font-size:2rem;margin:0}.sectionhead p{margin:0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{overflow:hidden;background:linear-gradient(180deg,#141414,#0d0d0d);border:1px solid var(--line);border-radius:22px;box-shadow:0 18px 55px rgba(0,0,0,.3)}.art{position:relative;aspect-ratio:1/1;background:#0b0b0b;overflow:hidden}.art img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}.card:hover .art img{transform:scale(1.035)}.tag{position:absolute;top:14px;left:14px;background:rgba(7,7,7,.78);border:1px solid var(--line);padding:6px 10px;border-radius:999px;font-size:.75rem;color:var(--gold2)}.body{padding:20px}.titleline{display:flex;justify-content:space-between;gap:15px;align-items:center}.titleline h3{margin:0;font-size:1.35rem}.token{color:var(--gold2);font-weight:700}.desc{color:var(--muted);font-size:.92rem;margin:10px 0 17px}.verify{display:inline-flex;align-items:center;gap:7px;color:var(--ok);font-size:.82rem;margin-bottom:17px}.dot{width:8px;height:8px;border-radius:50%;background:currentColor}.actions{display:flex;gap:9px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:11px;padding:9px 12px;font-size:.82rem;color:var(--gold2);background:rgba(216,173,76,.05)}.btn:hover{background:rgba(216,173,76,.12)}.btn.primary{background:var(--gold);color:#0b0b0b;border-color:var(--gold);font-weight:800}.btn.primary:hover{background:var(--gold2)}
-.details{margin:58px 0;display:grid;grid-template-columns:1fr 1fr;gap:22px}.box{border:1px solid var(--line);border-radius:20px;padding:25px;background:rgba(255,255,255,.02)}.box h3{margin-top:0}.row{display:grid;grid-template-columns:130px 1fr;gap:15px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:.9rem}.row:last-child{border-bottom:0}.label{color:var(--muted)}.value{overflow-wrap:anywhere;color:#eee}.value a{color:var(--gold2)}
-.cta{margin:60px 0 80px;border:1px solid var(--line);border-radius:24px;padding:38px;text-align:center;background:radial-gradient(circle at center,rgba(216,173,76,.09),transparent 60%)}.cta h2{margin:0 0 8px}.cta p{color:var(--muted);max-width:650px;margin:0 auto 22px}.cta .actions{justify-content:center}
-footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.85rem}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-@media(max-width:850px){.grid{grid-template-columns:1fr 1fr}.details{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.links{gap:13px}}@media(max-width:580px){.navin{height:auto;padding:16px 0;align-items:flex-start}.links{font-size:.8rem;gap:9px;flex-wrap:wrap;justify-content:flex-end}.grid,.stats{grid-template-columns:1fr}.hero{padding-top:60px}.sectionhead{display:block}.sectionhead p{margin-top:7px}.row{grid-template-columns:100px 1fr}.cta{padding:28px 18px}}
+:root{
+  --bg:#070707;
+  --panel:#101010;
+  --panel2:#151515;
+  --gold:#d8ad4c;
+  --gold2:#f3d37a;
+  --text:#f6f2e8;
+  --muted:#a9a39a;
+  --line:rgba(216,173,76,.22);
+  --ok:#72d39a;
+  --max:1180px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(216,173,76,.12),
+      transparent 38%
+    ),
+    var(--bg);
+  color:var(--text);
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.wrap{
+  width:min(92%,var(--max));
+  margin:auto;
+}
+
+/* NAVIGATION */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(7,7,7,.86);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+
+.navin{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  font-weight:800;
+  letter-spacing:.08em;
+  color:var(--gold2);
+}
+
+.links{
+  display:flex;
+  gap:26px;
+  font-size:.94rem;
+}
+
+.links a{
+  color:var(--muted);
+  transition:.2s;
+}
+
+.links a:hover,
+.links a.active{
+  color:var(--gold2);
+}
+
+/* HERO */
+
+.hero{
+  padding:88px 0 52px;
+  text-align:center;
+}
+
+.eyebrow{
+  display:inline-flex;
+  border:1px solid var(--line);
+  padding:7px 13px;
+  border-radius:999px;
+  color:var(--gold2);
+  font-size:.78rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  font-size:clamp(2.6rem,7vw,5.4rem);
+  line-height:1.02;
+  margin:22px 0 16px;
+  letter-spacing:-.045em;
+}
+
+.hero h1 span{
+  color:var(--gold2);
+}
+
+.hero p{
+  max-width:700px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:1.08rem;
+}
+
+/* STATS */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin:42px 0;
+}
+
+.stat{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.035),
+      rgba(255,255,255,.015)
+    );
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:20px;
+}
+
+.stat strong{
+  display:block;
+  font-size:1.25rem;
+  color:var(--gold2);
+}
+
+.stat small{
+  color:var(--muted);
+}
+
+/* SECTION */
+
+.sectionhead{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:20px;
+  margin:30px 0 22px;
+}
+
+.sectionhead h2{
+  font-size:2rem;
+  margin:0;
+}
+
+.sectionhead p{
+  margin:0;
+  color:var(--muted);
+}
+
+/* CARDS */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.card{
+  overflow:hidden;
+  background:
+    linear-gradient(
+      180deg,
+      #141414,
+      #0d0d0d
+    );
+  border:1px solid var(--line);
+  border-radius:22px;
+  box-shadow:0 18px 55px rgba(0,0,0,.3);
+}
+
+.art{
+  position:relative;
+  aspect-ratio:1/1;
+  background:#0b0b0b;
+  overflow:hidden;
+}
+
+.art img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .5s;
+}
+
+.card:hover .art img{
+  transform:scale(1.035);
+}
+
+.tag{
+  position:absolute;
+  top:14px;
+  left:14px;
+  background:rgba(7,7,7,.78);
+  border:1px solid var(--line);
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:.75rem;
+  color:var(--gold2);
+}
+
+.body{
+  padding:20px;
+}
+
+.titleline{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:center;
+}
+
+.titleline h3{
+  margin:0;
+  font-size:1.35rem;
+}
+
+.token{
+  color:var(--gold2);
+  font-weight:700;
+}
+
+.desc{
+  color:var(--muted);
+  font-size:.92rem;
+  margin:10px 0 17px;
+}
+
+.verify{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  color:var(--ok);
+  font-size:.82rem;
+  margin-bottom:17px;
+}
+
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:currentColor;
+}
+
+/* BUTTONS */
+
+.actions{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:9px 12px;
+  font-size:.82rem;
+  color:var(--gold2);
+  background:rgba(216,173,76,.05);
+  transition:.2s;
+}
+
+.btn:hover{
+  background:rgba(216,173,76,.12);
+}
+
+.btn.primary{
+  background:var(--gold);
+  color:#0b0b0b;
+  border-color:var(--gold);
+  font-weight:800;
+}
+
+.btn.primary:hover{
+  background:var(--gold2);
+}
+
+/* DETAILS */
+
+.details{
+  margin:58px 0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
+.box{
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:25px;
+  background:rgba(255,255,255,.02);
+}
+
+.box h3{
+  margin-top:0;
+}
+
+.row{
+  display:grid;
+  grid-template-columns:130px 1fr;
+  gap:15px;
+  padding:11px 0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  font-size:.9rem;
+}
+
+.row:last-child{
+  border-bottom:0;
+}
+
+.label{
+  color:var(--muted);
+}
+
+.value{
+  overflow-wrap:anywhere;
+  color:#eee;
+}
+
+.value a{
+  color:var(--gold2);
+}
+
+/* CTA */
+
+.cta{
+  margin:60px 0 80px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:38px;
+  text-align:center;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(216,173,76,.09),
+      transparent 60%
+    );
+}
+
+.cta h2{
+  margin:0 0 8px;
+}
+
+.cta p{
+  color:var(--muted);
+  max-width:650px;
+  margin:0 auto 22px;
+}
+
+.cta .actions{
+  justify-content:center;
+}
+
+/* FOOTER */
+
+footer{
+  border-top:1px solid var(--line);
+  padding:28px 0;
+  color:var(--muted);
+  font-size:.85rem;
+}
+
+.foot{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .details{
+    grid-template-columns:1fr;
+  }
+
+  .stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .links{
+    gap:13px;
+  }
+}
+
+@media(max-width:580px){
+
+  .navin{
+    height:auto;
+    padding:16px 0;
+    align-items:flex-start;
+  }
+
+  .links{
+    font-size:.8rem;
+    gap:9px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+  }
+
+  .grid,
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding-top:60px;
+  }
+
+  .sectionhead{
+    display:block;
+  }
+
+  .sectionhead p{
+    margin-top:7px;
+  }
+
+  .row{
+    grid-template-columns:100px 1fr;
+  }
+
+  .cta{
+    padding:28px 18px;
+  }
+}
 </style>
 </head>
+
 <body>
-<nav><div class="wrap navin"><a class="brand" href="index.html">GOLDEN-EGG</a><div class="links"><a href="index.html">Gallery</a><a class="active" href="collection.html">Collection</a><a href="about.html">About</a><a href="#details">Verify</a></div></div></nav>
+
+<!-- NAVIGATION -->
+
+<nav>
+  <div class="wrap navin">
+
+    <a class="brand" href="index.html">
+      GOLDEN-EGG
+    </a>
+
+    <div class="links">
+      <a href="index.html">Gallery</a>
+      <a class="active" href="collection.html">Collection</a>
+      <a href="about.html">About</a>
+      <a href="#details">Verify</a>
+    </div>
+
+  </div>
+</nav>
+
+
 <main class="wrap">
-<section class="hero"><span class="eyebrow">ERC-721 • Ethereum Sepolia</span><h1>Golden-<span>Egg</span> Collection</h1><p>A curated showcase of three Golden-Egg digital artworks, with their on-chain records and IPFS metadata kept visible for transparent exploration.</p></section>
-<section class="stats"><div class="stat"><strong>3</strong><small>Minted artworks</small></div><div class="stat"><strong>ERC-721</strong><small>Token standard</small></div><div class="stat"><strong>GEGG</strong><small>Collection symbol</small></div><div class="stat"><strong>IPFS</strong><small>Decentralized media</small></div></section>
-<section id="artworks"><div class="sectionhead"><div><h2>Artworks</h2><p>Explore the three minted Golden-Egg tokens.</p></div></div>
-<div class="grid">
-<article class="card"><div class="art"><img src="https://gateway.pinata.cloud/ipfs/bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q" alt="Golden-Egg #1" loading="lazy"><span class="tag">TOKEN #1</span></div><div class="body"><div class="titleline"><h3>Golden-Egg #1</h3><span class="token">#1</span></div><p class="desc">The first minted artwork in the Golden-Egg collection.</p><div class="verify"><span class="dot"></span> On-chain record available</div><div class="actions"><a class="btn primary" href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=1" target="_blank" rel="noopener">View on Etherscan</a><a class="btn" href="https://gateway.pinata.cloud/ipfs/bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa" target="_blank" rel="noopener">Metadata</a></div></div></article>
-<article class="card"><div class="art"><img src="https://gateway.pinata.cloud/ipfs/bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku" alt="Golden-Egg #2" loading="lazy"><span class="tag">TOKEN #2</span></div><div class="body"><div class="titleline"><h3>Golden-Egg #2</h3><span class="token">#2</span></div><p class="desc">The second minted artwork, recorded under the same collection contract.</p><div class="verify"><span class="dot"></span> On-chain record available</div><div class="actions"><a class="btn primary" href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2" target="_blank" rel="noopener">View on Etherscan</a><a class="btn" href="https://gateway.pinata.cloud/ipfs/bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4" target="_blank" rel="noopener">Metadata</a></div></div></article>
-<article class="card"><div class="art"><img src="https://gateway.pinata.cloud/ipfs/bafybeianohmded6d2qjqy3jrl72jlmrgvryjamme4kys6l6mnjhjpx75rq" alt="Golden-Egg #3" loading="lazy"><span class="tag">TOKEN #3</span></div><div class="body"><div class="titleline"><h3>Golden-Egg #3</h3><span class="token">#3</span></div><p class="desc">The third minted artwork, completing the current three-piece showcase.</p><div class="verify"><span class="dot"></span> On-chain record available</div><div class="actions"><a class="btn primary" href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=3" target="_blank" rel="noopener">View on Etherscan</a><a class="btn" href="https://gateway.pinata.cloud/ipfs/bafkreiev47cpkieizijczpb5ps7v3nbiave4f2onlzvoxbsdhd43uy4t3q" target="_blank" rel="noopener">Metadata</a></div></div></article>
-</div></section>
-<section id="details" class="details"><div class="box"><h3>Collection Details</h3><div class="row"><span class="label">Name</span><span class="value">Golden-Egg</span></div><div class="row"><span class="label">Symbol</span><span class="value">GEGG</span></div><div class="row"><span class="label">Standard</span><span class="value">ERC-721</span></div><div class="row"><span class="label">Network</span><span class="value">Ethereum Sepolia Testnet</span></div><div class="row"><span class="label">Contract</span><span class="value"><a href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167" target="_blank" rel="noopener">0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167</a></span></div></div>
-<div class="box"><h3>On-chain &amp; IPFS</h3><div class="row"><span class="label">Owner</span><span class="value"><a href="https://sepolia.etherscan.io/address/0x71C508b0B799D5941B91DA7966029C53c1d6F692" target="_blank" rel="noopener">0x71C508b0B799D5941B91DA7966029C53c1d6F692</a></span></div><div class="row"><span class="label">Token IDs</span><span class="value">1 • 2 • 3</span></div><div class="row"><span class="label">Media</span><span class="value">IPFS-hosted artwork</span></div><div class="row"><span class="label">Explorer</span><span class="value"><a href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167" target="_blank" rel="noopener">Sepolia Etherscan</a></span></div><div class="row"><span class="label">Repository</span><span class="value"><a href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery" target="_blank" rel="noopener">GitHub</a></span></div></div></section>
-<section class="cta"><h2>Explore the full Golden-Egg experience</h2><p>Return to the main gallery or read the project story and technical overview on the About page.</p><div class="actions"><a class="btn primary" href="index.html">Back to Gallery</a><a class="btn" href="about.html">About the Project</a><a class="btn" href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery" target="_blank" rel="noopener">GitHub</a></div></section>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <span class="eyebrow">
+    ERC-721 • Ethereum Sepolia
+  </span>
+
+  <h1>
+    Golden-<span>Egg</span> Collection
+  </h1>
+
+  <p>
+    A curated showcase of three Golden-Egg digital artworks,
+    with their on-chain records and IPFS metadata kept visible
+    for transparent exploration.
+  </p>
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="stats">
+
+  <div class="stat">
+    <strong>3</strong>
+    <small>Minted artworks</small>
+  </div>
+
+  <div class="stat">
+    <strong>ERC-721</strong>
+    <small>Token standard</small>
+  </div>
+
+  <div class="stat">
+    <strong>GEGG</strong>
+    <small>Collection symbol</small>
+  </div>
+
+  <div class="stat">
+    <strong>IPFS</strong>
+    <small>Decentralized media</small>
+  </div>
+
+</section>
+
+
+<!-- ARTWORKS -->
+
+<section id="artworks">
+
+  <div class="sectionhead">
+
+    <div>
+      <h2>Artworks</h2>
+      <p>
+        Explore the three minted Golden-Egg tokens.
+      </p>
+    </div>
+
+  </div>
+
+
+  <div class="grid">
+
+
+    <!-- GOLDEN-EGG #1 -->
+
+    <article class="card">
+
+      <div class="art">
+
+        <img
+          src="https://gateway.pinata.cloud/ipfs/bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q"
+          alt="Golden-Egg #1"
+          loading="lazy"
+        >
+
+        <span class="tag">
+          TOKEN #1
+        </span>
+
+      </div>
+
+
+      <div class="body">
+
+        <div class="titleline">
+
+          <h3>
+            Golden-Egg #1
+          </h3>
+
+          <span class="token">
+            #1
+          </span>
+
+        </div>
+
+
+        <p class="desc">
+          The first minted artwork in the Golden-Egg collection.
+        </p>
+
+
+        <div class="verify">
+          <span class="dot"></span>
+          On-chain record available
+        </div>
+
+
+        <div class="actions">
+
+          <a
+            class="btn primary"
+            href="golden-egg-1.html"
+          >
+            View Artwork
+          </a>
+
+          <a
+            class="btn"
+            href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=1"
+            target="_blank"
+            rel="noopener"
+          >
+            Etherscan
+          </a>
+
+          <a
+            class="btn"
+            href="https://gateway.pinata.cloud/ipfs/bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa"
+            target="_blank"
+            rel="noopener"
+          >
+            Metadata
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- GOLDEN-EGG #2 -->
+
+    <article class="card">
+
+      <div class="art">
+
+        <img
+          src="https://gateway.pinata.cloud/ipfs/bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku"
+          alt="Golden-Egg #2"
+          loading="lazy"
+        >
+
+        <span class="tag">
+          TOKEN #2
+        </span>
+
+      </div>
+
+
+      <div class="body">
+
+        <div class="titleline">
+
+          <h3>
+            Golden-Egg #2
+          </h3>
+
+          <span class="token">
+            #2
+          </span>
+
+        </div>
+
+
+        <p class="desc">
+          The second minted artwork, recorded under the same collection contract.
+        </p>
+
+
+        <div class="verify">
+          <span class="dot"></span>
+          On-chain record available
+        </div>
+
+
+        <div class="actions">
+
+          <a
+            class="btn primary"
+            href="golden-egg-2.html"
+          >
+            View Artwork
+          </a>
+
+          <a
+            class="btn"
+            href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2"
+            target="_blank"
+            rel="noopener"
+          >
+            Etherscan
+          </a>
+
+          <a
+            class="btn"
+            href="https://gateway.pinata.cloud/ipfs/bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4"
+            target="_blank"
+            rel="noopener"
+          >
+            Metadata
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- GOLDEN-EGG #3 -->
+
+    <article class="card">
+
+      <div class="art">
+
+        <img
+          src="https://gateway.pinata.cloud/ipfs/bafybeianohmded6d2qjqy3jrl72jlmrgvryjamme4kys6l6mnjhjpx75rq"
+          alt="Golden-Egg #3"
+          loading="lazy"
+        >
+
+        <span class="tag">
+          TOKEN #3
+        </span>
+
+      </div>
+
+
+      <div class="body">
+
+        <div class="titleline">
+
+          <h3>
+            Golden-Egg #3
+          </h3>
+
+          <span class="token">
+            #3
+          </span>
+
+        </div>
+
+
+        <p class="desc">
+          The third minted artwork, completing the current three-piece showcase.
+        </p>
+
+
+        <div class="verify">
+          <span class="dot"></span>
+          On-chain record available
+        </div>
+
+
+        <div class="actions">
+
+          <a
+            class="btn primary"
+            href="golden-egg-3.html"
+          >
+            View Artwork
+          </a>
+
+          <a
+            class="btn"
+            href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=3"
+            target="_blank"
+            rel="noopener"
+          >
+            Etherscan
+          </a>
+
+          <a
+            class="btn"
+            href="https://gateway.pinata.cloud/ipfs/bafkreiev47cpkieizijczpb5ps7v3nbiave4f2onlzvoxbsdhd43uy4t3q"
+            target="_blank"
+            rel="noopener"
+          >
+            Metadata
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- DETAILS -->
+
+<section id="details" class="details">
+
+
+  <div class="box">
+
+    <h3>
+      Collection Details
+    </h3>
+
+    <div class="row">
+      <span class="label">Name</span>
+      <span class="value">Golden-Egg</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Symbol</span>
+      <span class="value">GEGG</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Standard</span>
+      <span class="value">ERC-721</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Network</span>
+      <span class="value">Ethereum Sepolia Testnet</span>
+    </div>
+
+    <div class="row">
+
+      <span class="label">
+        Contract
+      </span>
+
+      <span class="value">
+
+        <a
+          href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
+          target="_blank"
+          rel="noopener"
+        >
+          0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
+        </a>
+
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <div class="box">
+
+    <h3>
+      On-chain &amp; IPFS
+    </h3>
+
+    <div class="row">
+
+      <span class="label">
+        Owner
+      </span>
+
+      <span class="value">
+
+        <a
+          href="https://sepolia.etherscan.io/address/0x71C508b0B799D5941B91DA7966029C53c1d6F692"
+          target="_blank"
+          rel="noopener"
+        >
+          0x71C508b0B799D5941B91DA7966029C53c1d6F692
+        </a>
+
+      </span>
+
+    </div>
+
+    <div class="row">
+      <span class="label">Token IDs</span>
+      <span class="value">1 • 2 • 3</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Media</span>
+      <span class="value">IPFS-hosted artwork</span>
+    </div>
+
+    <div class="row">
+
+      <span class="label">
+        Explorer
+      </span>
+
+      <span class="value">
+
+        <a
+          href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
+          target="_blank"
+          rel="noopener"
+        >
+          Sepolia Etherscan
+        </a>
+
+      </span>
+
+    </div>
+
+    <div class="row">
+
+      <span class="label">
+        Repository
+      </span>
+
+      <span class="value">
+
+        <a
+          href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
+          target="_blank"
+          rel="noopener"
+        >
+          GitHub
+        </a>
+
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+  <h2>
+    Explore the full Golden-Egg experience
+  </h2>
+
+  <p>
+    Return to the main gallery or read the project story
+    and technical overview on the About page.
+  </p>
+
+  <div class="actions">
+
+    <a
+      class="btn primary"
+      href="index.html"
+    >
+      Back to Gallery
+    </a>
+
+    <a
+      class="btn"
+      href="about.html"
+    >
+      About the Project
+    </a>
+
+    <a
+      class="btn"
+      href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
+      target="_blank"
+      rel="noopener"
+    >
+      GitHub
+    </a>
+
+  </div>
+
+</section>
+
 </main>
-<footer><div class="wrap foot"><span>© Golden-Egg Collection</span><span>Ethereum Sepolia • ERC-721 • IPFS</span></div></footer>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="wrap foot">
+
+    <span>
+      © Golden-Egg Collection
+    </span>
+
+    <span>
+      Ethereum Sepolia • ERC-721 • IPFS
+    </span>
+
+  </div>
+
+</footer>
+
 </body>
 </html>
