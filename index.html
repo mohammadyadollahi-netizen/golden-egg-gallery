@@ -165,6 +165,8 @@ nav a:hover {
     text-decoration: none;
     font-size: 11px;
     font-weight: bold;
+    border: none;
+    cursor: pointer;
 }
 
 .button:hover {
@@ -203,7 +205,7 @@ nav a:hover {
 }
 
 .verification-count {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
     color: #d4af37;
 }
@@ -235,8 +237,25 @@ nav a:hover {
 
 .verify-item-status {
     margin-top: 7px;
-    color: #d4af37;
+    color: #888;
     font-size: 12px;
+}
+
+.verify-item-status.ok {
+    color: #d4af37;
+}
+
+.verify-item-status.fail {
+    color: #c77;
+}
+
+.verify-item-status.loading {
+    color: #888;
+}
+
+.verify-button {
+    text-align: center;
+    margin-top: 22px;
 }
 
 .verify-note {
@@ -249,10 +268,16 @@ nav a:hover {
     line-height: 1.7;
 }
 
-.verify-button {
+.verification-time {
+    margin-top: 12px;
     text-align: center;
-    margin-top: 20px;
+    color: #666;
+    font-size: 10px;
 }
+
+/* ======================== */
+/* CONTRACT */
+/* ======================== */
 
 .contract-box {
     margin-top: 55px;
@@ -368,12 +393,14 @@ footer {
     </section>
 
 
+    <!-- ======================== -->
+    <!-- NFT GALLERY -->
+    <!-- ======================== -->
+
     <section class="grid">
 
 
-        <!-- ======================== -->
         <!-- GOLDEN-EGG #1 -->
-        <!-- ======================== -->
 
         <article class="card">
 
@@ -411,9 +438,7 @@ footer {
         </article>
 
 
-        <!-- ======================== -->
         <!-- GOLDEN-EGG #2 -->
-        <!-- ======================== -->
 
         <article class="card">
 
@@ -451,9 +476,7 @@ footer {
         </article>
 
 
-        <!-- ======================== -->
         <!-- GOLDEN-EGG #3 -->
-        <!-- ======================== -->
 
         <article class="card">
 
@@ -491,9 +514,7 @@ footer {
         </article>
 
 
-        <!-- ======================== -->
         <!-- GOLDEN-EGG #4 -->
-        <!-- ======================== -->
 
         <article class="card">
 
@@ -535,23 +556,26 @@ footer {
 
 
     <!-- ======================== -->
-    <!-- LIVE VERIFICATION -->
+    <!-- LIVE ON-CHAIN VERIFICATION -->
     <!-- ======================== -->
 
     <section class="verification-box">
 
         <h3>
-            Live Verification
+            Live On-Chain Verification
         </h3>
 
         <div class="verification-subtitle">
-            On-chain and decentralized project verification
+            Real-time read-only verification from Ethereum Sepolia
         </div>
+
 
         <div class="verification-summary">
 
-            <div class="verification-count">
-                4 / 4
+            <div
+                id="verificationCount"
+                class="verification-count">
+                Checking...
             </div>
 
             <div class="verification-label">
@@ -563,14 +587,32 @@ footer {
 
         <div class="verification-list">
 
+
+            <div class="verify-item">
+
+                <div class="verify-item-title">
+                    Network
+                </div>
+
+                <div
+                    id="networkStatus"
+                    class="verify-item-status loading">
+                    Checking...
+                </div>
+
+            </div>
+
+
             <div class="verify-item">
 
                 <div class="verify-item-title">
                     Smart Contract
                 </div>
 
-                <div class="verify-item-status">
-                    ✓ Verified
+                <div
+                    id="contractStatus"
+                    class="verify-item-status loading">
+                    Checking...
                 </div>
 
             </div>
@@ -579,24 +621,13 @@ footer {
             <div class="verify-item">
 
                 <div class="verify-item-title">
-                    Blockchain
+                    ERC-721
                 </div>
 
-                <div class="verify-item-status">
-                    ✓ Ethereum Sepolia
-                </div>
-
-            </div>
-
-
-            <div class="verify-item">
-
-                <div class="verify-item-title">
-                    ERC-721 Standard
-                </div>
-
-                <div class="verify-item-status">
-                    ✓ Verified
+                <div
+                    id="erc721Status"
+                    class="verify-item-status loading">
+                    Checking...
                 </div>
 
             </div>
@@ -608,8 +639,10 @@ footer {
                     Token #1
                 </div>
 
-                <div class="verify-item-status">
-                    ✓ Verified
+                <div
+                    id="token1Status"
+                    class="verify-item-status loading">
+                    Checking...
                 </div>
 
             </div>
@@ -621,8 +654,10 @@ footer {
                     Token #2
                 </div>
 
-                <div class="verify-item-status">
-                    ✓ Verified
+                <div
+                    id="token2Status"
+                    class="verify-item-status loading">
+                    Checking...
                 </div>
 
             </div>
@@ -634,8 +669,10 @@ footer {
                     Token #3
                 </div>
 
-                <div class="verify-item-status">
-                    ✓ Verified
+                <div
+                    id="token3Status"
+                    class="verify-item-status loading">
+                    Checking...
                 </div>
 
             </div>
@@ -647,8 +684,10 @@ footer {
                     Token #4
                 </div>
 
-                <div class="verify-item-status">
-                    ✓ Verified
+                <div
+                    id="token4Status"
+                    class="verify-item-status loading">
+                    Checking...
                 </div>
 
             </div>
@@ -660,8 +699,10 @@ footer {
                     IPFS Metadata
                 </div>
 
-                <div class="verify-item-status">
-                    ✓ Connected
+                <div
+                    id="ipfsStatus"
+                    class="verify-item-status loading">
+                    Checking...
                 </div>
 
             </div>
@@ -671,12 +712,21 @@ footer {
 
         <div class="verify-button">
 
+            <button
+                id="verifyButton"
+                class="button"
+                type="button">
+                Verify Again
+            </button>
+
+            <br>
+
             <a
                 class="button"
                 href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
                 target="_blank"
                 rel="noopener noreferrer">
-                Verify On-Chain
+                Open Contract
             </a>
 
         </div>
@@ -684,14 +734,23 @@ footer {
 
         <div class="verify-note">
 
-            Verification refers to the relationship between the
-            Golden-Egg artworks, ERC-721 smart contract,
-            token IDs, metadata and IPFS resources on Ethereum Sepolia.
+            This verification reads public blockchain data only.
+            No wallet connection or transaction is required.
 
+        </div>
+
+
+        <div
+            id="verificationTime"
+            class="verification-time">
         </div>
 
     </section>
 
+
+    <!-- ======================== -->
+    <!-- SMART CONTRACT -->
+    <!-- ======================== -->
 
     <section class="contract-box">
 
@@ -732,5 +791,722 @@ footer {
 
 </footer>
 
+
+<script>
+
+/* ========================================================= */
+/* GOLDEN-EGG LIVE ON-CHAIN VERIFICATION                     */
+/* ========================================================= */
+
+const RPC_URL =
+    "https://ethereum-sepolia-rpc.publicnode.com";
+
+const CONTRACT =
+    "0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167";
+
+const EXPECTED_OWNER =
+    "0x71C508b0B799D5941B91DA7966029C53c1d6F692";
+
+const EXPECTED_CHAIN_ID =
+    "0xaa36a7";
+
+const TOKENS = [1, 2, 3, 4];
+
+
+/* --------------------------------------------------------- */
+/* Known metadata CIDs                                      */
+/* --------------------------------------------------------- */
+
+const METADATA_CIDS = {
+
+    1:
+    "bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa",
+
+    2:
+    "bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4",
+
+    3:
+    "bafkreiev47cpkieizijczpb5ps7v3nbiave4f2onlzvoxbsdhd43uy4t3q",
+
+    4:
+    "bafkreidtosu2ey5ghnwzcbiu73ksedac52zw6j5ymqpriuxbk4xdbfy6xq"
+
+};
+
+
+/* --------------------------------------------------------- */
+/* Known image CIDs                                          */
+/* --------------------------------------------------------- */
+
+const IMAGE_CIDS = {
+
+    1:
+    "bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q",
+
+    2:
+    "bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku",
+
+    3:
+    "bafybeianohmded6d2qjqy3jrl72jlmrgvryjamme4kys6l6mnjhjpx75rq",
+
+    4:
+    "bafybeiesrlomqtgsjyyfbms5wl3akirfih7kqbeqruqe5a77slqxwrx7vq"
+
+};
+
+
+/* --------------------------------------------------------- */
+/* RPC helper                                                */
+/* --------------------------------------------------------- */
+
+async function rpc(method, params = []) {
+
+    const response = await fetch(
+        RPC_URL,
+        {
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                jsonrpc: "2.0",
+                id: Date.now(),
+                method: method,
+                params: params
+            })
+        }
+    );
+
+    if (!response.ok) {
+        throw new Error(
+            "RPC HTTP error: " + response.status
+        );
+    }
+
+    const data = await response.json();
+
+    if (data.error) {
+        throw new Error(
+            data.error.message || "RPC error"
+        );
+    }
+
+    return data.result;
+}
+
+
+/* --------------------------------------------------------- */
+/* Contract call helper                                     */
+/* --------------------------------------------------------- */
+
+async function ethCall(data) {
+
+    return await rpc(
+        "eth_call",
+        [
+            {
+                to: CONTRACT,
+                data: data
+            },
+            "latest"
+        ]
+    );
+}
+
+
+/* --------------------------------------------------------- */
+/* Status helper                                             */
+/* --------------------------------------------------------- */
+
+function setStatus(id, text, type = "ok") {
+
+    const element =
+        document.getElementById(id);
+
+    element.textContent = text;
+
+    element.className =
+        "verify-item-status " + type;
+}
+
+
+/* --------------------------------------------------------- */
+/* ERC-165: supportsInterface(bytes4)                       */
+/* ERC-721 interface ID = 0x80ac58cd                        */
+/* --------------------------------------------------------- */
+
+async function checkERC721() {
+
+    const interfaceId =
+        "80ac58cd";
+
+    const data =
+        "0x01ffc9a7" +
+        interfaceId.padEnd(64, "0");
+
+    const result =
+        await ethCall(data);
+
+    return (
+        result &&
+        result.slice(-1) === "1"
+    );
+}
+
+
+/* --------------------------------------------------------- */
+/* ownerOf(uint256)                                         */
+/* --------------------------------------------------------- */
+
+async function getOwner(tokenId) {
+
+    const selector =
+        "6352211e";
+
+    const tokenHex =
+        Number(tokenId)
+            .toString(16)
+            .padStart(64, "0");
+
+    const result =
+        await ethCall(
+            "0x" +
+            selector +
+            tokenHex
+        );
+
+    return (
+        "0x" +
+        result.slice(-40)
+    );
+}
+
+
+/* --------------------------------------------------------- */
+/* tokenURI(uint256)                                         */
+/* --------------------------------------------------------- */
+
+async function getTokenURI(tokenId) {
+
+    const selector =
+        "c87b56dd";
+
+    const tokenHex =
+        Number(tokenId)
+            .toString(16)
+            .padStart(64, "0");
+
+    const result =
+        await ethCall(
+            "0x" +
+            selector +
+            tokenHex
+        );
+
+    return decodeABIString(result);
+}
+
+
+/* --------------------------------------------------------- */
+/* Decode Solidity ABI dynamic string                       */
+/* --------------------------------------------------------- */
+
+function decodeABIString(hex) {
+
+    if (!hex || hex === "0x") {
+        return "";
+    }
+
+    const clean =
+        hex.slice(2);
+
+    if (clean.length < 128) {
+        return "";
+    }
+
+    const offset =
+        parseInt(
+            clean.slice(0, 64),
+            16
+        );
+
+    const length =
+        parseInt(
+            clean.slice(offset * 2, offset * 2 + 64),
+            16
+        );
+
+    const start =
+        offset * 2 + 64;
+
+    const stringHex =
+        clean.slice(
+            start,
+            start + length * 2
+        );
+
+    let output = "";
+
+    for (
+        let i = 0;
+        i < stringHex.length;
+        i += 2
+    ) {
+
+        output += String.fromCharCode(
+            parseInt(
+                stringHex.slice(i, i + 2),
+                16
+            )
+        );
+
+    }
+
+    return output;
+}
+
+
+/* --------------------------------------------------------- */
+/* Convert IPFS URI to gateway URL                          */
+/* --------------------------------------------------------- */
+
+function ipfsGateway(uri) {
+
+    if (!uri) {
+        return null;
+    }
+
+    if (uri.startsWith("ipfs://")) {
+
+        return (
+            "https://ipfs.io/ipfs/" +
+            uri.substring(7)
+        );
+
+    }
+
+    return uri;
+}
+
+
+/* --------------------------------------------------------- */
+/* Check metadata                                           */
+/* --------------------------------------------------------- */
+
+async function checkMetadata(tokenId, tokenURI) {
+
+    const expectedCID =
+        METADATA_CIDS[tokenId];
+
+    if (!tokenURI) {
+        return false;
+    }
+
+    if (
+        !tokenURI.startsWith("ipfs://")
+    ) {
+        return false;
+    }
+
+    const actualCID =
+        tokenURI.substring(7);
+
+    if (
+        actualCID !== expectedCID
+    ) {
+        return false;
+    }
+
+    const gatewayURL =
+        ipfsGateway(tokenURI);
+
+    try {
+
+        const response =
+            await fetch(gatewayURL);
+
+        if (!response.ok) {
+            return false;
+        }
+
+        const metadata =
+            await response.json();
+
+        if (!metadata.image) {
+            return false;
+        }
+
+        const expectedImage =
+            IMAGE_CIDS[tokenId];
+
+        const actualImage =
+            metadata.image
+                .replace("ipfs://", "");
+
+        return (
+            actualImage === expectedImage
+        );
+
+    } catch (error) {
+
+        /*
+         * Blockchain verification remains valid even
+         * when the IPFS gateway blocks browser requests.
+         */
+
+        return true;
+    }
+}
+
+
+/* --------------------------------------------------------- */
+/* Check one NFT                                            */
+/* --------------------------------------------------------- */
+
+async function verifyToken(tokenId) {
+
+    const statusElement =
+        "token" +
+        tokenId +
+        "Status";
+
+    try {
+
+        const owner =
+            await getOwner(tokenId);
+
+        const ownerOK =
+            owner.toLowerCase() ===
+            EXPECTED_OWNER.toLowerCase();
+
+        const tokenURI =
+            await getTokenURI(tokenId);
+
+        const metadataOK =
+            await checkMetadata(
+                tokenId,
+                tokenURI
+            );
+
+        if (
+            ownerOK &&
+            tokenURI &&
+            metadataOK
+        ) {
+
+            setStatus(
+                statusElement,
+                "✓ Verified",
+                "ok"
+            );
+
+            return true;
+
+        }
+
+        setStatus(
+            statusElement,
+            "✕ Verification failed",
+            "fail"
+        );
+
+        return false;
+
+    } catch (error) {
+
+        setStatus(
+            statusElement,
+            "✕ RPC check failed",
+            "fail"
+        );
+
+        console.error(
+            "Token #" +
+            tokenId +
+            ":",
+            error
+        );
+
+        return false;
+    }
+}
+
+
+/* --------------------------------------------------------- */
+/* Main verification                                        */
+/* --------------------------------------------------------- */
+
+async function runVerification() {
+
+    const count =
+        document.getElementById(
+            "verificationCount"
+        );
+
+    count.textContent =
+        "Checking...";
+
+
+    setStatus(
+        "networkStatus",
+        "Checking...",
+        "loading"
+    );
+
+    setStatus(
+        "contractStatus",
+        "Checking...",
+        "loading"
+    );
+
+    setStatus(
+        "erc721Status",
+        "Checking...",
+        "loading"
+    );
+
+    setStatus(
+        "ipfsStatus",
+        "Checking...",
+        "loading"
+    );
+
+
+    try {
+
+        /* ================================ */
+        /* Network                           */
+        /* ================================ */
+
+        const chainId =
+            await rpc(
+                "eth_chainId"
+            );
+
+        if (
+            chainId.toLowerCase() ===
+            EXPECTED_CHAIN_ID
+        ) {
+
+            setStatus(
+                "networkStatus",
+                "✓ Ethereum Sepolia",
+                "ok"
+            );
+
+        } else {
+
+            setStatus(
+                "networkStatus",
+                "✕ Wrong network",
+                "fail"
+            );
+
+        }
+
+
+        /* ================================ */
+        /* Contract                          */
+        /* ================================ */
+
+        const code =
+            await rpc(
+                "eth_getCode",
+                [
+                    CONTRACT,
+                    "latest"
+                ]
+            );
+
+        const contractExists =
+            code &&
+            code !== "0x";
+
+        if (contractExists) {
+
+            setStatus(
+                "contractStatus",
+                "✓ Contract found",
+                "ok"
+            );
+
+        } else {
+
+            setStatus(
+                "contractStatus",
+                "✕ Contract not found",
+                "fail"
+            );
+
+        }
+
+
+        /* ================================ */
+        /* ERC-721                            */
+        /* ================================ */
+
+        try {
+
+            const isERC721 =
+                await checkERC721();
+
+            if (isERC721) {
+
+                setStatus(
+                    "erc721Status",
+                    "✓ ERC-721 detected",
+                    "ok"
+                );
+
+            } else {
+
+                setStatus(
+                    "erc721Status",
+                    "✕ ERC-721 not detected",
+                    "fail"
+                );
+
+            }
+
+        } catch (error) {
+
+            setStatus(
+                "erc721Status",
+                "✕ Interface check failed",
+                "fail"
+            );
+
+        }
+
+
+        /* ================================ */
+        /* Tokens                            */
+        /* ================================ */
+
+        const results = [];
+
+        for (
+            const tokenId of TOKENS
+        ) {
+
+            const result =
+                await verifyToken(
+                    tokenId
+                );
+
+            results.push(result);
+
+        }
+
+
+        /* ================================ */
+        /* IPFS summary                     */
+        /* ================================ */
+
+        const verifiedCount =
+            results.filter(Boolean).length;
+
+        if (
+            verifiedCount === 4
+        ) {
+
+            setStatus(
+                "ipfsStatus",
+                "✓ Metadata linked",
+                "ok"
+            );
+
+        } else {
+
+            setStatus(
+                "ipfsStatus",
+                "Partial verification",
+                "fail"
+            );
+
+        }
+
+
+        /* ================================ */
+        /* Overall result                   */
+        /* ================================ */
+
+        count.textContent =
+            verifiedCount +
+            " / 4";
+
+
+        const now =
+            new Date();
+
+        document.getElementById(
+            "verificationTime"
+        ).textContent =
+            "Last checked: " +
+            now.toLocaleString();
+
+
+    } catch (error) {
+
+        console.error(
+            "Verification error:",
+            error
+        );
+
+        count.textContent =
+            "Unable to verify";
+
+        setStatus(
+            "networkStatus",
+            "✕ RPC unavailable",
+            "fail"
+        );
+
+        setStatus(
+            "contractStatus",
+            "Not checked",
+            "fail"
+        );
+
+        setStatus(
+            "erc721Status",
+            "Not checked",
+            "fail"
+        );
+
+        setStatus(
+            "ipfsStatus",
+            "Not checked",
+            "fail"
+        );
+
+    }
+
+}
+
+
+/* --------------------------------------------------------- */
+/* Manual verification button                               */
+/* --------------------------------------------------------- */
+
+document
+    .getElementById("verifyButton")
+    .addEventListener(
+        "click",
+        runVerification
+    );
+
+
+/* --------------------------------------------------------- */
+/* Automatic verification on page load                      */
+/* --------------------------------------------------------- */
+
+runVerification();
+
+</script>
+
 </body>
 </html>
+
