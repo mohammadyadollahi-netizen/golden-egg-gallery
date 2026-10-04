@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Golden-Egg #4</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050505;
+    color: #f5f5f5;
+}
+
+header {
+    padding: 35px 20px;
+    text-align: center;
+    border-bottom: 1px solid #252525;
+}
+
+.logo {
+    font-size: 38px;
+    font-weight: bold;
+    color: #d4af37;
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    margin-top: 10px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.status {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 8px 17px;
+    border: 1px solid #d4af37;
+    border-radius: 30px;
+    color: #d4af37;
+    font-size: 12px;
+}
+
+nav {
+    text-align: center;
+    padding: 18px;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    margin: 0 13px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #d4af37;
+}
+
+.container {
+    width: 92%;
+    max-width: 1050px;
+    margin: 55px auto;
+}
+
+.artwork {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: start;
+}
+
+.image-box {
+    background: #0d0d0d;
+    border: 1px solid #292929;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.image-box img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.details {
+    padding: 5px 0;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 11px;
+    border: 1px solid #444;
+    border-radius: 20px;
+    color: #aaa;
+    font-size: 11px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    margin: 0 0 15px;
+    color: #d4af37;
+    font-size: 34px;
+}
+
+.description {
+    color: #999;
+    line-height: 1.8;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.info-box {
+    background: #0d0d0d;
+    border: 1px solid #242424;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.info {
+    padding: 11px 0;
+    border-bottom: 1px solid #202020;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #aaa;
+    word-break: break-word;
+}
+
+.info:last-child {
+    border-bottom: none;
+}
+
+.info strong {
+    color: #eee;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 22px;
+}
+
+.button {
+    display: inline-block;
+    padding: 9px 13px;
+    border-radius: 6px;
+    background: #d4af37;
+    color: #050505;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #f0cf5c;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 45px;
+}
+
+.navigation a {
+    color: #bbb;
+    text-decoration: none;
+    border: 1px solid #333;
+    padding: 11px 16px;
+    border-radius: 7px;
+    font-size: 12px;
+}
+
+.navigation a:hover {
+    color: #d4af37;
+    border-color: #d4af37;
+}
+
+footer {
+    margin-top: 70px;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid #222;
+    color: #777;
+    font-size: 12px;
+}
+
+@media (max-width: 750px) {
+
+    .artwork {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    nav a {
+        margin: 0 6px;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    .navigation {
+        flex-direction: column;
+    }
+
+    .navigation a {
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        GOLDEN-EGG
+    </div>
+
+    <div class="subtitle">
+        Digital Art Collection · ERC-721
+    </div>
+
+    <div class="status">
+        Ethereum Sepolia Testnet
+    </div>
+
+</header>
+
+
+<nav>
+
+    <a href="index.html">
+        Gallery
+    </a>
+
+    <a href="collection.html">
+        Collection
+    </a>
+
+    <a href="about.html">
+        About
+    </a>
+
+    <a
+        href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
+        target="_blank">
+        GitHub
+    </a>
+
+</nav>
+
+
+<div class="container">
+
+
+    <section class="artwork">
+
+
+        <!-- ============================== -->
+        <!-- ARTWORK -->
+        <!-- ============================== -->
+
+        <div class="image-box">
+
+            <img
+                src="golden-egg-4.png"
+                alt="Golden-Egg #4">
+
+        </div>
+
+
+        <!-- ============================== -->
+        <!-- DETAILS -->
+        <!-- ============================== -->
+
+        <div class="details">
+
+            <span class="badge">
+                TOKEN #4 · ERC-721
+            </span>
+
+            <h1>
+                Golden-Egg #4
+            </h1>
+
+            <div class="description">
+
+                A digital artwork from the Golden-Egg collection.
+                This artwork is minted as Token #4 on the Ethereum
+                Sepolia testnet using the ERC-721 standard.
+
+            </div>
+
+
+            <div class="info-box">
+
+
+                <div class="info">
+
+                    <strong>Collection:</strong><br>
+
+                    Golden-Egg
+
+                </div>
+
+
+                <div class="info">
+
+                    <strong>Token ID:</strong><br>
+
+                    4
+
+                </div>
+
+
+                <div class="info">
+
+                    <strong>Standard:</strong><br>
+
+                    ERC-721
+
+                </div>
+
+
+                <div class="info">
+
+                    <strong>Network:</strong><br>
+
+                    Ethereum Sepolia
+
+                </div>
+
+
+                <div class="info">
+
+                    <strong>Contract:</strong><br>
+
+                    0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
+
+                </div>
+
+
+                <div class="info">
+
+                    <strong>Owner:</strong><br>
+
+                    0x71C508b0B799D5941B91DA7966029C53c1d6F692
+
+                </div>
+
+
+                <div class="info">
+
+                    <strong>Image CID:</strong><br>
+
+                    bafybeiesrlomqtgsjyyfbms5wl3akirfih7kqbeqruqe5a77slqxwrx7vq
+
+                </div>
+
+
+                <div class="info">
+
+                    <strong>Metadata CID:</strong><br>
+
+                    bafkreidtosu2ey5ghnwzcbiu73ksedac52zw6j5ymqpriuxbk4xdbfy6xq
+
+                </div>
+
+
+                <div class="info">
+
+                    <strong>Transaction:</strong><br>
+
+                    0xfd77c19db022adc6ee8ddcf733205a4880d7362cdf5e726d3266261b43a0546b
+
+                </div>
+
+
+                <div class="info">
+
+                    <strong>Block:</strong><br>
+
+                    11843735
+
+                </div>
+
+
+                <div class="info">
+
+                    <strong>Confirmations:</strong><br>
+
+                    7+
+
+                </div>
+
+
+            </div>
+
+
+            <div class="links">
+
+
+                <a
+                    class="button"
+                    href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=4"
+                    target="_blank">
+
+                    Etherscan
+
+                </a>
+
+
+                <a
+                    class="button"
+                    href="https://eth-sepolia.blockscout.com/tx/0xfd77c19db022adc6ee8ddcf733205a4880d7362cdf5e726d3266261b43a0546b"
+                    target="_blank">
+
+                    Transaction
+
+                </a>
+
+
+                <a
+                    class="button"
+                    href="https://ipfs.io/ipfs/bafkreidtosu2ey5ghnwzcbiu73ksedac52zw6j5ymqpriuxbk4xdbfy6xq"
+                    target="_blank">
+
+                    Metadata
+
+                </a>
+
+
+                <a
+                    class="button"
+                    href="https://ipfs.io/ipfs/bafybeiesrlomqtgsjyyfbms5wl3akirfih7kqbeqruqe5a77slqxwrx7vq"
+                    target="_blank">
+
+                    IPFS Image
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================== -->
+    <!-- PAGE NAVIGATION -->
+    <!-- ============================== -->
+
+    <div class="navigation">
+
+        <a href="golden-egg-3.html">
+            ← Golden-Egg #3
+        </a>
+
+        <a href="collection.html">
+            Collection · 4/4
+        </a>
+
+        <a href="index.html">
+            Gallery →
+        </a>
+
+    </div>
+
+
+</div>
+
+
+<footer>
+
+    <div>
+        Golden-Egg Collection
+    </div>
+
+    <div style="margin-top:8px;">
+        Token #4 · ERC-721 · Ethereum Sepolia · IPFS
+    </div>
+
+    <div style="margin-top:12px;">
+        4 minted artworks · Collection complete
+    </div>
+
+</footer>
+
+
+</body>
