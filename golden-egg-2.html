@@ -3,57 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Golden-Egg #2 | Golden-Egg Collection</title>
-
-  <meta
-    name="description"
-    content="Golden-Egg #2 digital artwork, NFT metadata, IPFS links and Sepolia blockchain transaction details."
-  >
+  <title>Golden-Egg #2</title>
 
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
       background: #080808;
       color: #f5f5f5;
+      font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
     }
 
-    a {
-      color: #d4af37;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px 60px;
     }
 
     header {
-      border-bottom: 1px solid #292929;
-      padding: 28px 20px;
       text-align: center;
+      margin-bottom: 40px;
     }
 
-    header h1 {
+    h1 {
       color: #d4af37;
-      font-size: 2rem;
+      font-size: 42px;
       margin-bottom: 8px;
     }
 
-    header p {
+    .subtitle {
       color: #aaa;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px;
+      font-size: 16px;
     }
 
     .artwork {
@@ -62,33 +46,37 @@
     }
 
     .artwork img {
-      max-width: 100%;
-      width: 650px;
+      width: 100%;
+      max-width: 650px;
       height: auto;
-      display: block;
-      margin: 0 auto;
-      border-radius: 14px;
-      border: 1px solid #3a3a3a;
-      box-shadow: 0 0 35px rgba(212, 175, 55, 0.15);
+      border-radius: 16px;
+      border: 1px solid #333;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.12);
     }
 
-    .card {
+    .info {
       background: #111;
       border: 1px solid #292929;
       border-radius: 14px;
       padding: 25px;
-      margin-bottom: 25px;
+      margin-bottom: 35px;
     }
 
-    .card h2 {
+    .info h2 {
       color: #d4af37;
-      margin-bottom: 18px;
+      margin-top: 0;
     }
 
-    .info {
+    .row {
       display: grid;
       grid-template-columns: 180px 1fr;
-      gap: 12px 20px;
+      gap: 15px;
+      padding: 12px 0;
+      border-bottom: 1px solid #242424;
+    }
+
+    .row:last-child {
+      border-bottom: none;
     }
 
     .label {
@@ -97,7 +85,12 @@
     }
 
     .value {
+      color: #eee;
       word-break: break-word;
+    }
+
+    a {
+      color: #d4af37;
     }
 
     .actions {
@@ -105,23 +98,31 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
-      margin: 35px 0;
+      margin-top: 30px;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 18px;
-      border: 1px solid #555;
+      padding: 11px 18px;
+      border: 1px solid #444;
       border-radius: 8px;
-      color: #f5f5f5;
       background: #151515;
+      color: #eee;
       text-decoration: none;
+      transition: 0.2s ease;
     }
 
     .btn:hover {
       border-color: #d4af37;
       color: #d4af37;
-      text-decoration: none;
+    }
+
+    .btn.current {
+      background: transparent;
+      color: #d4af37;
+      border-color: #d4af37;
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.18);
     }
 
     .btn.primary {
@@ -131,17 +132,26 @@
       font-weight: bold;
     }
 
-    footer {
-      border-top: 1px solid #292929;
-      text-align: center;
-      padding: 25px 20px;
-      color: #777;
-      margin-top: 40px;
+    .btn.primary:hover {
+      background: #f0cc55;
+      color: #080808;
     }
 
-    @media (max-width: 700px) {
-      .info {
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    @media (max-width: 650px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      .row {
         grid-template-columns: 1fr;
+        gap: 4px;
       }
     }
   </style>
@@ -149,148 +159,118 @@
 
 <body>
 
-<header>
-  <h1>Golden-Egg #2</h1>
-  <p>Golden-Egg Collection · ERC-721 · Ethereum Sepolia Testnet</p>
-</header>
+  <div class="container">
 
-<main>
-
-  <section class="artwork">
-    <img
-      src="golden-egg-2.png"
-      alt="Golden-Egg #2"
-    >
-  </section>
-
-  <section class="card">
-    <h2>NFT Information</h2>
-
-    <div class="info">
-
-      <div class="label">Name</div>
-      <div class="value">Golden-Egg #2</div>
-
-      <div class="label">Token ID</div>
-      <div class="value">2</div>
-
-      <div class="label">Standard</div>
-      <div class="value">ERC-721</div>
-
-      <div class="label">Network</div>
-      <div class="value">Ethereum Sepolia Testnet</div>
-
-      <div class="label">Collection</div>
-      <div class="value">Golden-Egg</div>
-
-      <div class="label">Symbol</div>
-      <div class="value">GEGG</div>
-
-      <div class="label">Owner</div>
-      <div class="value">
-        <a
-          href="https://sepolia.etherscan.io/address/0x71C508b0B799D5941B91DA7966029C53c1d6F692"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          0x71C508b0B799D5941B91DA7966029C53c1d6F692
-        </a>
+    <header>
+      <h1>Golden-Egg #2</h1>
+      <div class="subtitle">
+        Golden-Egg Collection · ERC-721 · Ethereum Sepolia Testnet
       </div>
+    </header>
 
-      <div class="label">Contract</div>
-      <div class="value">
-        <a
-          href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
-        </a>
-      </div>
-
-      <div class="label">Token URI</div>
-      <div class="value">
-        ipfs://bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4
-      </div>
-
-      <div class="label">Metadata CID</div>
-      <div class="value">
-        <a
-          href="https://ipfs.io/ipfs/bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4
-        </a>
-      </div>
-
-      <div class="label">Image CID</div>
-      <div class="value">
-        <a
-          href="https://ipfs.io/ipfs/bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku
-        </a>
-      </div>
-
-      <div class="label">Mint Transaction</div>
-      <div class="value">
-        <a
-          href="https://sepolia.etherscan.io/tx/0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Transaction
-        </a>
-      </div>
-
-      <div class="label">Token Page</div>
-      <div class="value">
-        <a
-          href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View on Sepolia Etherscan
-        </a>
-      </div>
-
+    <div class="artwork">
+      <img src="golden-egg-2.png" alt="Golden-Egg #2">
     </div>
-  </section>
 
-  <section class="card">
-    <h2>About Artwork</h2>
-    <p>
-      Golden-Egg #2 is a digital artwork from the Golden-Egg collection,
-      represented as an ERC-721 NFT on the Ethereum Sepolia Testnet.
-    </p>
-  </section>
+    <section class="info">
+      <h2>NFT Information</h2>
 
-  <section class="actions">
+      <div class="row">
+        <div class="label">Collection</div>
+        <div class="value">Golden-Egg</div>
+      </div>
 
-    <a class="btn" href="golden-egg-1.html">Golden-Egg #1</a>
-    <a class="btn" href="golden-egg-2.html">Golden-Egg #2</a>
-    <a class="btn" href="golden-egg-3.html">Golden-Egg #3</a>
-    <a class="btn" href="golden-egg-4.html">Golden-Egg #4</a>
+      <div class="row">
+        <div class="label">Token ID</div>
+        <div class="value">2</div>
+      </div>
 
-    <a class="btn primary" href="collection.html">
-      View Collection
-    </a>
+      <div class="row">
+        <div class="label">Standard</div>
+        <div class="value">ERC-721</div>
+      </div>
 
-    <a class="btn" href="index.html">
-      Gallery
-    </a>
+      <div class="row">
+        <div class="label">Network</div>
+        <div class="value">Ethereum Sepolia Testnet</div>
+      </div>
 
-  </section>
+      <div class="row">
+        <div class="label">Contract</div>
+        <div class="value">
+          <a href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
+             target="_blank" rel="noopener noreferrer">
+            0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
+          </a>
+        </div>
+      </div>
 
-</main>
+      <div class="row">
+        <div class="label">Owner</div>
+        <div class="value">
+          0x71C508b0B799D5941B91DA7966029C53c1d6F692
+        </div>
+      </div>
 
-<footer>
-  Golden-Egg Collection · ERC-721 · Ethereum Sepolia Testnet
-</footer>
+      <div class="row">
+        <div class="label">Image CID</div>
+        <div class="value">
+          bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="label">Metadata CID</div>
+        <div class="value">
+          bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="label">Transaction</div>
+        <div class="value">
+          <a href="https://sepolia.etherscan.io/tx/0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794"
+             target="_blank" rel="noopener noreferrer">
+            View Mint Transaction
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="actions">
+
+      <a class="btn" href="golden-egg-1.html">
+        Golden-Egg #1
+      </a>
+
+      <a class="btn current" href="golden-egg-2.html" aria-current="page">
+        Golden-Egg #2
+      </a>
+
+      <a class="btn" href="golden-egg-3.html">
+        Golden-Egg #3
+      </a>
+
+      <a class="btn" href="golden-egg-4.html">
+        Golden-Egg #4
+      </a>
+
+      <a class="btn primary" href="collection.html">
+        View Collection
+      </a>
+
+      <a class="btn" href="index.html">
+        Gallery
+      </a>
+
+    </section>
+
+    <footer>
+      Golden-Egg Collection · A learning and showcase project
+    </footer>
+
+  </div>
 
 </body>
 </html>
-
