@@ -3,1505 +3,1392 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Golden-Egg Gallery</title>
+<title>Golden-Egg — NFT Gallery</title>
 
 <style>
-* {
+  * {
     box-sizing: border-box;
-}
+  }
 
-body {
+  body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #050505;
-    color: #f5f5f5;
-}
+    background: #0b0b0b;
+    color: #eee;
+  }
 
-header {
-    padding: 45px 20px;
-    text-align: center;
-    border-bottom: 1px solid #252525;
-}
-
-.logo {
-    font-size: 42px;
-    font-weight: bold;
-    color: #d4af37;
-    letter-spacing: 3px;
-}
-
-.subtitle {
-    margin-top: 12px;
-    color: #aaa;
-    font-size: 15px;
-}
-
-.status {
-    display: inline-block;
-    margin-top: 22px;
-    padding: 9px 18px;
-    border: 1px solid #d4af37;
-    border-radius: 30px;
-    color: #d4af37;
-    font-size: 13px;
-}
-
-nav {
-    padding: 18px;
-    text-align: center;
-    border-bottom: 1px solid #1f1f1f;
-}
-
-nav a {
-    color: #aaa;
-    text-decoration: none;
-    margin: 0 14px;
-    font-size: 14px;
-}
-
-nav a:hover {
-    color: #d4af37;
-}
-
-.container {
-    width: 92%;
-    max-width: 1200px;
-    margin: 55px auto;
-}
-
-.hero {
-    text-align: center;
-    margin-bottom: 55px;
-}
-
-.hero h1 {
-    color: #d4af37;
-    font-size: 36px;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    max-width: 720px;
-    margin: auto;
-    color: #999;
-    line-height: 1.8;
-}
-
-.progress {
-    margin-top: 25px;
-    color: #d4af37;
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 28px;
-}
-
-.card {
-    background: #0d0d0d;
-    border: 1px solid #252525;
-    border-radius: 16px;
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    border-color: #d4af37;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.55);
-}
-
-.card-image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
+  header {
     background: #111;
-    overflow: hidden;
-}
+    border-bottom: 1px solid #2b2b2b;
+    padding: 22px 20px;
+  }
 
-.card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+  .nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
 
-.card-content {
-    padding: 22px;
-}
+  .logo {
+    color: #d4af37;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+  }
 
-.badge {
+  nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+
+  nav a:hover {
+    color: #d4af37;
+  }
+
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 45px 20px 70px;
+  }
+
+  .hero {
+    text-align: center;
+    margin-bottom: 45px;
+  }
+
+  .hero h1 {
+    margin: 0 0 12px;
+    font-size: 42px;
+    color: #d4af37;
+  }
+
+  .hero p {
+    color: #aaa;
+    font-size: 17px;
+  }
+
+  .status {
     display: inline-block;
-    padding: 5px 10px;
+    margin-top: 12px;
+    padding: 8px 14px;
     border: 1px solid #444;
     border-radius: 20px;
-    color: #aaa;
-    font-size: 10px;
-    margin-bottom: 13px;
-}
-
-.card h2 {
-    margin: 0 0 12px;
     color: #d4af37;
-    font-size: 22px;
-}
+    font-size: 14px;
+  }
 
-.card p {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+  }
+
+  .card {
+    background: #111;
+    border: 1px solid #2d2d2d;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: 0.25s ease;
+  }
+
+  .card:hover {
+    border-color: #d4af37;
+    transform: translateY(-4px);
+  }
+
+  .card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card-content {
+    padding: 18px;
+  }
+
+  .card h2 {
+    margin: 0 0 10px;
+    color: #d4af37;
+    font-size: 21px;
+  }
+
+  .meta {
     color: #999;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 11px 18px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: #151515;
+    color: #eee;
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+
+  .btn:hover {
+    border-color: #d4af37;
+    color: #d4af37;
+  }
+
+  .section {
+    margin-top: 60px;
+  }
+
+  .section h2 {
+    text-align: center;
+    color: #d4af37;
+    margin-bottom: 25px;
+  }
+
+  .contract-box {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 25px;
+    line-height: 1.8;
+  }
+
+  .contract-box strong {
+    color: #d4af37;
+  }
+
+  .contract-box a {
+    color: #d4af37;
+    word-break: break-all;
+  }
+
+  /* Live Verification */
+
+  .verification-box {
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 14px;
+    padding: 25px;
+  }
+
+  .verification-header {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .verification-header p {
+    color: #999;
+    margin-bottom: 0;
+  }
+
+  .verification-status {
+    margin: 10px 0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    background: #171717;
+    border: 1px solid #333;
+    font-size: 14px;
+  }
+
+  .verification-status.ok {
+    border-color: #356b42;
+    color: #8bd69a;
+  }
+
+  .verification-status.fail {
+    border-color: #743838;
+    color: #ff8b8b;
+  }
+
+  .verification-status.warn {
+    border-color: #806b2e;
+    color: #e5cf75;
+  }
+
+  .token-check {
+    margin-top: 20px;
+    padding: 18px;
+    background: #0d0d0d;
+    border: 1px solid #292929;
+    border-radius: 10px;
+  }
+
+  .token-title {
+    color: #d4af37;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .token-main-status {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .details {
+    display: grid;
+    gap: 6px;
+    color: #aaa;
     font-size: 13px;
     line-height: 1.6;
-}
+  }
 
-.button {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 9px 13px;
-    border-radius: 6px;
-    background: #d4af37;
-    color: #050505;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-}
+  .detail-ok {
+    color: #8bd69a;
+  }
 
-.button:hover {
-    background: #f0cf5c;
-}
+  .detail-fail {
+    color: #ff8b8b;
+  }
 
-/* ======================== */
-/* LIVE VERIFICATION */
-/* ======================== */
+  .detail-warn {
+    color: #e5cf75;
+  }
 
-.verification-box {
-    margin-top: 55px;
-    padding: 28px;
-    background: #0b0b0b;
-    border: 1px solid #222;
-    border-radius: 12px;
-}
-
-.verification-box h3 {
-    margin-top: 0;
-    text-align: center;
-    color: #d4af37;
-    font-size: 22px;
-}
-
-.verification-subtitle {
-    text-align: center;
-    color: #888;
-    font-size: 13px;
-    margin-bottom: 25px;
-}
-
-.verification-summary {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.verification-count {
-    font-size: 30px;
-    font-weight: bold;
-    color: #d4af37;
-}
-
-.verification-label {
-    margin-top: 5px;
-    color: #888;
-    font-size: 12px;
-}
-
-.verification-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 12px;
-}
-
-.verify-item {
-    padding: 15px;
-    background: #101010;
-    border: 1px solid #252525;
-    border-radius: 9px;
-}
-
-.verify-item-title {
-    color: #eee;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.verify-item-status {
-    margin-top: 7px;
-    color: #888;
-    font-size: 12px;
-}
-
-.verify-item-status.ok {
-    color: #d4af37;
-}
-
-.verify-item-status.fail {
-    color: #c77;
-}
-
-.verify-item-status.loading {
-    color: #888;
-}
-
-.verify-button {
-    text-align: center;
-    margin-top: 22px;
-}
-
-.verify-note {
-    margin-top: 22px;
-    padding-top: 18px;
-    border-top: 1px solid #222;
-    text-align: center;
+  .detail-muted {
     color: #777;
-    font-size: 11px;
-    line-height: 1.7;
-}
+  }
 
-.verification-time {
-    margin-top: 12px;
-    text-align: center;
-    color: #666;
-    font-size: 10px;
-}
-
-/* ======================== */
-/* CONTRACT */
-/* ======================== */
-
-.contract-box {
-    margin-top: 55px;
-    padding: 25px;
-    background: #0b0b0b;
-    border: 1px solid #222;
-    border-radius: 12px;
-    text-align: center;
-}
-
-.contract-box h3 {
-    color: #d4af37;
-    margin-top: 0;
-}
-
-.contract-address {
-    color: #999;
-    font-size: 12px;
+  .value {
+    color: #bbb;
     word-break: break-all;
-}
+  }
 
-footer {
-    margin-top: 70px;
-    padding: 30px 20px;
-    text-align: center;
+  .progress {
+    margin-top: 25px;
+    height: 8px;
+    background: #222;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #d4af37;
+    transition: width 0.4s ease;
+  }
+
+  footer {
     border-top: 1px solid #222;
+    padding: 25px 20px;
+    text-align: center;
     color: #777;
-    font-size: 12px;
-}
+    font-size: 13px;
+  }
 
-@media (max-width: 600px) {
+  footer a {
+    color: #d4af37;
+    text-decoration: none;
+  }
 
-    .logo {
-        font-size: 31px;
-    }
-
+  @media (max-width: 700px) {
     .hero h1 {
-        font-size: 28px;
+      font-size: 32px;
     }
 
     nav a {
-        margin: 0 7px;
+      margin-left: 10px;
+      font-size: 14px;
     }
-
-    .container {
-        width: 94%;
-    }
-}
+  }
 </style>
 </head>
 
 <body>
 
 <header>
+  <div class="nav">
+    <a href="index.html" class="logo">Golden-Egg</a>
 
-    <div class="logo">
-        GOLDEN-EGG
-    </div>
-
-    <div class="subtitle">
-        Digital Art Collection · ERC-721
-    </div>
-
-    <div class="status">
-        Ethereum Sepolia Testnet
-    </div>
-
+    <nav>
+      <a href="index.html">Gallery</a>
+      <a href="collection.html">Collection</a>
+      <a href="about.html">About</a>
+      <a href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
+         target="_blank"
+         rel="noopener noreferrer">GitHub</a>
+    </nav>
+  </div>
 </header>
 
+<main>
 
-<nav>
+  <section class="hero">
+    <h1>Golden-Egg</h1>
 
-    <a href="index.html">
-        Gallery
-    </a>
+    <p>
+      A digital NFT collection built on Ethereum Sepolia.
+    </p>
 
-    <a href="collection.html">
-        Collection
-    </a>
-
-    <a href="about.html">
-        About
-    </a>
-
-    <a
-        href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
-        target="_blank"
-        rel="noopener noreferrer">
-        GitHub
-    </a>
-
-</nav>
+    <div class="status">
+      4 / 4 Minted · ERC-721
+    </div>
+  </section>
 
 
-<div class="container">
+  <!-- Gallery -->
 
-    <section class="hero">
+  <section>
+    <div class="grid">
 
-        <h1>
-            Golden-Egg Gallery
-        </h1>
+      <div class="card">
+        <img src="golden-egg-1.png" alt="Golden-Egg #1">
+
+        <div class="card-content">
+          <h2>Golden-Egg #1</h2>
+
+          <div class="meta">
+            Token ID: 1<br>
+            Standard: ERC-721<br>
+            Network: Ethereum Sepolia
+          </div>
+
+          <br>
+
+          <a href="golden-egg-1.html" class="btn">
+            View NFT
+          </a>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <img src="golden-egg-2.png" alt="Golden-Egg #2">
+
+        <div class="card-content">
+          <h2>Golden-Egg #2</h2>
+
+          <div class="meta">
+            Token ID: 2<br>
+            Standard: ERC-721<br>
+            Network: Ethereum Sepolia
+          </div>
+
+          <br>
+
+          <a href="golden-egg-2.html" class="btn">
+            View NFT
+          </a>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <img src="golden-egg-3.png" alt="Golden-Egg #3">
+
+        <div class="card-content">
+          <h2>Golden-Egg #3</h2>
+
+          <div class="meta">
+            Token ID: 3<br>
+            Standard: ERC-721<br>
+            Network: Ethereum Sepolia
+          </div>
+
+          <br>
+
+          <a href="golden-egg-3.html" class="btn">
+            View NFT
+          </a>
+        </div>
+      </div>
+
+
+      <div class="card">
+        <img src="golden-egg-4.png" alt="Golden-Egg #4">
+
+        <div class="card-content">
+          <h2>Golden-Egg #4</h2>
+
+          <div class="meta">
+            Token ID: 4<br>
+            Standard: ERC-721<br>
+            Network: Ethereum Sepolia
+          </div>
+
+          <br>
+
+          <a href="golden-egg-4.html" class="btn">
+            View NFT
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Smart Contract -->
+
+  <section class="section">
+
+    <h2>Smart Contract</h2>
+
+    <div class="contract-box">
+
+      <strong>Collection:</strong> Golden-Egg<br>
+
+      <strong>Symbol:</strong> GEGG<br>
+
+      <strong>Standard:</strong> ERC-721<br>
+
+      <strong>Network:</strong> Ethereum Sepolia Testnet<br>
+
+      <strong>Contract:</strong><br>
+
+      <a href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
+         target="_blank"
+         rel="noopener noreferrer">
+        0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
+      </a>
+
+      <br><br>
+
+      <a href="collection.html" class="btn">
+        View Collection
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- Live Verification -->
+
+  <section class="section">
+
+    <h2>Live Verification</h2>
+
+    <div class="verification-box">
+
+      <div class="verification-header">
+
+        <strong id="overallStatus">
+          Checking blockchain...
+        </strong>
 
         <p>
-            A digital art collection created as an ERC-721 project
-            on the Ethereum Sepolia testnet. Each artwork is
-            connected to decentralized metadata stored on IPFS.
+          Live verification against Ethereum Sepolia
         </p>
 
-        <div class="progress">
-            4 / 4 Minted Artworks
-        </div>
+      </div>
 
-    </section>
 
+      <div id="networkStatus"
+           class="verification-status">
+        Network: Checking...
+      </div>
 
-    <!-- ======================== -->
-    <!-- NFT GALLERY -->
-    <!-- ======================== -->
 
-    <section class="grid">
+      <div id="contractStatus"
+           class="verification-status">
+        Smart Contract: Checking...
+      </div>
 
 
-        <!-- GOLDEN-EGG #1 -->
+      <div id="erc721Status"
+           class="verification-status">
+        ERC-721: Checking...
+      </div>
 
-        <article class="card">
 
-            <div class="card-image">
+      <div id="tokenChecks"></div>
 
-                <img
-                    src="golden-egg-1.png"
-                    alt="Golden-Egg #1"
-                    loading="lazy">
 
-            </div>
+      <div id="metadataSummary"
+           class="verification-status warn">
+        IPFS Metadata: Checking...
+      </div>
 
-            <div class="card-content">
 
-                <span class="badge">
-                    TOKEN #1 · ERC-721
-                </span>
+      <div class="progress">
+        <div id="progressBar"
+             class="progress-bar"></div>
+      </div>
 
-                <h2>
-                    Golden-Egg #1
-                </h2>
+    </div>
 
-                <p>
-                    The first artwork in the Golden-Egg collection.
-                </p>
+  </section>
 
-                <a
-                    class="button"
-                    href="golden-egg-1.html">
-                    View Artwork
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- GOLDEN-EGG #2 -->
-
-        <article class="card">
-
-            <div class="card-image">
-
-                <img
-                    src="golden-egg-2.png"
-                    alt="Golden-Egg #2"
-                    loading="lazy">
-
-            </div>
-
-            <div class="card-content">
-
-                <span class="badge">
-                    TOKEN #2 · ERC-721
-                </span>
-
-                <h2>
-                    Golden-Egg #2
-                </h2>
-
-                <p>
-                    The second artwork in the Golden-Egg collection.
-                </p>
-
-                <a
-                    class="button"
-                    href="golden-egg-2.html">
-                    View Artwork
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- GOLDEN-EGG #3 -->
-
-        <article class="card">
-
-            <div class="card-image">
-
-                <img
-                    src="golden-egg-3.png"
-                    alt="Golden-Egg #3"
-                    loading="lazy">
-
-            </div>
-
-            <div class="card-content">
-
-                <span class="badge">
-                    TOKEN #3 · ERC-721
-                </span>
-
-                <h2>
-                    Golden-Egg #3
-                </h2>
-
-                <p>
-                    The third artwork in the Golden-Egg collection.
-                </p>
-
-                <a
-                    class="button"
-                    href="golden-egg-3.html">
-                    View Artwork
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- GOLDEN-EGG #4 -->
-
-        <article class="card">
-
-            <div class="card-image">
-
-                <img
-                    src="golden-egg-4.png"
-                    alt="Golden-Egg #4"
-                    loading="lazy">
-
-            </div>
-
-            <div class="card-content">
-
-                <span class="badge">
-                    TOKEN #4 · ERC-721
-                </span>
-
-                <h2>
-                    Golden-Egg #4
-                </h2>
-
-                <p>
-                    The fourth artwork in the Golden-Egg collection.
-                </p>
-
-                <a
-                    class="button"
-                    href="golden-egg-4.html">
-                    View Artwork
-                </a>
-
-            </div>
-
-        </article>
-
-
-    </section>
-
-
-    <!-- ======================== -->
-    <!-- LIVE ON-CHAIN VERIFICATION -->
-    <!-- ======================== -->
-
-    <section class="verification-box">
-
-        <h3>
-            Live On-Chain Verification
-        </h3>
-
-        <div class="verification-subtitle">
-            Real-time read-only verification from Ethereum Sepolia
-        </div>
-
-
-        <div class="verification-summary">
-
-            <div
-                id="verificationCount"
-                class="verification-count">
-                Checking...
-            </div>
-
-            <div class="verification-label">
-                NFTs Verified
-            </div>
-
-        </div>
-
-
-        <div class="verification-list">
-
-
-            <div class="verify-item">
-
-                <div class="verify-item-title">
-                    Network
-                </div>
-
-                <div
-                    id="networkStatus"
-                    class="verify-item-status loading">
-                    Checking...
-                </div>
-
-            </div>
-
-
-            <div class="verify-item">
-
-                <div class="verify-item-title">
-                    Smart Contract
-                </div>
-
-                <div
-                    id="contractStatus"
-                    class="verify-item-status loading">
-                    Checking...
-                </div>
-
-            </div>
-
-
-            <div class="verify-item">
-
-                <div class="verify-item-title">
-                    ERC-721
-                </div>
-
-                <div
-                    id="erc721Status"
-                    class="verify-item-status loading">
-                    Checking...
-                </div>
-
-            </div>
-
-
-            <div class="verify-item">
-
-                <div class="verify-item-title">
-                    Token #1
-                </div>
-
-                <div
-                    id="token1Status"
-                    class="verify-item-status loading">
-                    Checking...
-                </div>
-
-            </div>
-
-
-            <div class="verify-item">
-
-                <div class="verify-item-title">
-                    Token #2
-                </div>
-
-                <div
-                    id="token2Status"
-                    class="verify-item-status loading">
-                    Checking...
-                </div>
-
-            </div>
-
-
-            <div class="verify-item">
-
-                <div class="verify-item-title">
-                    Token #3
-                </div>
-
-                <div
-                    id="token3Status"
-                    class="verify-item-status loading">
-                    Checking...
-                </div>
-
-            </div>
-
-
-            <div class="verify-item">
-
-                <div class="verify-item-title">
-                    Token #4
-                </div>
-
-                <div
-                    id="token4Status"
-                    class="verify-item-status loading">
-                    Checking...
-                </div>
-
-            </div>
-
-
-            <div class="verify-item">
-
-                <div class="verify-item-title">
-                    IPFS Metadata
-                </div>
-
-                <div
-                    id="ipfsStatus"
-                    class="verify-item-status loading">
-                    Checking...
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="verify-button">
-
-            <button
-                id="verifyButton"
-                class="button"
-                type="button">
-                Verify Again
-            </button>
-
-            <br>
-
-            <a
-                class="button"
-                href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
-                target="_blank"
-                rel="noopener noreferrer">
-                Open Contract
-            </a>
-
-        </div>
-
-
-        <div class="verify-note">
-
-            This verification reads public blockchain data only.
-            No wallet connection or transaction is required.
-
-        </div>
-
-
-        <div
-            id="verificationTime"
-            class="verification-time">
-        </div>
-
-    </section>
-
-
-    <!-- ======================== -->
-    <!-- SMART CONTRACT -->
-    <!-- ======================== -->
-
-    <section class="contract-box">
-
-        <h3>
-            Smart Contract
-        </h3>
-
-        <div class="contract-address">
-            0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
-        </div>
-
-        <a
-            class="button"
-            href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
-            target="_blank"
-            rel="noopener noreferrer">
-            View Contract
-        </a>
-
-    </section>
-
-</div>
+</main>
 
 
 <footer>
 
-    <div>
-        Golden-Egg Collection
-    </div>
+  Golden-Egg · ERC-721 · Ethereum Sepolia
 
-    <div style="margin-top:8px;">
-        ERC-721 · Ethereum Sepolia · IPFS
-    </div>
+  <br><br>
 
-    <div style="margin-top:12px;">
-        4 minted artworks · Collection complete
-    </div>
+  <a href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
+     target="_blank"
+     rel="noopener noreferrer">
+    GitHub Repository
+  </a>
 
 </footer>
 
 
 <script>
 
-/* ========================================================= */
-/* GOLDEN-EGG LIVE ON-CHAIN VERIFICATION                     */
-/* ========================================================= */
+/* =========================================================
+   Golden-Egg Live Verification
+   ========================================================= */
 
 const RPC_URL =
-    "https://ethereum-sepolia-rpc.publicnode.com";
+  "https://ethereum-sepolia-rpc.publicnode.com";
 
 const CONTRACT =
-    "0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167";
+  "0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167";
 
 const EXPECTED_OWNER =
-    "0x71C508b0B799D5941B91DA7966029C53c1d6F692";
+  "0x71C508b0B799D5941B91DA7966029C53c1d6F692";
 
 const EXPECTED_CHAIN_ID =
-    "0xaa36a7";
+  "0xaa36a7";
 
-const TOKENS = [1, 2, 3, 4];
-
-
-/* --------------------------------------------------------- */
-/* Known metadata CIDs                                      */
-/* --------------------------------------------------------- */
-
-const METADATA_CIDS = {
-
-    1:
-    "bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa",
-
-    2:
-    "bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4",
-
-    3:
-    "bafkreiev47cpkieizijczpb5ps7v3nbiave4f2onlzvoxbsdhd43uy4t3q",
-
-    4:
-    "bafkreidtosu2ey5ghnwzcbiu73ksedac52zw6j5ymqpriuxbk4xdbfy6xq"
-
-};
-
-
-/* --------------------------------------------------------- */
-/* Known image CIDs                                          */
-/* --------------------------------------------------------- */
-
-const IMAGE_CIDS = {
-
-    1:
-    "bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q",
-
-    2:
-    "bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku",
-
-    3:
-    "bafybeianohmded6d2qjqy3jrl72jlmrgvryjamme4kys6l6mnjhjpx75rq",
-
-    4:
-    "bafybeiesrlomqtgsjyyfbms5wl3akirfih7kqbeqruqe5a77slqxwrx7vq"
-
-};
+const TOKENS = [
+  {
+    id: 1,
+    metadataCID:
+      "bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa",
+    imageCID:
+      "bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q"
+  },
+  {
+    id: 2,
+    metadataCID:
+      "bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4",
+    imageCID:
+      "bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku"
+  },
+  {
+    id: 3,
+    metadataCID:
+      "bafkreiev47cpkieizijczpb5ps7v3nbiave4f2onlzvoxbsdhd43uy4t3q",
+    imageCID:
+      "bafybeianohmded6d2qjqy3jrl72jlmrgvryjamme4kys6l6mnjhjpx75rq"
+  },
+  {
+    id: 4,
+    metadataCID:
+      "bafkreidtosu2ey5ghnwzcbiu73ksedac52zw6j5ymqpriuxbk4xdbfy6xq",
+    imageCID:
+      "bafybeiesrlomqtgsjyyfbms5wl3akirfih7kqbeqruqe5a77slqxwrx7vq"
+  }
+];
 
 
-/* --------------------------------------------------------- */
-/* RPC helper                                                */
-/* --------------------------------------------------------- */
+/* ---------- RPC ---------- */
 
 async function rpc(method, params = []) {
 
-    const response = await fetch(
-        RPC_URL,
+  const response = await fetch(RPC_URL, {
+
+    method: "POST",
+
+    headers: {
+      "Content-Type": "application/json"
+    },
+
+    body: JSON.stringify({
+      jsonrpc: "2.0",
+      id: Date.now(),
+      method,
+      params
+    })
+
+  });
+
+  if (!response.ok) {
+    throw new Error(
+      "RPC HTTP " + response.status
+    );
+  }
+
+  const data = await response.json();
+
+  if (data.error) {
+    throw new Error(
+      data.error.message || "RPC error"
+    );
+  }
+
+  return data.result;
+}
+
+
+/* ---------- ABI helpers ---------- */
+
+function pad64(hex) {
+
+  return hex
+    .replace(/^0x/, "")
+    .padStart(64, "0");
+
+}
+
+
+function encodeUint256(value) {
+
+  return "0x" + pad64(
+    BigInt(value).toString(16)
+  );
+
+}
+
+
+function encodeAddress(address) {
+
+  return "0x" + pad64(
+    address.slice(2).toLowerCase()
+  );
+
+}
+
+
+function decodeAddress(result) {
+
+  const clean = result
+    .replace(/^0x/, "");
+
+  return "0x" +
+    clean.slice(-40);
+
+}
+
+
+function decodeABIString(result) {
+
+  const clean = result
+    .replace(/^0x/, "");
+
+  if (clean.length < 128) {
+    return "";
+  }
+
+  const offset =
+    parseInt(clean.slice(0, 64), 16);
+
+  const length =
+    parseInt(
+      clean.slice(offset * 2, offset * 2 + 64),
+      16
+    );
+
+  const dataStart =
+    offset * 2 + 64;
+
+  const data =
+    clean.slice(
+      dataStart,
+      dataStart + length * 2
+    );
+
+  let output = "";
+
+  for (
+    let i = 0;
+    i < data.length;
+    i += 2
+  ) {
+
+    output += String.fromCharCode(
+      parseInt(data.slice(i, i + 2), 16)
+    );
+
+  }
+
+  return output;
+}
+
+
+/* ---------- Contract calls ---------- */
+
+async function ownerOf(tokenId) {
+
+  const selector = "6352211e";
+
+  const data =
+    "0x" +
+    selector +
+    pad64(
+      BigInt(tokenId).toString(16)
+    );
+
+  const result =
+    await rpc(
+      "eth_call",
+      [
         {
-            method: "POST",
-
-            headers: {
-                "Content-Type": "application/json"
-            },
-
-            body: JSON.stringify({
-                jsonrpc: "2.0",
-                id: Date.now(),
-                method: method,
-                params: params
-            })
-        }
+          to: CONTRACT,
+          data: data
+        },
+        "latest"
+      ]
     );
 
-    if (!response.ok) {
-        throw new Error(
-            "RPC HTTP error: " + response.status
-        );
-    }
+  return decodeAddress(result);
 
-    const data = await response.json();
-
-    if (data.error) {
-        throw new Error(
-            data.error.message || "RPC error"
-        );
-    }
-
-    return data.result;
 }
 
 
-/* --------------------------------------------------------- */
-/* Contract call helper                                     */
-/* --------------------------------------------------------- */
+async function tokenURI(tokenId) {
 
-async function ethCall(data) {
+  const selector = "c87b56dd";
 
-    return await rpc(
-        "eth_call",
-        [
-            {
-                to: CONTRACT,
-                data: data
-            },
-            "latest"
-        ]
+  const data =
+    "0x" +
+    selector +
+    pad64(
+      BigInt(tokenId).toString(16)
     );
-}
 
-
-/* --------------------------------------------------------- */
-/* Status helper                                             */
-/* --------------------------------------------------------- */
-
-function setStatus(id, text, type = "ok") {
-
-    const element =
-        document.getElementById(id);
-
-    element.textContent = text;
-
-    element.className =
-        "verify-item-status " + type;
-}
-
-
-/* --------------------------------------------------------- */
-/* ERC-165: supportsInterface(bytes4)                       */
-/* ERC-721 interface ID = 0x80ac58cd                        */
-/* --------------------------------------------------------- */
-
-async function checkERC721() {
-
-    const interfaceId =
-        "80ac58cd";
-
-    const data =
-        "0x01ffc9a7" +
-        interfaceId.padEnd(64, "0");
-
-    const result =
-        await ethCall(data);
-
-    return (
-        result &&
-        result.slice(-1) === "1"
+  const result =
+    await rpc(
+      "eth_call",
+      [
+        {
+          to: CONTRACT,
+          data: data
+        },
+        "latest"
+      ]
     );
+
+  return decodeABIString(result);
+
 }
 
 
-/* --------------------------------------------------------- */
-/* ownerOf(uint256)                                         */
-/* --------------------------------------------------------- */
+async function supportsERC721() {
 
-async function getOwner(tokenId) {
+  const selector =
+    "01ffc9a7";
 
-    const selector =
-        "6352211e";
+  const interfaceId =
+    "80ac58cd";
 
-    const tokenHex =
-        Number(tokenId)
-            .toString(16)
-            .padStart(64, "0");
-
-    const result =
-        await ethCall(
-            "0x" +
-            selector +
-            tokenHex
-        );
-
-    return (
-        "0x" +
-        result.slice(-40)
+  const data =
+    "0x" +
+    selector +
+    pad64(
+      BigInt("0x" + interfaceId)
+        .toString(16)
     );
+
+  const result =
+    await rpc(
+      "eth_call",
+      [
+        {
+          to: CONTRACT,
+          data: data
+        },
+        "latest"
+      ]
+    );
+
+  return (
+    result &&
+    result.slice(-1) === "1"
+  );
+
 }
 
 
-/* --------------------------------------------------------- */
-/* tokenURI(uint256)                                         */
-/* --------------------------------------------------------- */
+/* ---------- Metadata ---------- */
 
-async function getTokenURI(tokenId) {
+async function fetchMetadata(cid) {
 
-    const selector =
-        "c87b56dd";
+  const gateways = [
 
-    const tokenHex =
-        Number(tokenId)
-            .toString(16)
-            .padStart(64, "0");
+    "https://ipfs.io/ipfs/" + cid,
 
-    const result =
-        await ethCall(
-            "0x" +
-            selector +
-            tokenHex
-        );
+    "https://gateway.pinata.cloud/ipfs/" + cid,
 
-    return decodeABIString(result);
+    "https://cloudflare-ipfs.com/ipfs/" + cid
+
+  ];
+
+  for (const url of gateways) {
+
+    try {
+
+      const response =
+        await fetch(url, {
+          cache: "no-store"
+        });
+
+      if (!response.ok) {
+        continue;
+      }
+
+      const json =
+        await response.json();
+
+      return {
+        success: true,
+        data: json,
+        gateway: url
+      };
+
+    } catch (error) {
+
+      continue;
+
+    }
+
+  }
+
+  return {
+    success: false,
+    data: null,
+    gateway: null
+  };
+
 }
 
 
-/* --------------------------------------------------------- */
-/* Decode Solidity ABI dynamic string                       */
-/* --------------------------------------------------------- */
+/* ---------- UI helpers ---------- */
 
-function decodeABIString(hex) {
+function setStatus(
+  element,
+  text,
+  type
+) {
 
-    if (!hex || hex === "0x") {
-        return "";
-    }
+  element.textContent = text;
 
-    const clean =
-        hex.slice(2);
+  element.className =
+    "verification-status " +
+    type;
 
-    if (clean.length < 128) {
-        return "";
-    }
-
-    const offset =
-        parseInt(
-            clean.slice(0, 64),
-            16
-        );
-
-    const length =
-        parseInt(
-            clean.slice(offset * 2, offset * 2 + 64),
-            16
-        );
-
-    const start =
-        offset * 2 + 64;
-
-    const stringHex =
-        clean.slice(
-            start,
-            start + length * 2
-        );
-
-    let output = "";
-
-    for (
-        let i = 0;
-        i < stringHex.length;
-        i += 2
-    ) {
-
-        output += String.fromCharCode(
-            parseInt(
-                stringHex.slice(i, i + 2),
-                16
-            )
-        );
-
-    }
-
-    return output;
 }
 
 
-/* --------------------------------------------------------- */
-/* Convert IPFS URI to gateway URL                          */
-/* --------------------------------------------------------- */
+function detail(
+  label,
+  value,
+  type = ""
+) {
 
-function ipfsGateway(uri) {
+  return `
+    <div class="${type}">
+      <strong>${label}:</strong>
+      <span class="value">${value}</span>
+    </div>
+  `;
 
-    if (!uri) {
-        return null;
-    }
-
-    if (uri.startsWith("ipfs://")) {
-
-        return (
-            "https://ipfs.io/ipfs/" +
-            uri.substring(7)
-        );
-
-    }
-
-    return uri;
 }
 
 
-/* --------------------------------------------------------- */
-/* Check metadata                                           */
-/* --------------------------------------------------------- */
+/* ---------- Token verification ---------- */
 
-async function checkMetadata(tokenId, tokenURI) {
+async function verifyToken(token) {
 
-    const expectedCID =
-        METADATA_CIDS[tokenId];
+  const box =
+    document.createElement("div");
 
-    if (!tokenURI) {
-        return false;
+  box.className =
+    "token-check";
+
+  box.innerHTML = `
+    <div class="token-title">
+      Token #${token.id}
+    </div>
+
+    <div class="token-main-status">
+      Checking...
+    </div>
+
+    <div class="details"></div>
+  `;
+
+  document
+    .getElementById("tokenChecks")
+    .appendChild(box);
+
+  const mainStatus =
+    box.querySelector(
+      ".token-main-status"
+    );
+
+  const details =
+    box.querySelector(".details");
+
+
+  let ownerOK = false;
+  let uriOK = false;
+  let metadataOK = false;
+
+  let actualOwner = "";
+  let actualURI = "";
+
+  try {
+
+    /* Owner */
+
+    actualOwner =
+      await ownerOf(token.id);
+
+    ownerOK =
+      actualOwner.toLowerCase() ===
+      EXPECTED_OWNER.toLowerCase();
+
+    details.innerHTML += detail(
+      "Owner",
+      ownerOK
+        ? "✓ Correct"
+        : "✕ Mismatch",
+      ownerOK
+        ? "detail-ok"
+        : "detail-fail"
+    );
+
+    if (!ownerOK) {
+
+      details.innerHTML += detail(
+        "Actual owner",
+        actualOwner,
+        "detail-muted"
+      );
+
     }
 
-    if (
-        !tokenURI.startsWith("ipfs://")
-    ) {
-        return false;
-    }
+
+    /* Token URI */
+
+    actualURI =
+      await tokenURI(token.id);
 
     const actualCID =
-        tokenURI.substring(7);
+      actualURI
+        .replace("ipfs://", "")
+        .trim();
+
+    uriOK =
+      actualCID ===
+      token.metadataCID;
+
+    details.innerHTML += detail(
+      "Token URI",
+      uriOK
+        ? "✓ Correct"
+        : "✕ Mismatch",
+      uriOK
+        ? "detail-ok"
+        : "detail-fail"
+    );
+
+    if (!uriOK) {
+
+      details.innerHTML += detail(
+        "Actual URI",
+        actualURI || "(empty)",
+        "detail-muted"
+      );
+
+      details.innerHTML += detail(
+        "Expected CID",
+        token.metadataCID,
+        "detail-muted"
+      );
+
+    }
+
+
+    /* Metadata */
+
+    const metadata =
+      await fetchMetadata(
+        token.metadataCID
+      );
+
+    if (!metadata.success) {
+
+      details.innerHTML += detail(
+        "Metadata",
+        "⚠ Gateway unavailable",
+        "detail-warn"
+      );
+
+      metadataOK = null;
+
+    } else {
+
+      const image =
+        metadata.data.image || "";
+
+      const imageCID =
+        image
+          .replace("ipfs://", "")
+          .trim();
+
+      metadataOK =
+        imageCID === token.imageCID;
+
+      details.innerHTML += detail(
+        "Metadata",
+        metadataOK
+          ? "✓ Image CID correct"
+          : "✕ Image CID mismatch",
+        metadataOK
+          ? "detail-ok"
+          : "detail-fail"
+      );
+
+      if (!metadataOK) {
+
+        details.innerHTML += detail(
+          "Metadata image",
+          image || "(missing)",
+          "detail-muted"
+        );
+
+        details.innerHTML += detail(
+          "Expected image CID",
+          token.imageCID,
+          "detail-muted"
+        );
+
+      }
+
+    }
+
+
+    /* Final token result */
 
     if (
-        actualCID !== expectedCID
+      ownerOK &&
+      uriOK &&
+      metadataOK !== false
     ) {
-        return false;
+
+      mainStatus.textContent =
+        "✓ Token verified";
+
+      mainStatus.className =
+        "token-main-status detail-ok";
+
+      return {
+        success: true,
+        metadataOK
+      };
+
     }
 
-    const gatewayURL =
-        ipfsGateway(tokenURI);
 
-    try {
+    mainStatus.textContent =
+      "✕ Verification failed";
 
-        const response =
-            await fetch(gatewayURL);
+    mainStatus.className =
+      "token-main-status detail-fail";
 
-        if (!response.ok) {
-            return false;
-        }
+    return {
+      success: false,
+      metadataOK
+    };
 
-        const metadata =
-            await response.json();
 
-        if (!metadata.image) {
-            return false;
-        }
+  } catch (error) {
 
-        const expectedImage =
-            IMAGE_CIDS[tokenId];
+    mainStatus.textContent =
+      "✕ Verification error";
 
-        const actualImage =
-            metadata.image
-                .replace("ipfs://", "");
+    mainStatus.className =
+      "token-main-status detail-fail";
 
-        return (
-            actualImage === expectedImage
-        );
+    details.innerHTML += detail(
+      "Error",
+      error.message,
+      "detail-fail"
+    );
 
-    } catch (error) {
+    return {
+      success: false,
+      metadataOK: false
+    };
 
-        /*
-         * Blockchain verification remains valid even
-         * when the IPFS gateway blocks browser requests.
-         */
+  }
 
-        return true;
-    }
 }
 
 
-/* --------------------------------------------------------- */
-/* Check one NFT                                            */
-/* --------------------------------------------------------- */
-
-async function verifyToken(tokenId) {
-
-    const statusElement =
-        "token" +
-        tokenId +
-        "Status";
-
-    try {
-
-        const owner =
-            await getOwner(tokenId);
-
-        const ownerOK =
-            owner.toLowerCase() ===
-            EXPECTED_OWNER.toLowerCase();
-
-        const tokenURI =
-            await getTokenURI(tokenId);
-
-        const metadataOK =
-            await checkMetadata(
-                tokenId,
-                tokenURI
-            );
-
-        if (
-            ownerOK &&
-            tokenURI &&
-            metadataOK
-        ) {
-
-            setStatus(
-                statusElement,
-                "✓ Verified",
-                "ok"
-            );
-
-            return true;
-
-        }
-
-        setStatus(
-            statusElement,
-            "✕ Verification failed",
-            "fail"
-        );
-
-        return false;
-
-    } catch (error) {
-
-        setStatus(
-            statusElement,
-            "✕ RPC check failed",
-            "fail"
-        );
-
-        console.error(
-            "Token #" +
-            tokenId +
-            ":",
-            error
-        );
-
-        return false;
-    }
-}
-
-
-/* --------------------------------------------------------- */
-/* Main verification                                        */
-/* --------------------------------------------------------- */
+/* ---------- Main verification ---------- */
 
 async function runVerification() {
 
-    const count =
+  const overall =
+    document.getElementById(
+      "overallStatus"
+    );
+
+  const tokenContainer =
+    document.getElementById(
+      "tokenChecks"
+    );
+
+  tokenContainer.innerHTML = "";
+
+
+  /* Network */
+
+  try {
+
+    const chainId =
+      await rpc("eth_chainId");
+
+    if (
+      chainId.toLowerCase() ===
+      EXPECTED_CHAIN_ID
+    ) {
+
+      setStatus(
         document.getElementById(
-            "verificationCount"
-        );
+          "networkStatus"
+        ),
+        "Network: ✓ Ethereum Sepolia",
+        "ok"
+      );
 
-    count.textContent =
-        "Checking...";
+    } else {
 
-
-    setStatus(
-        "networkStatus",
-        "Checking...",
-        "loading"
-    );
-
-    setStatus(
-        "contractStatus",
-        "Checking...",
-        "loading"
-    );
-
-    setStatus(
-        "erc721Status",
-        "Checking...",
-        "loading"
-    );
-
-    setStatus(
-        "ipfsStatus",
-        "Checking...",
-        "loading"
-    );
-
-
-    try {
-
-        /* ================================ */
-        /* Network                           */
-        /* ================================ */
-
-        const chainId =
-            await rpc(
-                "eth_chainId"
-            );
-
-        if (
-            chainId.toLowerCase() ===
-            EXPECTED_CHAIN_ID
-        ) {
-
-            setStatus(
-                "networkStatus",
-                "✓ Ethereum Sepolia",
-                "ok"
-            );
-
-        } else {
-
-            setStatus(
-                "networkStatus",
-                "✕ Wrong network",
-                "fail"
-            );
-
-        }
-
-
-        /* ================================ */
-        /* Contract                          */
-        /* ================================ */
-
-        const code =
-            await rpc(
-                "eth_getCode",
-                [
-                    CONTRACT,
-                    "latest"
-                ]
-            );
-
-        const contractExists =
-            code &&
-            code !== "0x";
-
-        if (contractExists) {
-
-            setStatus(
-                "contractStatus",
-                "✓ Contract found",
-                "ok"
-            );
-
-        } else {
-
-            setStatus(
-                "contractStatus",
-                "✕ Contract not found",
-                "fail"
-            );
-
-        }
-
-
-        /* ================================ */
-        /* ERC-721                            */
-        /* ================================ */
-
-        try {
-
-            const isERC721 =
-                await checkERC721();
-
-            if (isERC721) {
-
-                setStatus(
-                    "erc721Status",
-                    "✓ ERC-721 detected",
-                    "ok"
-                );
-
-            } else {
-
-                setStatus(
-                    "erc721Status",
-                    "✕ ERC-721 not detected",
-                    "fail"
-                );
-
-            }
-
-        } catch (error) {
-
-            setStatus(
-                "erc721Status",
-                "✕ Interface check failed",
-                "fail"
-            );
-
-        }
-
-
-        /* ================================ */
-        /* Tokens                            */
-        /* ================================ */
-
-        const results = [];
-
-        for (
-            const tokenId of TOKENS
-        ) {
-
-            const result =
-                await verifyToken(
-                    tokenId
-                );
-
-            results.push(result);
-
-        }
-
-
-        /* ================================ */
-        /* IPFS summary                     */
-        /* ================================ */
-
-        const verifiedCount =
-            results.filter(Boolean).length;
-
-        if (
-            verifiedCount === 4
-        ) {
-
-            setStatus(
-                "ipfsStatus",
-                "✓ Metadata linked",
-                "ok"
-            );
-
-        } else {
-
-            setStatus(
-                "ipfsStatus",
-                "Partial verification",
-                "fail"
-            );
-
-        }
-
-
-        /* ================================ */
-        /* Overall result                   */
-        /* ================================ */
-
-        count.textContent =
-            verifiedCount +
-            " / 4";
-
-
-        const now =
-            new Date();
-
+      setStatus(
         document.getElementById(
-            "verificationTime"
-        ).textContent =
-            "Last checked: " +
-            now.toLocaleString();
-
-
-    } catch (error) {
-
-        console.error(
-            "Verification error:",
-            error
-        );
-
-        count.textContent =
-            "Unable to verify";
-
-        setStatus(
-            "networkStatus",
-            "✕ RPC unavailable",
-            "fail"
-        );
-
-        setStatus(
-            "contractStatus",
-            "Not checked",
-            "fail"
-        );
-
-        setStatus(
-            "erc721Status",
-            "Not checked",
-            "fail"
-        );
-
-        setStatus(
-            "ipfsStatus",
-            "Not checked",
-            "fail"
-        );
+          "networkStatus"
+        ),
+        "Network: ✕ Wrong network",
+        "fail"
+      );
 
     }
+
+  } catch (error) {
+
+    setStatus(
+      document.getElementById(
+        "networkStatus"
+      ),
+      "Network: ✕ " + error.message,
+      "fail"
+    );
+
+    overall.textContent =
+      "Verification unavailable";
+
+    return;
+
+  }
+
+
+  /* Contract */
+
+  try {
+
+    const code =
+      await rpc(
+        "eth_getCode",
+        [
+          CONTRACT,
+          "latest"
+        ]
+      );
+
+    if (
+      code &&
+      code !== "0x"
+    ) {
+
+      setStatus(
+        document.getElementById(
+          "contractStatus"
+        ),
+        "Smart Contract: ✓ Contract found",
+        "ok"
+      );
+
+    } else {
+
+      setStatus(
+        document.getElementById(
+          "contractStatus"
+        ),
+        "Smart Contract: ✕ Not found",
+        "fail"
+      );
+
+      return;
+
+    }
+
+  } catch (error) {
+
+    setStatus(
+      document.getElementById(
+        "contractStatus"
+      ),
+      "Smart Contract: ✕ " + error.message,
+      "fail"
+    );
+
+    return;
+
+  }
+
+
+  /* ERC-721 */
+
+  try {
+
+    const supported =
+      await supportsERC721();
+
+    if (supported) {
+
+      setStatus(
+        document.getElementById(
+          "erc721Status"
+        ),
+        "ERC-721: ✓ ERC-721 detected",
+        "ok"
+      );
+
+    } else {
+
+      setStatus(
+        document.getElementById(
+          "erc721Status"
+        ),
+        "ERC-721: ✕ Interface not detected",
+        "fail"
+      );
+
+    }
+
+  } catch (error) {
+
+    setStatus(
+      document.getElementById(
+        "erc721Status"
+      ),
+      "ERC-721: ⚠ Could not verify",
+      "warn"
+    );
+
+  }
+
+
+  /* Tokens */
+
+  let verifiedCount = 0;
+  let metadataGatewayCount = 0;
+  let metadataVerifiedCount = 0;
+
+
+  for (const token of TOKENS) {
+
+    const result =
+      await verifyToken(token);
+
+    if (result.success) {
+      verifiedCount++;
+    }
+
+    if (result.metadataOK === true) {
+      metadataVerifiedCount++;
+      metadataGatewayCount++;
+    }
+
+    if (result.metadataOK === null) {
+      metadataGatewayCount++;
+    }
+
+  }
+
+
+  /* Summary */
+
+  const metadataSummary =
+    document.getElementById(
+      "metadataSummary"
+    );
+
+  if (
+    metadataVerifiedCount ===
+    TOKENS.length
+  ) {
+
+    setStatus(
+      metadataSummary,
+      "IPFS Metadata: ✓ All metadata verified",
+      "ok"
+    );
+
+  } else if (
+    metadataGatewayCount >
+    0
+  ) {
+
+    setStatus(
+      metadataSummary,
+      "IPFS Metadata: Partial verification",
+      "warn"
+    );
+
+  } else {
+
+    setStatus(
+      metadataSummary,
+      "IPFS Metadata: ✕ Verification failed",
+      "fail"
+    );
+
+  }
+
+
+  /* Overall */
+
+  const percentage =
+    Math.round(
+      (verifiedCount / TOKENS.length) *
+      100
+    );
+
+  document
+    .getElementById(
+      "progressBar"
+    )
+    .style.width =
+      percentage + "%";
+
+
+  if (
+    verifiedCount ===
+    TOKENS.length
+  ) {
+
+    overall.textContent =
+      "✓ 4 / 4 NFTs verified";
+
+  } else {
+
+    overall.textContent =
+      "⚠ " +
+      verifiedCount +
+      " / " +
+      TOKENS.length +
+      " NFTs verified";
+
+  }
 
 }
 
 
-/* --------------------------------------------------------- */
-/* Manual verification button                               */
-/* --------------------------------------------------------- */
-
-document
-    .getElementById("verifyButton")
-    .addEventListener(
-        "click",
-        runVerification
-    );
-
-
-/* --------------------------------------------------------- */
-/* Automatic verification on page load                      */
-/* --------------------------------------------------------- */
+/* Start */
 
 runVerification();
 
