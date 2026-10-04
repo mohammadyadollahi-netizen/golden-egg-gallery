@@ -5,309 +5,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Golden-Egg #2 | Golden-Egg Collection</title>
-  <meta name="description" content="Golden-Egg #2 digital artwork, NFT metadata, IPFS links and Sepolia blockchain transaction details.">
+
+  <meta
+    name="description"
+    content="Golden-Egg #2 digital artwork, NFT metadata, IPFS links and Sepolia blockchain transaction details."
+  >
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: radial-gradient(circle at top, #241b00 0%, #090909 38%, #050505 100%);
+      background: #080808;
       color: #f5f5f5;
-      min-height: 100vh;
       line-height: 1.6;
     }
 
     a {
-      color: inherit;
+      color: #d4af37;
       text-decoration: none;
     }
 
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
-    }
-
-    header {
-      border-bottom: 1px solid rgba(255,215,0,.18);
-      background: rgba(5,5,5,.9);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      color: #ffd700;
-      font-size: 1.35rem;
-      font-weight: 800;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      padding: 8px 14px;
-      border-radius: 8px;
-      color: #ccc;
-    }
-
-    .nav-links a:hover {
-      background: rgba(255,215,0,.1);
-      color: #ffd700;
-    }
-
-    main {
-      padding: 45px 0 75px;
-    }
-
-    .back {
-      display: inline-block;
-      color: #bbb;
-      margin-bottom: 26px;
-    }
-
-    .back:hover {
-      color: #ffd700;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0,1.1fr) minmax(320px,.9fr);
-      gap: 40px;
-      align-items: start;
-    }
-
-    .artwork-box {
-      background: #0d0d0d;
-      border: 1px solid rgba(255,215,0,.22);
-      border-radius: 20px;
-      padding: 14px;
-      box-shadow: 0 0 50px rgba(255,215,0,.08);
-    }
-
-    .artwork-box img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 13px;
-      background: #111;
-    }
-
-    .image-status {
-      text-align: center;
-      color: #888;
-      font-size: .82rem;
-      padding: 10px 4px 2px;
-    }
-
-    .eyebrow {
-      color: #ffd700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: .78rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    h1 {
-      font-size: clamp(2.2rem,5vw,4rem);
-      line-height: 1.1;
-      margin-bottom: 15px;
-    }
-
-    h2 {
-      font-size: 1.08rem;
-      color: #ffd700;
-      margin-bottom: 16px;
-    }
-
-    .subtitle {
-      color: #aaa;
-      margin-bottom: 25px;
-    }
-
-    .badge-row,
-    .actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .badge {
-      border: 1px solid rgba(255,215,0,.28);
-      background: rgba(255,215,0,.07);
-      color: #eee;
-      padding: 7px 11px;
-      border-radius: 999px;
-      font-size: .82rem;
-    }
-
-    .badge.gold {
-      color: #ffd700;
-    }
-
-    .badge-row {
-      margin-bottom: 25px;
-    }
-
-    .panel {
-      background: rgba(16,16,16,.92);
-      border: 1px solid #242424;
-      border-radius: 16px;
-      padding: 22px;
-      margin-bottom: 18px;
-    }
-
-    .info-row {
-      display: grid;
-      grid-template-columns: 130px minmax(0,1fr);
-      gap: 14px;
-      padding: 11px 0;
-      border-bottom: 1px solid #202020;
-    }
-
-    .info-row:last-child {
-      border-bottom: 0;
-    }
-
-    .label {
-      color: #888;
-      font-size: .88rem;
-    }
-
-    .value {
-      color: #e5e5e5;
-      font-size: .9rem;
-      overflow-wrap: anywhere;
-    }
-
-    .value a {
-      color: #ffd700;
-    }
-
-    .value a:hover {
+    a:hover {
       text-decoration: underline;
     }
 
-    .address {
-      font-family: monospace;
-      font-size: .82rem;
+    header {
+      border-bottom: 1px solid #292929;
+      padding: 28px 20px;
+      text-align: center;
     }
 
-    .actions {
-      margin-top: 22px;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 44px;
-      padding: 10px 16px;
-      border-radius: 9px;
-      border: 1px solid #333;
-      background: #151515;
-      color: #ddd;
-      font-weight: 600;
-      transition: .2s;
-    }
-
-    .btn:hover {
-      border-color: #ffd700;
-      color: #ffd700;
-    }
-
-    .btn.primary {
-      background: #ffd700;
-      color: #080808;
-      border-color: #ffd700;
-    }
-
-    .btn.primary:hover {
-      background: #ffe45c;
-      color: #000;
-    }
-
-    .section {
-      margin-top: 38px;
-    }
-
-    .verification-grid {
-      display: grid;
-      grid-template-columns: repeat(3,minmax(0,1fr));
-      gap: 15px;
-    }
-
-    .verify-card {
-      background: #0d0d0d;
-      border: 1px solid #242424;
-      border-radius: 14px;
-      padding: 18px;
-    }
-
-    .verify-card h3 {
-      font-size: .95rem;
+    header h1 {
+      color: #d4af37;
+      font-size: 2rem;
       margin-bottom: 8px;
     }
 
-    .verify-status {
-      color: #888;
-      font-size: .87rem;
-      overflow-wrap: anywhere;
+    header p {
+      color: #aaa;
     }
 
-    .verify-status.ok {
-      color: #65d68a;
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
-    .verify-status.fail {
-      color: #e57373;
+    .artwork {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .artwork img {
+      max-width: 100%;
+      width: 650px;
+      border-radius: 14px;
+      border: 1px solid #3a3a3a;
+      box-shadow: 0 0 35px rgba(212, 175, 55, 0.15);
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 14px;
+      padding: 25px;
+      margin-bottom: 25px;
+    }
+
+    .card h2 {
+      color: #d4af37;
+      margin-bottom: 18px;
+    }
+
+    .info {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 12px 20px;
+    }
+
+    .label {
+      color: #aaa;
+      font-weight: bold;
+    }
+
+    .value {
+      word-break: break-word;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 35px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border: 1px solid #555;
+      border-radius: 8px;
+      color: #f5f5f5;
+      background: #151515;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      border-color: #d4af37;
+      color: #d4af37;
+      text-decoration: none;
+    }
+
+    .btn.primary {
+      background: #d4af37;
+      color: #080808;
+      border-color: #d4af37;
+      font-weight: bold;
     }
 
     footer {
-      border-top: 1px solid rgba(255,215,0,.14);
-      padding: 28px 0;
-      color: #777;
+      border-top: 1px solid #292929;
       text-align: center;
-      font-size: .85rem;
+      padding: 25px 20px;
+      color: #777;
+      margin-top: 40px;
     }
 
-    @media (max-width: 850px) {
-      .hero {
+    @media (max-width: 700px) {
+      .info {
         grid-template-columns: 1fr;
-      }
-
-      .verification-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        padding: 12px 0;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .info-row {
-        grid-template-columns: 1fr;
-        gap: 4px;
-      }
-
-      main {
-        padding-top: 28px;
       }
     }
   </style>
@@ -316,765 +147,158 @@
 <body>
 
 <header>
-  <div class="container nav">
-
-    <a class="logo" href="index.html">
-      🥚 Golden-Egg
-    </a>
-
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="index.html">Gallery</a>
-      <a href="collection.html">Collection</a>
-      <a href="about.html">About</a>
-    </nav>
-
-  </div>
+  <h1>Golden-Egg #2</h1>
+  <p>Golden-Egg Collection · ERC-721 · Ethereum Sepolia Testnet</p>
 </header>
 
 <main>
 
-  <div class="container">
+  <section class="artwork">
+    <img
+      src="https://ipfs.io/ipfs/bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku"
+      alt="Golden-Egg #2"
+    >
+  </section>
 
-    <a class="back" href="collection.html">
-      ← Back to Collection
-    </a>
+  <section class="card">
+    <h2>NFT Information</h2>
 
-    <section class="hero">
+    <div class="info">
 
-      <div class="artwork-box">
+      <div class="label">Name</div>
+      <div class="value">Golden-Egg #2</div>
 
-        <img
-          id="artwork"
-          alt="Golden-Egg #2 digital artwork"
-        >
+      <div class="label">Token ID</div>
+      <div class="value">2</div>
 
-        <div id="imageStatus" class="image-status">
-          Loading artwork...
-        </div>
+      <div class="label">Standard</div>
+      <div class="value">ERC-721</div>
 
-      </div>
+      <div class="label">Network</div>
+      <div class="value">Ethereum Sepolia Testnet</div>
 
+      <div class="label">Collection</div>
+      <div class="value">Golden-Egg</div>
 
-      <div>
+      <div class="label">Symbol</div>
+      <div class="value">GEGG</div>
 
-        <div class="eyebrow">
-          Golden-Egg Collection
-        </div>
-
-        <h1>
-          Golden-Egg #2
-        </h1>
-
-        <p class="subtitle">
-          A digital artwork from the Golden-Egg NFT Collection.
-        </p>
-
-        <div class="badge-row">
-
-          <span class="badge gold">
-            NFT #2
-          </span>
-
-          <span class="badge">
-            ERC-721
-          </span>
-
-          <span class="badge">
-            GEGG
-          </span>
-
-          <span class="badge">
-            Sepolia Testnet
-          </span>
-
-        </div>
-
-
-        <div class="panel">
-
-          <h2>
-            NFT Information
-          </h2>
-
-          <div class="info-row">
-            <div class="label">Name</div>
-            <div class="value">Golden-Egg</div>
-          </div>
-
-          <div class="info-row">
-            <div class="label">Token ID</div>
-            <div class="value">2</div>
-          </div>
-
-          <div class="info-row">
-            <div class="label">Collection</div>
-            <div class="value">Golden-Egg</div>
-          </div>
-
-          <div class="info-row">
-            <div class="label">Symbol</div>
-            <div class="value">GEGG</div>
-          </div>
-
-          <div class="info-row">
-            <div class="label">Standard</div>
-            <div class="value">ERC-721</div>
-          </div>
-
-          <div class="info-row">
-            <div class="label">Network</div>
-            <div class="value">
-              Ethereum Sepolia Testnet
-            </div>
-          </div>
-
-        </div>
-
-
-        <div class="actions">
-
-          <a
-            class="btn primary"
-            href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2"
-            target="_blank"
-            rel="noopener noreferrer">
-            View on Etherscan ↗
-          </a>
-
-          <a
-            class="btn"
-            href="https://ipfs.io/ipfs/bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4"
-            target="_blank"
-            rel="noopener noreferrer">
-            View Metadata ↗
-          </a>
-
-          <a
-            class="btn"
-            href="https://sepolia.etherscan.io/tx/0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794"
-            target="_blank"
-            rel="noopener noreferrer">
-            Mint Transaction ↗
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- BLOCKCHAIN INFORMATION -->
-
-    <section class="section panel">
-
-      <h2>
-        Blockchain Information
-      </h2>
-
-      <div class="info-row">
-
-        <div class="label">
-          Contract
-        </div>
-
-        <div class="value address">
-
-          <a
-            href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
-            target="_blank"
-            rel="noopener noreferrer">
-            0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="info-row">
-
-        <div class="label">
-          Owner
-        </div>
-
-        <div class="value address">
-
-          <a
-            href="https://sepolia.etherscan.io/address/0x71C508b0B799D5941B91DA7966029C53c1d6F692"
-            target="_blank"
-            rel="noopener noreferrer">
-            0x71C508b0B799D5941B91DA7966029C53c1d6F692
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="info-row">
-
-        <div class="label">
-          Token Page
-        </div>
-
-        <div class="value">
-
-          <a
-            href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2"
-            target="_blank"
-            rel="noopener noreferrer">
-            Etherscan Token #2 ↗
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="info-row">
-
-        <div class="label">
-          Mint Transaction
-        </div>
-
-        <div class="value address">
-
-          <a
-            href="https://sepolia.etherscan.io/tx/0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794"
-            target="_blank"
-            rel="noopener noreferrer">
-            0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="info-row">
-
-        <div class="label">
-          Mint Block
-        </div>
-
-        <div class="value">
-
-          <a
-            href="https://sepolia.etherscan.io/block/11816645"
-            target="_blank"
-            rel="noopener noreferrer">
-            11816645 ↗
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="info-row">
-
-        <div class="label">
-          Mint Recipient
-        </div>
-
-        <div class="value address">
-          0x71C508b0B799D5941B91DA7966029C53c1d6F692
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- IPFS INFORMATION -->
-
-    <section class="section panel">
-
-      <h2>
-        IPFS Information
-      </h2>
-
-      <div class="info-row">
-
-        <div class="label">
-          Image CID
-        </div>
-
-        <div class="value address">
-          bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku
-        </div>
-
-      </div>
-
-
-      <div class="info-row">
-
-        <div class="label">
-          Metadata CID
-        </div>
-
-        <div class="value address">
-          bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4
-        </div>
-
-      </div>
-
-
-      <div class="info-row">
-
-        <div class="label">
-          Image URI
-        </div>
-
-        <div class="value address">
-          ipfs://bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku
-        </div>
-
-      </div>
-
-
-      <div class="info-row">
-
-        <div class="label">
-          Metadata URI
-        </div>
-
-        <div class="value address">
-          ipfs://bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4
-        </div>
-
-      </div>
-
-
-      <div class="actions">
-
+      <div class="label">Owner</div>
+      <div class="value">
         <a
-          class="btn"
-          href="https://ipfs.io/ipfs/bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku"
+          href="https://sepolia.etherscan.io/address/0x71C508b0B799D5941B91DA7966029C53c1d6F692"
           target="_blank"
-          rel="noopener noreferrer">
-          Open Image ↗
+          rel="noopener noreferrer"
+        >
+          0x71C508b0B799D5941B91DA7966029C53c1d6F692
         </a>
+      </div>
 
+      <div class="label">Contract</div>
+      <div class="value">
         <a
-          class="btn"
+          href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
+        </a>
+      </div>
+
+      <div class="label">Token URI</div>
+      <div class="value">
+        ipfs://bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4
+      </div>
+
+      <div class="label">Metadata CID</div>
+      <div class="value">
+        <a
           href="https://ipfs.io/ipfs/bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4"
           target="_blank"
-          rel="noopener noreferrer">
-          Open Metadata ↗
+          rel="noopener noreferrer"
+        >
+          bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4
         </a>
-
       </div>
 
-    </section>
-
-
-    <!-- BLOCKCHAIN VERIFICATION -->
-
-    <section class="section panel">
-
-      <h2>
-        Blockchain Verification
-      </h2>
-
-      <div class="verification-grid">
-
-        <div class="verify-card">
-
-          <h3>
-            Contract
-          </h3>
-
-          <div
-            id="contractStatus"
-            class="verify-status">
-            Checking...
-          </div>
-
-        </div>
-
-
-        <div class="verify-card">
-
-          <h3>
-            Ownership
-          </h3>
-
-          <div
-            id="ownerStatus"
-            class="verify-status">
-            Checking...
-          </div>
-
-        </div>
-
-
-        <div class="verify-card">
-
-          <h3>
-            Token #2
-          </h3>
-
-          <div
-            id="tokenStatus"
-            class="verify-status">
-            Checking...
-          </div>
-
-        </div>
-
+      <div class="label">Image CID</div>
+      <div class="value">
+        <a
+          href="https://ipfs.io/ipfs/bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku
+        </a>
       </div>
 
-    </section>
+      <div class="label">Mint Transaction</div>
+      <div class="value">
+        <a
+          href="https://sepolia.etherscan.io/tx/0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Transaction
+        </a>
+      </div>
 
+      <div class="label">Token Page</div>
+      <div class="value">
+        <a
+          href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View on Sepolia Etherscan
+        </a>
+      </div>
 
-    <!-- ABOUT ARTWORK -->
+    </div>
+  </section>
 
-    <section class="section panel">
+  <section class="card">
+    <h2>About Artwork</h2>
+    <p>
+      Golden-Egg #2 is a digital artwork from the Golden-Egg collection,
+      represented as an ERC-721 NFT on the Ethereum Sepolia Testnet.
+    </p>
+  </section>
 
-      <h2>
-        About This Artwork
-      </h2>
+  <!-- Navigation -->
+  <section class="actions">
 
-      <p style="color:#aaa">
+    <a class="btn" href="golden-egg-1.html">
+      Golden-Egg #1
+    </a>
 
-        Golden-Egg #2 is part of the Golden-Egg digital art collection.
-        Its metadata and artwork are referenced through IPFS, while its
-        NFT ownership record is associated with the Ethereum Sepolia testnet.
+    <a class="btn" href="golden-egg-2.html">
+      Golden-Egg #2
+    </a>
 
-      </p>
+    <a class="btn" href="golden-egg-3.html">
+      Golden-Egg #3
+    </a>
 
-      <p style="color:#888; margin-top:12px; font-size:.9rem">
+    <a class="btn" href="golden-egg-4.html">
+      Golden-Egg #4
+    </a>
 
-        This page describes a testnet NFT. It does not imply an Ethereum
-        Mainnet asset or a market valuation.
+    <a class="btn primary" href="collection.html">
+      View Collection
+    </a>
 
-      </p>
+    <a class="btn" href="index.html">
+      Gallery
+    </a>
 
-    </section>
-
-
-    <!-- NAVIGATION -->
-
-    <section class="actions">
-
-      <a
-        class="btn"
-        href="golden-egg-1.html">
-        ← Golden-Egg #1
-      </a>
-
-      <a
-        class="btn"
-        href="golden-egg-3.html">
-        Golden-Egg #3 →
-      </a>
-
-      <a
-        class="btn"
-        href="golden-egg-4.html">
-        Golden-Egg #4 →
-      </a>
-
-      <a
-        class="btn primary"
-        href="collection.html">
-        View Collection
-      </a>
-
-    </section>
-
-  </div>
+  </section>
 
 </main>
 
-
 <footer>
-
-  <div class="container">
-
-    Golden-Egg Collection © 2026<br>
-
-    Ethereum Sepolia Testnet · ERC-721 · IPFS
-
-  </div>
-
+  Golden-Egg Collection · ERC-721 · Ethereum Sepolia Testnet
 </footer>
-
-
-<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
-
-<script>
-
-  const CONTRACT =
-    "0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167";
-
-  const EXPECTED_OWNER =
-    "0x71C508b0B799D5941B91DA7966029C53c1d6F692";
-
-  const TOKEN_ID = 2;
-
-  const IMAGE_CID =
-    "bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku";
-
-
-  const imageGateways = [
-
-    `https://ipfs.io/ipfs/${IMAGE_CID}`,
-
-    `https://gateway.pinata.cloud/ipfs/${IMAGE_CID}`,
-
-    `https://dweb.link/ipfs/${IMAGE_CID}`
-
-  ];
-
-
-  const artwork =
-    document.getElementById("artwork");
-
-  const imageStatus =
-    document.getElementById("imageStatus");
-
-  let gatewayIndex = 0;
-
-
-  function loadArtwork() {
-
-    if (gatewayIndex >= imageGateways.length) {
-
-      imageStatus.textContent =
-        "Could not load image. Try Open Image below.";
-
-      imageStatus.style.color =
-        "#e57373";
-
-      return;
-    }
-
-
-    artwork.onload = () => {
-
-      imageStatus.textContent =
-        "Artwork loaded";
-
-      imageStatus.style.color =
-        "#65d68a";
-
-    };
-
-
-    artwork.onerror = () => {
-
-      gatewayIndex++;
-
-      loadArtwork();
-
-    };
-
-
-    artwork.src =
-      imageGateways[gatewayIndex];
-
-  }
-
-
-  loadArtwork();
-
-
-  async function verifyBlockchain() {
-
-    const contractStatus =
-      document.getElementById("contractStatus");
-
-    const ownerStatus =
-      document.getElementById("ownerStatus");
-
-    const tokenStatus =
-      document.getElementById("tokenStatus");
-
-
-    const setStatus =
-      (element, message, type) => {
-
-        element.textContent =
-          message;
-
-        element.className =
-          `verify-status ${type}`;
-
-      };
-
-
-    try {
-
-      if (!window.ethers) {
-
-        throw new Error(
-          "Ethers.js did not load"
-        );
-
-      }
-
-
-      const provider =
-        new ethers.JsonRpcProvider(
-          "https://ethereum-sepolia-rpc.publicnode.com"
-        );
-
-
-      const code =
-        await provider.getCode(CONTRACT);
-
-
-      if (code === "0x") {
-
-        setStatus(
-          contractStatus,
-          "Contract not found on this network",
-          "fail"
-        );
-
-        setStatus(
-          ownerStatus,
-          "Not checked",
-          ""
-        );
-
-        setStatus(
-          tokenStatus,
-          "Not checked",
-          ""
-        );
-
-        return;
-
-      }
-
-
-      setStatus(
-        contractStatus,
-        "Contract found on Sepolia",
-        "ok"
-      );
-
-
-      const abi = [
-
-        "function ownerOf(uint256 tokenId) view returns (address)",
-
-        "function name() view returns (string)",
-
-        "function symbol() view returns (string)"
-
-      ];
-
-
-      const nft =
-        new ethers.Contract(
-          CONTRACT,
-          abi,
-          provider
-        );
-
-
-      const [
-        actualOwner,
-        name,
-        symbol
-      ] = await Promise.all([
-
-        nft.ownerOf(TOKEN_ID),
-
-        nft.name(),
-
-        nft.symbol()
-
-      ]);
-
-
-      if (
-        actualOwner.toLowerCase()
-        ===
-        EXPECTED_OWNER.toLowerCase()
-      ) {
-
-        setStatus(
-          ownerStatus,
-          "Current owner matches expected address",
-          "ok"
-        );
-
-      } else {
-
-        setStatus(
-          ownerStatus,
-          "Token exists; current owner differs",
-          ""
-        );
-
-      }
-
-
-      if (
-        name === "Golden-Egg"
-        &&
-        symbol === "GEGG"
-      ) {
-
-        setStatus(
-          tokenStatus,
-          "Token #2 exists; collection name and symbol match",
-          "ok"
-        );
-
-      } else {
-
-        setStatus(
-          tokenStatus,
-          "Token exists; name or symbol differs",
-          "fail"
-        );
-
-      }
-
-
-    } catch (error) {
-
-      console.error(
-        "Blockchain verification error:",
-        error
-      );
-
-
-      setStatus(
-        contractStatus,
-        "Verification unavailable — retry later",
-        "fail"
-      );
-
-
-      setStatus(
-        ownerStatus,
-        "Verification unavailable",
-        "fail"
-      );
-
-
-      setStatus(
-        tokenStatus,
-        "Verification unavailable",
-        "fail"
-      );
-
-    }
-
-  }
-
-
-  verifyBlockchain();
-
-</script>
 
 </body>
 </html>
