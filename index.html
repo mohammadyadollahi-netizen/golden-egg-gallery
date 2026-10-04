@@ -171,6 +171,89 @@ nav a:hover {
     background: #f0cf5c;
 }
 
+/* ======================== */
+/* LIVE VERIFICATION */
+/* ======================== */
+
+.verification-box {
+    margin-top: 55px;
+    padding: 28px;
+    background: #0b0b0b;
+    border: 1px solid #222;
+    border-radius: 12px;
+}
+
+.verification-box h3 {
+    margin-top: 0;
+    text-align: center;
+    color: #d4af37;
+    font-size: 22px;
+}
+
+.verification-subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.verification-summary {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.verification-count {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d4af37;
+}
+
+.verification-label {
+    margin-top: 5px;
+    color: #888;
+    font-size: 12px;
+}
+
+.verification-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px;
+}
+
+.verify-item {
+    padding: 15px;
+    background: #101010;
+    border: 1px solid #252525;
+    border-radius: 9px;
+}
+
+.verify-item-title {
+    color: #eee;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.verify-item-status {
+    margin-top: 7px;
+    color: #d4af37;
+    font-size: 12px;
+}
+
+.verify-note {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #222;
+    text-align: center;
+    color: #777;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.verify-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
 .contract-box {
     margin-top: 55px;
     padding: 25px;
@@ -256,7 +339,8 @@ footer {
 
     <a
         href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
-        target="_blank">
+        target="_blank"
+        rel="noopener noreferrer">
         GitHub
     </a>
 
@@ -450,6 +534,165 @@ footer {
     </section>
 
 
+    <!-- ======================== -->
+    <!-- LIVE VERIFICATION -->
+    <!-- ======================== -->
+
+    <section class="verification-box">
+
+        <h3>
+            Live Verification
+        </h3>
+
+        <div class="verification-subtitle">
+            On-chain and decentralized project verification
+        </div>
+
+        <div class="verification-summary">
+
+            <div class="verification-count">
+                4 / 4
+            </div>
+
+            <div class="verification-label">
+                NFTs Verified
+            </div>
+
+        </div>
+
+
+        <div class="verification-list">
+
+            <div class="verify-item">
+
+                <div class="verify-item-title">
+                    Smart Contract
+                </div>
+
+                <div class="verify-item-status">
+                    ✓ Verified
+                </div>
+
+            </div>
+
+
+            <div class="verify-item">
+
+                <div class="verify-item-title">
+                    Blockchain
+                </div>
+
+                <div class="verify-item-status">
+                    ✓ Ethereum Sepolia
+                </div>
+
+            </div>
+
+
+            <div class="verify-item">
+
+                <div class="verify-item-title">
+                    ERC-721 Standard
+                </div>
+
+                <div class="verify-item-status">
+                    ✓ Verified
+                </div>
+
+            </div>
+
+
+            <div class="verify-item">
+
+                <div class="verify-item-title">
+                    Token #1
+                </div>
+
+                <div class="verify-item-status">
+                    ✓ Verified
+                </div>
+
+            </div>
+
+
+            <div class="verify-item">
+
+                <div class="verify-item-title">
+                    Token #2
+                </div>
+
+                <div class="verify-item-status">
+                    ✓ Verified
+                </div>
+
+            </div>
+
+
+            <div class="verify-item">
+
+                <div class="verify-item-title">
+                    Token #3
+                </div>
+
+                <div class="verify-item-status">
+                    ✓ Verified
+                </div>
+
+            </div>
+
+
+            <div class="verify-item">
+
+                <div class="verify-item-title">
+                    Token #4
+                </div>
+
+                <div class="verify-item-status">
+                    ✓ Verified
+                </div>
+
+            </div>
+
+
+            <div class="verify-item">
+
+                <div class="verify-item-title">
+                    IPFS Metadata
+                </div>
+
+                <div class="verify-item-status">
+                    ✓ Connected
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="verify-button">
+
+            <a
+                class="button"
+                href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
+                target="_blank"
+                rel="noopener noreferrer">
+                Verify On-Chain
+            </a>
+
+        </div>
+
+
+        <div class="verify-note">
+
+            Verification refers to the relationship between the
+            Golden-Egg artworks, ERC-721 smart contract,
+            token IDs, metadata and IPFS resources on Ethereum Sepolia.
+
+        </div>
+
+    </section>
+
+
     <section class="contract-box">
 
         <h3>
@@ -463,7 +706,8 @@ footer {
         <a
             class="button"
             href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
-            target="_blank">
+            target="_blank"
+            rel="noopener noreferrer">
             View Contract
         </a>
 
@@ -489,3 +733,4 @@ footer {
 </footer>
 
 </body>
+</html>
