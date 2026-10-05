@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Golden-Egg NFT Gallery</title>
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -60,6 +63,11 @@
       color: #d4af37;
     }
 
+    .btn.primary {
+      border-color: #d4af37;
+      color: #d4af37;
+    }
+
     .container {
       width: min(1180px, 92%);
       margin: 0 auto;
@@ -82,6 +90,14 @@
       max-width: 760px;
       margin: 0 auto;
       line-height: 1.7;
+    }
+
+    .hero-actions {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .gallery {
@@ -120,111 +136,64 @@
       color: #d4af37;
     }
 
-    .meta {
-      font-size: 13px;
+    .description {
       color: #aaa;
       line-height: 1.7;
-      word-break: break-word;
-    }
-
-    .meta strong {
-      color: #ddd;
+      font-size: 14px;
+      margin-bottom: 18px;
     }
 
     .card-links {
-      margin-top: 18px;
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
     }
 
-    .section {
+    .collection-preview {
       margin-top: 55px;
-    }
-
-    .section h2 {
-      color: #d4af37;
-      margin-bottom: 18px;
-    }
-
-    .verification-box {
       background: #101010;
       border: 1px solid #292929;
       border-radius: 14px;
-      padding: 24px;
+      padding: 28px;
+      text-align: center;
     }
 
-    .verification-summary {
+    .collection-preview h2 {
+      color: #d4af37;
+      margin-top: 0;
+    }
+
+    .collection-preview p {
+      max-width: 700px;
+      margin: 0 auto 22px;
+      color: #aaa;
+      line-height: 1.7;
+    }
+
+    .collection-stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 14px;
       margin-bottom: 24px;
     }
 
-    .status-box {
+    .stat {
       background: #151515;
       border: 1px solid #333;
       border-radius: 10px;
       padding: 16px;
     }
 
-    .status-box strong {
+    .stat strong {
       display: block;
-      margin-bottom: 6px;
-      color: #ddd;
-    }
-
-    .status-good {
-      color: #7ee787;
-    }
-
-    .status-warn {
-      color: #e3b341;
-    }
-
-    .status-bad {
-      color: #ff7b72;
-    }
-
-    .token-verification {
-      margin-top: 18px;
-      padding: 18px;
-      background: #0c0c0c;
-      border: 1px solid #252525;
-      border-radius: 10px;
-    }
-
-    .token-verification h3 {
-      margin-top: 0;
       color: #d4af37;
+      font-size: 22px;
+      margin-bottom: 4px;
     }
 
-    .check {
-      margin: 7px 0;
-      line-height: 1.6;
-    }
-
-    .record {
-      margin-top: 12px;
-      padding: 12px;
-      border-left: 3px solid #d4af37;
-      background: #17140b;
-      color: #d8c98e;
-      line-height: 1.6;
-    }
-
-    .cid {
-      font-family: Consolas, Monaco, monospace;
-      font-size: 12px;
-      word-break: break-all;
-      color: #bbb;
-    }
-
-    .verification-note {
-      margin-top: 20px;
+    .stat span {
       color: #999;
       font-size: 13px;
-      line-height: 1.7;
     }
 
     footer {
@@ -233,6 +202,11 @@
       text-align: center;
       color: #777;
       font-size: 13px;
+    }
+
+    footer a {
+      color: #d4af37;
+      text-decoration: none;
     }
 
     @media (max-width: 600px) {
@@ -250,423 +224,271 @@
 <body>
 
 <header>
+
   <h1>Golden-Egg</h1>
+
   <p>ERC-721 Digital Art Collection</p>
 
   <nav>
-    <a class="btn" href="index.html">Gallery</a>
-    <a class="btn" href="collection.html">Collection</a>
-    <a class="btn" href="about.html">About</a>
-    <a class="btn"
-       href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
-       target="_blank"
-       rel="noopener">
-       GitHub
+    <a class="btn" href="index.html">
+      Gallery
+    </a>
+
+    <a class="btn" href="collection.html">
+      Collection
+    </a>
+
+    <a class="btn" href="about.html">
+      About
+    </a>
+
+    <a
+      class="btn"
+      href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
+      target="_blank"
+      rel="noopener noreferrer">
+      GitHub
     </a>
   </nav>
+
 </header>
+
 
 <main class="container">
 
+  <!-- HERO -->
+
   <section class="hero">
+
     <h2>Golden-Egg NFT Gallery</h2>
+
     <p>
-      A small ERC-721 digital art collection deployed on the
-      Ethereum Sepolia Testnet.
+      A small ERC-721 digital art collection created and documented
+      on the Ethereum Sepolia Testnet.
     </p>
+
+    <div class="hero-actions">
+
+      <a
+        class="btn primary"
+        href="collection.html">
+        View Collection &amp; Verify
+      </a>
+
+      <a
+        class="btn"
+        href="about.html">
+        About the Project
+      </a>
+
+    </div>
+
   </section>
+
+
+  <!-- GALLERY -->
 
   <section class="gallery">
 
     <!-- TOKEN #1 -->
+
     <article class="card">
-      <img src="golden-egg-1.png" alt="Golden-Egg #1">
+
+      <img
+        src="golden-egg-1.png"
+        alt="Golden-Egg #1">
 
       <div class="card-content">
+
         <h3>Golden-Egg #1</h3>
 
-        <div class="meta">
-          <strong>Token ID:</strong> 1<br>
-          <strong>Standard:</strong> ERC-721<br>
-          <strong>Network:</strong> Ethereum Sepolia<br>
-          <strong>Image CID:</strong><br>
-          <span class="cid">
-            bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q
-          </span><br><br>
-
-          <strong>Metadata CID:</strong><br>
-          <span class="cid">
-            bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa
-          </span>
-        </div>
+        <p class="description">
+          The first artwork in the Golden-Egg ERC-721 collection.
+        </p>
 
         <div class="card-links">
-          <a class="btn" href="golden-egg-1.html">View NFT</a>
-          <a class="btn"
-             href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=1"
-             target="_blank"
-             rel="noopener">
-             Etherscan
+
+          <a
+            class="btn"
+            href="golden-egg-1.html">
+            View NFT
           </a>
+
+          <a
+            class="btn"
+            href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=1"
+            target="_blank"
+            rel="noopener noreferrer">
+            Etherscan
+          </a>
+
         </div>
+
       </div>
+
     </article>
 
 
     <!-- TOKEN #2 -->
+
     <article class="card">
-      <img src="golden-egg-2.png" alt="Golden-Egg #2">
+
+      <img
+        src="golden-egg-2.png"
+        alt="Golden-Egg #2">
 
       <div class="card-content">
+
         <h3>Golden-Egg #2</h3>
 
-        <div class="meta">
-          <strong>Token ID:</strong> 2<br>
-          <strong>Standard:</strong> ERC-721<br>
-          <strong>Network:</strong> Ethereum Sepolia<br>
-          <strong>Image CID:</strong><br>
-          <span class="cid">
-            bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku
-          </span><br><br>
-
-          <strong>Metadata CID:</strong><br>
-          <span class="cid">
-            bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4
-          </span>
-        </div>
+        <p class="description">
+          The second artwork in the Golden-Egg ERC-721 collection.
+        </p>
 
         <div class="card-links">
-          <a class="btn" href="golden-egg-2.html">View NFT</a>
-          <a class="btn"
-             href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2"
-             target="_blank"
-             rel="noopener">
-             Etherscan
+
+          <a
+            class="btn"
+            href="golden-egg-2.html">
+            View NFT
           </a>
+
+          <a
+            class="btn"
+            href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2"
+            target="_blank"
+            rel="noopener noreferrer">
+            Etherscan
+          </a>
+
         </div>
+
       </div>
+
     </article>
 
 
     <!-- TOKEN #3 -->
+
     <article class="card">
-      <img src="golden-egg-3.png" alt="Golden-Egg #3">
+
+      <img
+        src="golden-egg-3.png"
+        alt="Golden-Egg #3">
 
       <div class="card-content">
+
         <h3>Golden-Egg #3</h3>
 
-        <div class="meta">
-          <strong>Token ID:</strong> 3<br>
-          <strong>Standard:</strong> ERC-721<br>
-          <strong>Network:</strong> Ethereum Sepolia<br>
-
-          <strong>Image CID:</strong><br>
-          <span class="cid">
-            bafybeianohmded6d2qjqy3jrl72jlmrgvryjamme4kys6l6mnjhjpx75rq
-          </span><br><br>
-
-          <strong>On-Chain Metadata CID:</strong><br>
-          <span class="cid">
-            bafkreiev47cpkieizijczpb5ps7v3n3biave4f2onlzvoxbsdhd43uy4t3q
-          </span><br><br>
-
-          <strong>Recovered Metadata CID:</strong><br>
-          <span class="cid">
-            bafkreiev47cpkieizijczpb5ps7v3nbiave4f2onlzvoxbsdhd43uy4t3q
-          </span>
-        </div>
-
-        <div class="record">
-          On-chain Token URI is authoritative.
-          The original Metadata CID is currently unavailable through
-          accessible IPFS gateways. A recovered Metadata copy is available
-          separately and is not claimed to be the original on-chain CID.
-        </div>
+        <p class="description">
+          The third artwork in the Golden-Egg ERC-721 collection.
+        </p>
 
         <div class="card-links">
-          <a class="btn" href="golden-egg-3.html">View NFT</a>
-          <a class="btn"
-             href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=3"
-             target="_blank"
-             rel="noopener">
-             Etherscan
+
+          <a
+            class="btn"
+            href="golden-egg-3.html">
+            View NFT
           </a>
+
+          <a
+            class="btn"
+            href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=3"
+            target="_blank"
+            rel="noopener noreferrer">
+            Etherscan
+          </a>
+
         </div>
+
       </div>
+
     </article>
 
 
     <!-- TOKEN #4 -->
+
     <article class="card">
-      <img src="golden-egg-4.png" alt="Golden-Egg #4">
+
+      <img
+        src="golden-egg-4.png"
+        alt="Golden-Egg #4">
 
       <div class="card-content">
+
         <h3>Golden-Egg #4</h3>
 
-        <div class="meta">
-          <strong>Token ID:</strong> 4<br>
-          <strong>Standard:</strong> ERC-721<br>
-          <strong>Network:</strong> Ethereum Sepolia<br>
-
-          <strong>Image CID:</strong><br>
-          <span class="cid">
-            bafybeiesrlomqtgsjyyfbms5wl3akirfih7kqbeqruqe5a77slqxwrx7vq
-          </span><br><br>
-
-          <strong>Metadata CID:</strong><br>
-          <span class="cid">
-            bafkreidtosu2ey5ghnwzcbiu73ksedac52zw6j5ymqpriuxbk4xdbfy6xq
-          </span>
-        </div>
+        <p class="description">
+          The fourth artwork in the Golden-Egg ERC-721 collection.
+        </p>
 
         <div class="card-links">
-          <a class="btn" href="golden-egg-4.html">View NFT</a>
-          <a class="btn"
-             href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=4"
-             target="_blank"
-             rel="noopener">
-             Etherscan
+
+          <a
+            class="btn"
+            href="golden-egg-4.html">
+            View NFT
           </a>
+
+          <a
+            class="btn"
+            href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=4"
+            target="_blank"
+            rel="noopener noreferrer">
+            Etherscan
+          </a>
+
         </div>
+
       </div>
+
     </article>
 
   </section>
 
 
-  <!-- LIVE VERIFICATION -->
+  <!-- COLLECTION PREVIEW -->
 
-  <section class="section">
+  <section class="collection-preview">
 
-    <h2>Live Verification</h2>
+    <h2>Golden-Egg Collection</h2>
 
-    <div class="verification-box">
+    <p>
+      Four ERC-721 artworks are currently minted on Ethereum Sepolia.
+      Visit the Collection page for blockchain details, Token URIs,
+      metadata references, ownership information, and Live Verification.
+    </p>
 
-      <div class="verification-summary">
+    <div class="collection-stats">
 
-        <div class="status-box">
-          <strong>Blockchain Verification</strong>
-          <span class="status-good">
-            ✓ 4 / 4 NFTs verified on-chain
-          </span>
-        </div>
-
-        <div class="status-box">
-          <strong>Network</strong>
-          <span class="status-good">
-            ✓ Ethereum Sepolia
-          </span>
-        </div>
-
-        <div class="status-box">
-          <strong>Smart Contract</strong>
-          <span class="status-good">
-            ✓ Contract found
-          </span>
-        </div>
-
-        <div class="status-box">
-          <strong>IPFS Metadata</strong>
-          <span class="status-warn">
-            ⚠ Gateway availability limited
-          </span>
-        </div>
-
+      <div class="stat">
+        <strong>4 / 4</strong>
+        <span>NFTs Minted</span>
       </div>
 
-
-      <!-- TOKEN #1 VERIFICATION -->
-
-      <div class="token-verification">
-
-        <h3>Token #1</h3>
-
-        <div class="check status-good">
-          ✓ Token verified on-chain
-        </div>
-
-        <div class="check">
-          Owner:
-          <span class="status-good">✓ Correct</span>
-        </div>
-
-        <div class="check">
-          Token URI:
-          <span class="status-good">✓ Correct</span>
-        </div>
-
-        <div class="check">
-          Metadata:
-          <span class="status-good">✓ Image CID correct</span>
-        </div>
-
+      <div class="stat">
+        <strong>ERC-721</strong>
+        <span>Token Standard</span>
       </div>
 
-
-      <!-- TOKEN #2 VERIFICATION -->
-
-      <div class="token-verification">
-
-        <h3>Token #2</h3>
-
-        <div class="check status-good">
-          ✓ Token verified on-chain
-        </div>
-
-        <div class="check">
-          Owner:
-          <span class="status-good">✓ Correct</span>
-        </div>
-
-        <div class="check">
-          Token URI:
-          <span class="status-good">✓ Correct</span>
-        </div>
-
-        <div class="check">
-          Metadata:
-          <span class="status-good">✓ Image CID correct</span>
-        </div>
-
+      <div class="stat">
+        <strong>Sepolia</strong>
+        <span>Network</span>
       </div>
 
-
-      <!-- TOKEN #3 VERIFICATION -->
-
-      <div class="token-verification">
-
-        <h3>Token #3</h3>
-
-        <div class="check status-good">
-          ✓ Token verified on-chain
-        </div>
-
-        <div class="check">
-          Owner:
-          <span class="status-good">✓ Correct</span>
-        </div>
-
-        <div class="check">
-          Token URI:
-          <span class="status-good">✓ Correct</span>
-        </div>
-
-        <div class="check">
-          Original Metadata:
-          <span class="status-warn">⚠ Currently unavailable</span>
-        </div>
-
-        <div class="check">
-          Recovered Metadata:
-          <span class="status-good">✓ Available</span>
-        </div>
-
-        <div class="record">
-          The on-chain Token URI remains unchanged.
-          The recovered Metadata is preserved as a separate reference
-          and is not claimed to be the original on-chain CID.
-        </div>
-
-        <div class="meta">
-
-          <strong>On-Chain CID:</strong><br>
-          <span class="cid">
-            bafkreiev47cpkieizijczpb5ps7v3n3biave4f2onlzvoxbsdhd43uy4t3q
-          </span>
-
-          <br><br>
-
-          <strong>Recovered Metadata CID:</strong><br>
-          <span class="cid">
-            bafkreiev47cpkieizijczpb5ps7v3nbiave4f2onlzvoxbsdhd43uy4t3q
-          </span>
-
-        </div>
-
-      </div>
-
-
-      <!-- TOKEN #4 VERIFICATION -->
-
-      <div class="token-verification">
-
-        <h3>Token #4</h3>
-
-        <div class="check status-good">
-          ✓ Token verified on-chain
-        </div>
-
-        <div class="check">
-          Owner:
-          <span class="status-good">✓ Correct</span>
-        </div>
-
-        <div class="check">
-          Token URI:
-          <span class="status-good">✓ Correct</span>
-        </div>
-
-        <div class="check">
-          Metadata:
-          <span class="status-warn">
-            ⚠ Gateway temporarily unavailable
-          </span>
-        </div>
-
-        <div class="record">
-          Blockchain ownership and Token URI are verified.
-          The Metadata warning concerns IPFS gateway availability only.
-        </div>
-
-      </div>
-
-
-      <div class="verification-note">
-
-        Live verification reads blockchain data from Ethereum Sepolia.
-        IPFS metadata availability may vary depending on public gateway
-        availability, CORS policy, caching, and provider status.
-
-        An unavailable gateway does not by itself indicate that the NFT
-        or its blockchain record is invalid.
-
+      <div class="stat">
+        <strong>GEGG</strong>
+        <span>Collection Symbol</span>
       </div>
 
     </div>
 
-  </section>
-
-
-  <!-- COLLECTION INFORMATION -->
-
-  <section class="section">
-
-    <h2>Collection Information</h2>
-
-    <div class="verification-box">
-
-      <div class="meta">
-
-        <strong>Collection:</strong> Golden-Egg<br>
-        <strong>Symbol:</strong> GEGG<br>
-        <strong>Standard:</strong> ERC-721<br>
-        <strong>Network:</strong> Ethereum Sepolia Testnet<br>
-
-        <strong>Contract:</strong><br>
-        <span class="cid">
-          0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
-        </span>
-
-        <br><br>
-
-        <strong>Owner:</strong><br>
-        <span class="cid">
-          0x71C508b0B799D5941B91DA7966029C53c1d6F692
-        </span>
-
-      </div>
-
-    </div>
+    <a
+      class="btn primary"
+      href="collection.html">
+      View Collection &amp; Live Verification
+    </a>
 
   </section>
 
@@ -674,7 +496,21 @@
 
 
 <footer>
+
   Golden-Egg · ERC-721 · Ethereum Sepolia Testnet
+
+  <br><br>
+
+  <a href="collection.html">
+    Collection &amp; Verification
+  </a>
+
+  ·
+
+  <a href="about.html">
+    About
+  </a>
+
 </footer>
 
 </body>
