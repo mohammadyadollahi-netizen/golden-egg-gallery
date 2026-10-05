@@ -1,588 +1,508 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Golden-Egg</title>
 
-<title>About Golden-Egg</title>
-
-<meta
-    name="description"
-    content="About the Golden-Egg digital art collection, ERC-721 NFT project, Ethereum Sepolia testnet and IPFS metadata."
->
-
-<style>
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #050505;
-    color: #f5f5f5;
-}
-
-header {
-    padding: 45px 20px;
-    text-align: center;
-    border-bottom: 1px solid #252525;
-}
-
-.logo {
-    font-size: 42px;
-    font-weight: bold;
-    color: #d4af37;
-    letter-spacing: 3px;
-}
-
-.subtitle {
-    margin-top: 12px;
-    color: #aaa;
-    font-size: 15px;
-}
-
-.status {
-    display: inline-block;
-    margin-top: 22px;
-    padding: 9px 18px;
-    border: 1px solid #d4af37;
-    border-radius: 30px;
-    color: #d4af37;
-    font-size: 13px;
-}
-
-nav {
-    padding: 18px;
-    text-align: center;
-    border-bottom: 1px solid #1f1f1f;
-}
-
-nav a {
-    color: #aaa;
-    text-decoration: none;
-    margin: 0 14px;
-    font-size: 14px;
-}
-
-nav a:hover {
-    color: #d4af37;
-}
-
-.container {
-    width: 92%;
-    max-width: 1200px;
-    margin: 55px auto;
-}
-
-.hero {
-    text-align: center;
-    margin-bottom: 55px;
-}
-
-.hero h1 {
-    color: #d4af37;
-    font-size: 36px;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    max-width: 720px;
-    margin: auto;
-    color: #999;
-    line-height: 1.8;
-}
-
-.progress {
-    margin-top: 25px;
-    color: #d4af37;
-    font-weight: bold;
-    font-size: 15px;
-}
-
-.info-box {
-    margin-top: 28px;
-    padding: 25px;
-    background: #0b0b0b;
-    border: 1px solid #222;
-    border-radius: 12px;
-}
-
-.info-box h2 {
-    color: #d4af37;
-    font-size: 22px;
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-.info-box p {
-    color: #999;
-    font-size: 14px;
-    line-height: 1.8;
-    margin: 0;
-}
-
-.info-box p + p {
-    margin-top: 12px;
-}
-
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 28px;
-    margin-top: 28px;
-}
-
-.info-item {
-    background: #0d0d0d;
-    border: 1px solid #252525;
-    border-radius: 16px;
-    padding: 22px;
-}
-
-.info-item:hover {
-    border-color: #d4af37;
-}
-
-.info-item h3 {
-    color: #d4af37;
-    margin: 0 0 12px;
-    font-size: 18px;
-}
-
-.info-item p {
-    color: #999;
-    font-size: 13px;
-    line-height: 1.7;
-    margin: 0;
-}
-
-.button {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 9px 13px;
-    border-radius: 6px;
-    background: #d4af37;
-    color: #050505;
-    text-decoration: none;
-    font-size: 11px;
-    font-weight: bold;
-}
-
-.button:hover {
-    background: #f0cf5c;
-}
-
-.contract-box {
-    margin-top: 55px;
-    padding: 25px;
-    background: #0b0b0b;
-    border: 1px solid #222;
-    border-radius: 12px;
-    text-align: center;
-}
-
-.contract-box h3 {
-    color: #d4af37;
-    margin-top: 0;
-}
-
-.contract-address {
-    color: #999;
-    font-size: 12px;
-    word-break: break-all;
-}
-
-.tech-list {
-    margin: 0;
-    padding-left: 20px;
-    color: #999;
-    font-size: 13px;
-    line-height: 1.9;
-}
-
-.tech-list li::marker {
-    color: #d4af37;
-}
-
-footer {
-    margin-top: 70px;
-    padding: 30px 20px;
-    text-align: center;
-    border-top: 1px solid #222;
-    color: #777;
-    font-size: 12px;
-}
-
-@media (max-width: 600px) {
-
-    .logo {
-        font-size: 31px;
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-    .hero h1 {
-        font-size: 28px;
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b0b;
+      color: #eee;
+      line-height: 1.7;
     }
 
-    nav a {
-        margin: 0 7px;
+    header {
+      padding: 28px 20px;
+      border-bottom: 1px solid #252525;
+      text-align: center;
+      background: #0d0d0d;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      color: #d4af37;
+      font-size: 34px;
+    }
+
+    header p {
+      margin: 0;
+      color: #aaa;
+    }
+
+    nav {
+      margin-top: 22px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 18px;
+      border: 1px solid #444;
+      border-radius: 8px;
+      background: #151515;
+      color: #eee;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      border-color: #d4af37;
+      color: #d4af37;
+    }
+
+    .btn.current {
+      background: transparent;
+      color: #d4af37;
+      border-color: #d4af37;
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(212,175,55,.18);
+      cursor: default;
+    }
+
+    .btn.primary {
+      border-color: #d4af37;
+      color: #d4af37;
     }
 
     .container {
-        width: 94%;
+      width: min(1000px, 92%);
+      margin: auto;
+      padding: 55px 0 80px;
     }
 
-}
+    .hero {
+      text-align: center;
+      margin-bottom: 50px;
+    }
 
-</style>
+    .hero h2 {
+      color: #d4af37;
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
 
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: #aaa;
+    }
+
+    .section {
+      margin-top: 45px;
+    }
+
+    .section h2 {
+      color: #d4af37;
+      border-bottom: 1px solid #292929;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .panel {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 14px;
+      padding: 25px;
+    }
+
+    .panel p {
+      color: #aaa;
+    }
+
+    .quote {
+      border-left: 3px solid #d4af37;
+      padding-left: 18px;
+      color: #ddd !important;
+      font-size: 18px;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+
+    .step {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .step-number {
+      color: #d4af37;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .step h3 {
+      color: #eee;
+      margin: 8px 0;
+    }
+
+    .step p {
+      color: #999;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
+    }
+
+    .tech {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .tech strong {
+      display: block;
+      color: #d4af37;
+      margin-bottom: 5px;
+    }
+
+    .tech span {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .actions {
+      margin-top: 24px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .contract {
+      font-family: Consolas, Monaco, monospace;
+      word-break: break-all;
+      color: #bbb;
+      font-size: 13px;
+    }
+
+    footer {
+      border-top: 1px solid #252525;
+      padding: 28px 20px;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      .hero h2 {
+        font-size: 30px;
+      }
+
+      .container {
+        width: 94%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
 
-<div class="logo">
-    GOLDEN-EGG
-</div>
+  <h1>Golden-Egg</h1>
 
-<div class="subtitle">
-    Digital Art Collection · ERC-721
-</div>
+  <p>ERC-721 Digital Art Collection</p>
 
-<div class="status">
-    Ethereum Sepolia Testnet
-</div>
+  <nav>
+
+    <a class="btn" href="index.html">
+      Gallery
+    </a>
+
+    <a class="btn" href="collection.html">
+      Collection
+    </a>
+
+    <span class="btn current" aria-current="page">
+      About
+    </span>
+
+    <a
+      class="btn"
+      href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
+      target="_blank"
+      rel="noopener noreferrer">
+      GitHub
+    </a>
+
+  </nav>
 
 </header>
 
-<nav>
 
-<a href="index.html">
-    Gallery
-</a>
+<main class="container">
 
-<a href="collection.html">
-    Collection
-</a>
 
-<a href="about.html">
-    About
-</a>
+  <section class="hero">
 
-<a
-    href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
-    target="_blank"
-    rel="noopener noreferrer">
-    GitHub
-</a>
-
-</nav>
-
-<div class="container">
-
-<!-- ======================== -->
-<!-- ABOUT HERO -->
-<!-- ======================== -->
-
-<section class="hero">
-
-    <h1>
-        About Golden-Egg
-    </h1>
+    <h2>About Golden-Egg</h2>
 
     <p>
-        Golden-Egg is a digital art collection created to
-        explore NFT technology, blockchain ownership,
-        ERC-721 smart contracts and decentralized metadata
-        using IPFS.
+      Golden-Egg is a small experimental digital-art project
+      created to explore the complete lifecycle of an NFT:
+      artwork creation, decentralized storage, smart contracts,
+      minting, blockchain verification, and web presentation.
     </p>
 
-    <div class="progress">
-        4 / 4 Minted Artworks · Collection Complete
+  </section>
+
+
+  <section class="section">
+
+    <h2>The Project</h2>
+
+    <div class="panel">
+
+      <p class="quote">
+        Golden-Egg is a focused experiment in creating, storing,
+        minting, and presenting digital art on a public blockchain.
+      </p>
+
+      <p>
+        The collection uses the ERC-721 standard and is currently
+        deployed on the Ethereum Sepolia Testnet. Each artwork has
+        an individual Token ID and an on-chain Token URI pointing
+        toward decentralized metadata.
+      </p>
+
+      <p>
+        The project is designed as both a digital-art showcase
+        and a practical learning project for understanding how
+        NFTs connect artwork, metadata, IPFS, smart contracts,
+        blockchain transactions, and a public website.
+      </p>
+
     </div>
 
-</section>
+  </section>
 
 
-<!-- ======================== -->
-<!-- PROJECT OVERVIEW -->
-<!-- ======================== -->
+  <section class="section">
 
-<section class="info-box">
+    <h2>How Golden-Egg Works</h2>
 
-    <h2>
-        Project Overview
-    </h2>
+    <div class="workflow">
 
-    <p>
-        Golden-Egg combines digital artwork with blockchain
-        technology. Each artwork is represented by an ERC-721
-        NFT on the Ethereum Sepolia Testnet.
-    </p>
-
-    <p>
-        The project is designed as a practical exploration of
-        how digital artwork, NFT metadata, IPFS and blockchain
-        records can work together in a transparent and
-        verifiable way.
-    </p>
-
-</section>
-
-
-<!-- ======================== -->
-<!-- TECHNOLOGY -->
-<!-- ======================== -->
-
-<section class="info-grid">
-
-    <article class="info-item">
-
-        <h3>
-            Blockchain
-        </h3>
-
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Artwork</h3>
         <p>
-            The collection uses an ERC-721 smart contract
-            deployed on the Ethereum Sepolia Testnet.
+          Digital artwork is prepared for the Golden-Egg collection.
         </p>
+      </div>
 
-    </article>
-
-    <article class="info-item">
-
-        <h3>
-            IPFS
-        </h3>
-
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>IPFS</h3>
         <p>
-            Artwork files and NFT metadata are referenced
-            through IPFS content identifiers (CIDs).
+          Artwork files and NFT metadata are stored using IPFS.
         </p>
+      </div>
 
-    </article>
-
-    <article class="info-item">
-
-        <h3>
-            NFT Standard
-        </h3>
-
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Smart Contract</h3>
         <p>
-            Each Golden-Egg artwork is represented using
-            the ERC-721 non-fungible token standard.
+          The ERC-721 smart contract defines the collection and
+          NFT ownership structure.
         </p>
+      </div>
 
-    </article>
+      <div class="step">
+        <div class="step-number">04</div>
+        <h3>Minting</h3>
+        <p>
+          Each artwork receives its own Token ID and blockchain record.
+        </p>
+      </div>
 
-</section>
+      <div class="step">
+        <div class="step-number">05</div>
+        <h3>Verification</h3>
+        <p>
+          Ownership and Token URI records can be checked directly
+          on Ethereum Sepolia.
+        </p>
+      </div>
 
+      <div class="step">
+        <div class="step-number">06</div>
+        <h3>Gallery</h3>
+        <p>
+          The public website presents the artwork and connects it
+          to its blockchain records.
+        </p>
+      </div>
 
-<!-- ======================== -->
-<!-- HOW IT WORKS -->
-<!-- ======================== -->
+    </div>
 
-<section class="info-box">
-
-    <h2>
-        How Golden-Egg Works
-    </h2>
-
-    <ol class="tech-list">
-
-        <li>
-            A digital artwork is created for the collection.
-        </li>
-
-        <li>
-            The artwork is stored using IPFS.
-        </li>
-
-        <li>
-            NFT metadata is created and stored using IPFS.
-        </li>
-
-        <li>
-            The metadata URI is associated with an ERC-721 token.
-        </li>
-
-        <li>
-            The token is recorded on the Ethereum Sepolia
-            blockchain.
-        </li>
-
-        <li>
-            The blockchain transaction, token and metadata
-            references can then be independently inspected.
-        </li>
-
-    </ol>
-
-</section>
+  </section>
 
 
-<!-- ======================== -->
-<!-- COLLECTION -->
-<!-- ======================== -->
+  <section class="section">
 
-<section class="info-box">
+    <h2>Technology</h2>
 
-    <h2>
-        Collection
-    </h2>
+    <div class="tech-grid">
 
-    <p>
-        The Golden-Egg collection contains four minted
-        artworks, from Golden-Egg #1 through Golden-Egg #4.
-    </p>
+      <div class="tech">
+        <strong>Ethereum</strong>
+        <span>
+          Blockchain network used for the NFT records.
+        </span>
+      </div>
 
-    <p>
-        Each artwork has its own NFT token, metadata,
-        IPFS references and blockchain transaction.
-    </p>
+      <div class="tech">
+        <strong>ERC-721</strong>
+        <span>
+          Standard used for the Golden-Egg NFT collection.
+        </span>
+      </div>
 
-    <div style="text-align:center;">
+      <div class="tech">
+        <strong>IPFS</strong>
+        <span>
+          Decentralized storage for artwork and metadata.
+        </span>
+      </div>
+
+      <div class="tech">
+        <strong>GitHub Pages</strong>
+        <span>
+          Public web hosting for the Golden-Egg gallery.
+        </span>
+      </div>
+
+      <div class="tech">
+        <strong>Sepolia</strong>
+        <span>
+          Ethereum test network used during development.
+        </span>
+      </div>
+
+      <div class="tech">
+        <strong>Blockchain Verification</strong>
+        <span>
+          On-chain records are presented alongside the collection.
+        </span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <h2>Collection Status</h2>
+
+    <div class="panel">
+
+      <p>
+        <strong>Collection:</strong> Golden-Egg
+      </p>
+
+      <p>
+        <strong>Symbol:</strong> GEGG
+      </p>
+
+      <p>
+        <strong>Standard:</strong> ERC-721
+      </p>
+
+      <p>
+        <strong>Network:</strong> Ethereum Sepolia Testnet
+      </p>
+
+      <p>
+        <strong>Minted:</strong> 4 / 4 NFTs
+      </p>
+
+      <p>
+        <strong>Contract:</strong>
+      </p>
+
+      <div class="contract">
+        0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
+      </div>
+
+      <div class="actions">
 
         <a
-            class="button"
-            href="collection.html">
-            View Full Collection
+          class="btn primary"
+          href="collection.html">
+          View Full Collection &amp; Verification
         </a>
 
+        <a
+          class="btn"
+          href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
+          target="_blank"
+          rel="noopener noreferrer">
+          View Contract
+        </a>
+
+      </div>
+
     </div>
 
-</section>
+  </section>
 
 
-<!-- ======================== -->
-<!-- PROJECT DETAILS -->
-<!-- ======================== -->
+  <section class="section">
 
-<section class="info-grid">
+    <h2>Project Repository</h2>
 
-    <article class="info-item">
+    <div class="panel">
 
-        <h3>
-            Collection
-        </h3>
+      <p>
+        The source files, documentation, gallery pages, and project
+        materials are maintained in the public GitHub repository.
+      </p>
 
-        <p>
-            Golden-Egg
-        </p>
-
-    </article>
-
-    <article class="info-item">
-
-        <h3>
-            Symbol
-        </h3>
-
-        <p>
-            GEGG
-        </p>
-
-    </article>
-
-    <article class="info-item">
-
-        <h3>
-            Standard
-        </h3>
-
-        <p>
-            ERC-721
-        </p>
-
-    </article>
-
-    <article class="info-item">
-
-        <h3>
-            Network
-        </h3>
-
-        <p>
-            Ethereum Sepolia Testnet
-        </p>
-
-    </article>
-
-</section>
-
-
-<!-- ======================== -->
-<!-- SMART CONTRACT -->
-<!-- ======================== -->
-
-<section class="contract-box">
-
-    <h3>
-        Smart Contract
-    </h3>
-
-    <div class="contract-address">
-        0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
-    </div>
-
-    <a
-        class="button"
-        href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
+      <a
+        class="btn"
+        href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
         target="_blank"
         rel="noopener noreferrer">
-        View Contract
-    </a>
-
-</section>
-
-
-<!-- ======================== -->
-<!-- PROJECT REPOSITORY -->
-<!-- ======================== -->
-
-<section class="info-box">
-
-    <h2>
-        Project Repository
-    </h2>
-
-    <p>
-        The Golden-Egg Gallery website and project files
-        are maintained in the project's GitHub repository.
-    </p>
-
-    <div style="text-align:center;">
-
-        <a
-            class="button"
-            href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
-            target="_blank"
-            rel="noopener noreferrer">
-            View GitHub Repository
-        </a>
+        Open GitHub Repository
+      </a>
 
     </div>
 
-</section>
+  </section>
 
-</div>
+
+</main>
+
 
 <footer>
 
-<div>
-    Golden-Egg Collection
-</div>
-
-<div style="margin-top:8px;">
-    ERC-721 · Ethereum Sepolia · IPFS
-</div>
-
-<div style="margin-top:12px;">
-    4 minted artworks · Collection complete
-</div>
+  Golden-Egg · ERC-721 · Ethereum Sepolia Testnet
 
 </footer>
 
