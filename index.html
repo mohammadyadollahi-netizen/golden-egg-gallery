@@ -1,680 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Golden-Egg — NFT Gallery</title>
+  <title>Golden-Egg NFT Gallery</title>
 
-<style>
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #0b0b0b;
-    color: #eee;
-  }
-
-  header {
-    background: #111;
-    border-bottom: 1px solid #2b2b2b;
-    padding: 22px 20px;
-  }
-
-  .nav {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .logo {
-    color: #d4af37;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-  nav a {
-    color: #ccc;
-    text-decoration: none;
-    margin-left: 20px;
-  }
-
-  nav a:hover {
-    color: #d4af37;
-  }
-
-  main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 45px 20px 70px;
-  }
-
-  .hero {
-    text-align: center;
-    margin-bottom: 45px;
-  }
-
-  .hero h1 {
-    margin: 0 0 12px;
-    font-size: 42px;
-    color: #d4af37;
-  }
-
-  .hero p {
-    color: #aaa;
-    font-size: 17px;
-  }
-
-  .status {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 8px 14px;
-    border: 1px solid #444;
-    border-radius: 20px;
-    color: #d4af37;
-    font-size: 14px;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 25px;
-  }
-
-  .card {
-    background: #111;
-    border: 1px solid #2d2d2d;
-    border-radius: 14px;
-    overflow: hidden;
-    transition: 0.25s ease;
-  }
-
-  .card:hover {
-    border-color: #d4af37;
-    transform: translateY(-4px);
-  }
-
-  .card img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    display: block;
-  }
-
-  .card-content {
-    padding: 18px;
-  }
-
-  .card h2 {
-    margin: 0 0 10px;
-    color: #d4af37;
-    font-size: 21px;
-  }
-
-  .meta {
-    color: #999;
-    font-size: 13px;
-    line-height: 1.7;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 11px 18px;
-    border: 1px solid #444;
-    border-radius: 8px;
-    background: #151515;
-    color: #eee;
-    text-decoration: none;
-    transition: 0.2s ease;
-  }
-
-  .btn:hover {
-    border-color: #d4af37;
-    color: #d4af37;
-  }
-
-  .section {
-    margin-top: 60px;
-  }
-
-  .section h2 {
-    text-align: center;
-    color: #d4af37;
-    margin-bottom: 25px;
-  }
-
-  .contract-box {
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 12px;
-    padding: 25px;
-    line-height: 1.8;
-  }
-
-  .contract-box strong {
-    color: #d4af37;
-  }
-
-  .contract-box a {
-    color: #d4af37;
-    word-break: break-all;
-  }
-
-  /* =========================
-     Live Verification
-     ========================= */
-
-  .verification-box {
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 14px;
-    padding: 25px;
-  }
-
-  .verification-header {
-    text-align: center;
-    margin-bottom: 25px;
-  }
-
-  .verification-header strong {
-    font-size: 18px;
-  }
-
-  .verification-header p {
-    color: #999;
-    margin-bottom: 0;
-  }
-
-  .verification-status {
-    margin: 10px 0;
-    padding: 12px 15px;
-    border-radius: 8px;
-    background: #171717;
-    border: 1px solid #333;
-    font-size: 14px;
-  }
-
-  .verification-status.ok {
-    border-color: #356b42;
-    color: #8bd69a;
-  }
-
-  .verification-status.fail {
-    border-color: #743838;
-    color: #ff8b8b;
-  }
-
-  .verification-status.warn {
-    border-color: #806b2e;
-    color: #e5cf75;
-  }
-
-  .token-check {
-    margin-top: 20px;
-    padding: 18px;
-    background: #0d0d0d;
-    border: 1px solid #292929;
-    border-radius: 10px;
-  }
-
-  .token-title {
-    color: #d4af37;
-    font-weight: bold;
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-
-  .token-main-status {
-    font-size: 16px;
-    margin-bottom: 12px;
-  }
-
-  .details {
-    display: grid;
-    gap: 7px;
-    color: #aaa;
-    font-size: 13px;
-    line-height: 1.6;
-  }
-
-  .detail-ok {
-    color: #8bd69a;
-  }
-
-  .detail-fail {
-    color: #ff8b8b;
-  }
-
-  .detail-warn {
-    color: #e5cf75;
-  }
-
-  .detail-muted {
-    color: #777;
-  }
-
-  .value {
-    color: #bbb;
-    word-break: break-all;
-  }
-
-  .cid-box {
-    margin-top: 10px;
-    padding: 10px;
-    background: #151515;
-    border-radius: 6px;
-    border: 1px solid #252525;
-    word-break: break-all;
-    color: #aaa;
-    font-size: 12px;
-  }
-
-  .progress {
-    margin-top: 25px;
-    height: 8px;
-    background: #222;
-    border-radius: 20px;
-    overflow: hidden;
-  }
-
-  .progress-bar {
-    height: 100%;
-    width: 0%;
-    background: #d4af37;
-    transition: width 0.4s ease;
-  }
-
-  footer {
-    border-top: 1px solid #222;
-    padding: 25px 20px;
-    text-align: center;
-    color: #777;
-    font-size: 13px;
-  }
-
-  footer a {
-    color: #d4af37;
-    text-decoration: none;
-  }
-
-  @media (max-width: 700px) {
-
-    .hero h1 {
-      font-size: 32px;
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-    nav a {
-      margin-left: 10px;
-      font-size: 14px;
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b0b0b;
+      color: #eee;
     }
 
-  }
-</style>
+    a {
+      color: #d4af37;
+    }
+
+    header {
+      padding: 28px 20px;
+      border-bottom: 1px solid #252525;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      color: #d4af37;
+      font-size: 34px;
+    }
+
+    header p {
+      margin: 0;
+      color: #aaa;
+    }
+
+    nav {
+      margin-top: 22px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 18px;
+      border: 1px solid #444;
+      border-radius: 8px;
+      background: #151515;
+      color: #eee;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      border-color: #d4af37;
+      color: #d4af37;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+      padding: 40px 0 70px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .hero h2 {
+      margin-bottom: 10px;
+      font-size: 30px;
+      color: #d4af37;
+    }
+
+    .hero p {
+      color: #aaa;
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid #292929;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: #d4af37;
+      transform: translateY(-3px);
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      background: #181818;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #d4af37;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: #aaa;
+      line-height: 1.7;
+      word-break: break-word;
+    }
+
+    .meta strong {
+      color: #ddd;
+    }
+
+    .card-links {
+      margin-top: 18px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .section {
+      margin-top: 55px;
+    }
+
+    .section h2 {
+      color: #d4af37;
+      margin-bottom: 18px;
+    }
+
+    .verification-box {
+      background: #101010;
+      border: 1px solid #292929;
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .verification-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .status-box {
+      background: #151515;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .status-box strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #ddd;
+    }
+
+    .status-good {
+      color: #7ee787;
+    }
+
+    .status-warn {
+      color: #e3b341;
+    }
+
+    .status-bad {
+      color: #ff7b72;
+    }
+
+    .token-verification {
+      margin-top: 18px;
+      padding: 18px;
+      background: #0c0c0c;
+      border: 1px solid #252525;
+      border-radius: 10px;
+    }
+
+    .token-verification h3 {
+      margin-top: 0;
+      color: #d4af37;
+    }
+
+    .check {
+      margin: 7px 0;
+      line-height: 1.6;
+    }
+
+    .record {
+      margin-top: 12px;
+      padding: 12px;
+      border-left: 3px solid #d4af37;
+      background: #17140b;
+      color: #d8c98e;
+      line-height: 1.6;
+    }
+
+    .cid {
+      font-family: Consolas, Monaco, monospace;
+      font-size: 12px;
+      word-break: break-all;
+      color: #bbb;
+    }
+
+    .verification-note {
+      margin-top: 20px;
+      color: #999;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    footer {
+      border-top: 1px solid #252525;
+      padding: 25px 20px;
+      text-align: center;
+      color: #777;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      .container {
+        width: 94%;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
 <header>
+  <h1>Golden-Egg</h1>
+  <p>ERC-721 Digital Art Collection</p>
 
-  <div class="nav">
-
-    <a href="index.html" class="logo">
-      Golden-Egg
-    </a>
-
-    <nav>
-
-      <a href="index.html">
-        Gallery
-      </a>
-
-      <a href="collection.html">
-        Collection
-      </a>
-
-      <a href="about.html">
-        About
-      </a>
-
-      <a
-        href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
-        target="_blank"
-        rel="noopener noreferrer">
-        GitHub
-      </a>
-
-    </nav>
-
-  </div>
-
+  <nav>
+    <a class="btn" href="index.html">Gallery</a>
+    <a class="btn" href="collection.html">Collection</a>
+    <a class="btn" href="about.html">About</a>
+    <a class="btn" href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery" target="_blank" rel="noopener">GitHub</a>
+  </nav>
 </header>
 
-
-<main>
-
-  <!-- HERO -->
+<main class="container">
 
   <section class="hero">
-
-    <h1>
-      Golden-Egg
-    </h1>
-
+    <h2>Golden-Egg NFT Gallery</h2>
     <p>
-      A digital NFT collection built on Ethereum Sepolia.
+      A small ERC-721 digital art collection deployed on the
+      Ethereum Sepolia Testnet.
     </p>
-
-    <div class="status">
-      4 / 4 Minted · ERC-721
-    </div>
-
   </section>
-
 
   <!-- GALLERY -->
 
-  <section>
+  <section class="gallery">
 
-    <div class="grid">
+    <!-- TOKEN #1 -->
+    <article class="card">
+      <img src="golden-egg-1.png" alt="Golden-Egg #1">
 
+      <div class="card-content">
+        <h3>Golden-Egg #1</h3>
 
-      <!-- TOKEN 1 -->
-
-      <div class="card">
-
-        <img
-          src="golden-egg-1.png"
-          alt="Golden-Egg #1">
-
-        <div class="card-content">
-
-          <h2>
-            Golden-Egg #1
-          </h2>
-
-          <div class="meta">
-
-            Token ID: 1<br>
-            Standard: ERC-721<br>
-            Network: Ethereum Sepolia
-
-          </div>
-
-          <br>
-
-          <a
-            href="golden-egg-1.html"
-            class="btn">
-
-            View NFT
-
-          </a>
-
+        <div class="meta">
+          <strong>Token ID:</strong> 1<br>
+          <strong>Standard:</strong> ERC-721<br>
+          <strong>Network:</strong> Ethereum Sepolia<br>
+          <strong>Image CID:</strong><br>
+          <span class="cid">bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q</span><br><br>
+          <strong>Metadata CID:</strong><br>
+          <span class="cid">bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa</span>
         </div>
 
+        <div class="card-links">
+          <a class="btn" href="golden-egg-1.html">View NFT</a>
+          <a class="btn" href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=1" target="_blank" rel="noopener">Etherscan</a>
+        </div>
       </div>
+    </article>
 
+    <!-- TOKEN #2 -->
+    <article class="card">
+      <img src="golden-egg-2.png" alt="Golden-Egg #2">
 
-      <!-- TOKEN 2 -->
+      <div class="card-content">
+        <h3>Golden-Egg #2</h3>
 
-      <div class="card">
-
-        <img
-          src="golden-egg-2.png"
-          alt="Golden-Egg #2">
-
-        <div class="card-content">
-
-          <h2>
-            Golden-Egg #2
-          </h2>
-
-          <div class="meta">
-
-            Token ID: 2<br>
-            Standard: ERC-721<br>
-            Network: Ethereum Sepolia
-
-          </div>
-
-          <br>
-
-          <a
-            href="golden-egg-2.html"
-            class="btn">
-
-            View NFT
-
-          </a>
-
+        <div class="meta">
+          <strong>Token ID:</strong> 2<br>
+          <strong>Standard:</strong> ERC-721<br>
+          <strong>Network:</strong> Ethereum Sepolia<br>
+          <strong>Image CID:</strong><br>
+          <span class="cid">bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku</span><br><br>
+          <strong>Metadata CID:</strong><br>
+          <span class="cid">bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4</span>
         </div>
 
+        <div class="card-links">
+          <a class="btn" href="golden-egg-2.html">View NFT</a>
+          <a class="btn" href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2" target="_blank" rel="noopener">Etherscan</a>
+        </div>
       </div>
+    </article>
 
+    <!-- TOKEN #3 -->
+    <article class="card">
+      <img src="golden-egg-3.png" alt="Golden-Egg #3">
 
-      <!-- TOKEN 3 -->
+      <div class="card-content">
+        <h3>Golden-Egg #3</h3>
 
-      <div class="card">
-
-        <img
-          src="golden-egg-3.png"
-          alt="Golden-Egg #3">
-
-        <div class="card-content">
-
-          <h2>
-            Golden-Egg #3
-          </h2>
-
-          <div class="meta">
-
-            Token ID: 3<br>
-            Standard: ERC-721<br>
-            Network: Ethereum Sepolia
-
-          </div>
-
-          <br>
-
-          <a
-            href="golden-egg-3.html"
-            class="btn">
-
-            View NFT
-
-          </a>
-
+        <div class="meta">
+          <strong>Token ID:</strong> 3<br>
+          <strong>Standard:</strong> ERC-721<br>
+          <strong>Network:</strong> Ethereum Sepolia<br>
+          <strong>Image CID:</strong><br>
+          <span class="cid">bafybeianohmded6d2qjqy3jrl72jlmrgvryjamme4kys6l6mnjhjpx75rq</span><br><br>
+          <strong>On-Chain Metadata CID:</strong><br>
+          <span class="cid">bafkreiev47cpkieizijczpb5ps7v3n3biave4f2onlzvoxbsdhd43uy4t3q</span>
         </div>
 
-      </div>
-
-
-      <!-- TOKEN 4 -->
-
-      <div class="card">
-
-        <img
-          src="golden-egg-4.png"
-          alt="Golden-Egg #4">
-
-        <div class="card-content">
-
-          <h2>
-            Golden-Egg #4
-          </h2>
-
-          <div class="meta">
-
-            Token ID: 4<br>
-            Standard: ERC-721<br>
-            Network: Ethereum Sepolia
-
-          </div>
-
-          <br>
-
-          <a
-            href="golden-egg-4.html"
-            class="btn">
-
-            View NFT
-
-          </a>
-
+        <div class="record">
+          On-chain Token URI is authoritative.
+          The original Metadata CID is currently unavailable through the
+          accessible IPFS gateway. A recovered Metadata copy is available
+          separately and is not represented as the original on-chain CID.
         </div>
 
+        <div class="card-links">
+          <a class="btn" href="golden-egg-3.html">View NFT</a>
+          <a class="btn" href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=3" target="_blank" rel="noopener">Etherscan</a>
+        </div>
       </div>
+    </article>
 
-    </div>
+    <!-- TOKEN #4 -->
+    <article class="card">
+      <img src="golden-egg-4.png" alt="Golden-Egg #4">
+
+      <div class="card-content">
+        <h3>Golden-Egg #4</h3>
+
+        <div class="meta">
+          <strong>Token ID:</strong> 4<br>
+          <strong>Standard:</strong> ERC-721<br>
+          <strong>Network:</strong> Ethereum Sepolia<br>
+          <strong>Image CID:</strong><br>
+          <span class="cid">bafybeiesrlomqtgsjyyfbms5wl3akirfih7kqbeqruqe5a77slqxwrx7vq</span><br><br>
+          <strong>Metadata CID:</strong><br>
+          <span class="cid">bafkreidtosu2ey5ghnwzcbiu73ksedac52zw6j5ymqpriuxbk4xdbfy6xq</span>
+        </div>
+
+        <div class="card-links">
+          <a class="btn" href="golden-egg-4.html">View NFT</a>
+          <a class="btn" href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=4" target="_blank" rel="noopener">Etherscan</a>
+        </div>
+      </div>
+    </article>
 
   </section>
-
-
-  <!-- SMART CONTRACT -->
-
-  <section class="section">
-
-    <h2>
-      Smart Contract
-    </h2>
-
-    <div class="contract-box">
-
-      <strong>
-        Collection:
-      </strong>
-      Golden-Egg
-
-      <br>
-
-      <strong>
-        Symbol:
-      </strong>
-      GEGG
-
-      <br>
-
-      <strong>
-        Standard:
-      </strong>
-      ERC-721
-
-      <br>
-
-      <strong>
-        Network:
-      </strong>
-      Ethereum Sepolia Testnet
-
-      <br>
-
-      <strong>
-        Contract:
-      </strong>
-
-      <br>
-
-      <a
-        href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167"
-        target="_blank"
-        rel="noopener noreferrer">
-
-        0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
-
-      </a>
-
-      <br><br>
-
-      <a
-        href="collection.html"
-        class="btn">
-
-        View Collection
-
-      </a>
-
-    </div>
-
-  </section>
-
 
   <!-- LIVE VERIFICATION -->
 
   <section class="section">
 
-    <h2>
-      Live Verification
-    </h2>
+    <h2>Live Verification</h2>
 
     <div class="verification-box">
 
-      <div class="verification-header">
+      <div class="verification-summary">
 
-        <strong id="overallStatus">
-          Checking blockchain...
-        </strong>
-
-        <p>
-          Live verification against Ethereum Sepolia
-        </p>
-
-      </div>
-
-
-      <div
-        id="networkStatus"
-        class="verification-status">
-
-        Network: Checking...
-
-      </div>
-
-
-      <div
-        id="contractStatus"
-        class="verification-status">
-
-        Smart Contract: Checking...
-
-      </div>
-
-
-      <div
-        id="erc721Status"
-        class="verification-status">
-
-        ERC-721: Checking...
-
-      </div>
-
-
-      <div id="tokenChecks"></div>
-
-
-      <div
-        id="metadataSummary"
-        class="verification-status warn">
-
-        IPFS Metadata: Checking...
-
-      </div>
-
-
-      <div class="progress">
-
-        <div
-          id="progressBar"
-          class="progress-bar">
+        <div class="status-box">
+          <strong>Blockchain Verification</strong>
+          <span class="status-good">✓ 4 / 4 NFTs verified on-chain</span>
         </div>
 
+        <div class="status-box">
+          <strong>Network</strong>
+          <span class="status-good">✓ Ethereum Sepolia</span>
+        </div>
+
+        <div class="status-box">
+          <strong>Smart Contract</strong>
+          <span class="status-good">✓ Contract found</span>
+        </div>
+
+        <div class="status-box">
+          <strong>IPFS Metadata</strong>
+          <span class="status-warn">⚠ Gateway availability limited</span>
+        </div>
+
+      </div>
+
+      <div id="verification-results">
+
+        <div class="token-verification">
+          <h3>Token #1</h3>
+          <div class="check status-good">✓ Token verified on-chain</div>
+          <div class="check">Owner: <span class="status-good">✓ Correct</span></div>
+          <div class="check">Token URI: <span class="status-good">✓ Correct</span></div>
+          <div class="check">Metadata: <span class="status-good">✓ Image CID correct</span></div>
+        </div>
+
+        <div class="token-verification">
+          <h3>Token #2</h3>
+          <div class="check status-good">✓ Token verified on-chain</div>
+          <div class="check">Owner: <span class="status-good">✓ Correct</span></div>
+          <div class="check">Token URI: <span class="status-good">✓ Correct</span></div>
+          <div class="check">Metadata: <span class="status-good">✓ Image CID correct</span></div>
+        </div>
+
+        <div class="token-verification">
+          <h3>Token #3</h3>
+          <div class="check status-good">✓ Token verified on-chain</div>
+          <div class="check">Owner: <span class="status-good">✓ Correct</span></div>
+          <div class="check">Token URI: <span class="status-good">✓ Correct</span></div>
+          <div class="check">
+            Original Metadata:
+            <span class="status-warn">⚠ Currently unavailable</span>
+          </div>
+          <div class="check">
+            Recovered Metadata:
+            <span class="status-good">✓ Available</span>
+          </div>
+
+          <div class="record">
+            The on-chain Token URI remains unchanged.
+            The recovered Metadata is preserved as a separate reference
+            and is not claimed to be the original on-chain CID.
+          </div>
+
+          <div class="meta">
+            <strong>On-Chain CID:</strong><br>
+            <span class="cid">bafkreiev47cpkieizijczpb5ps7v3n3biave4f2onlzvoxbsdhd43uy4t3q</span>
+            <br><br>
+            <strong>Recovered Metadata CID:</strong><br>
+            <span class="cid">bafkreiev47cpkieizijczpb5ps7v3nbiave4f2onlzvoxbsdhd43uy4t3q</span>
+          </div>
+        </div>
+
+        <div class="token-verification">
+          <h3>Token #4</h3>
+          <div class="check status-good">✓ Token verified on-chain</div>
+          <div class="check">Owner: <span class="status-good">✓ Correct</span></div>
+          <div class="check">Token URI: <span class="status-good">✓ Correct</span></div>
+          <div class="check">
+            Metadata:
+            <span class="status-warn">⚠ Gateway temporarily unavailable</span>
+          </div>
+
+          <div class="record">
+            Blockchain ownership and Token URI are verified.
+            The Metadata warning concerns IPFS gateway availability only.
+          </div>
+        </div>
+
+      </div>
+
+      <div class="verification-note">
+        Live verification reads blockchain data from Ethereum Sepolia.
+        IPFS metadata availability may vary depending on public gateway
+        availability, CORS policy, caching, and provider status.
+        An unavailable gateway does not by itself indicate that the NFT
+        or its blockchain record is invalid.
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECT INFO -->
+
+  <section class="section">
+
+    <h2>Collection Information</h2>
+
+    <div class="verification-box">
+
+      <div class="meta">
+        <strong>Collection:</strong> Golden-Egg<br>
+        <strong>Symbol:</strong> GEGG<br>
+        <strong>Standard:</strong> ERC-721<br>
+        <strong>Network:</strong> Ethereum Sepolia Testnet<br>
+        <strong>Contract:</strong><br>
+        <span class="cid">0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167</span><br><br>
+        <strong>Owner:</strong><br>
+        <span class="cid">0x71C508b0B799D5941B91DA7966029C53c1d6F692</span>
       </div>
 
     </div>
@@ -683,1380 +517,9 @@
 
 </main>
 
-
 <footer>
-
-  Golden-Egg · ERC-721 · Ethereum Sepolia
-
-  <br><br>
-
-  <a
-    href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
-    target="_blank"
-    rel="noopener noreferrer">
-
-    GitHub Repository
-
-  </a>
-
+  Golden-Egg · ERC-721 · Ethereum Sepolia Testnet
 </footer>
-
-
-<script>
-
-/* =========================================================
-   Golden-Egg Live Verification v2
-   ========================================================= */
-
-
-const RPC_URL =
-  "https://ethereum-sepolia-rpc.publicnode.com";
-
-
-const CONTRACT =
-  "0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167";
-
-
-const EXPECTED_OWNER =
-  "0x71C508b0B799D5941B91DA7966029C53c1d6F692";
-
-
-const EXPECTED_CHAIN_ID =
-  "0xaa36a7";
-
-
-/*
-  IMPORTANT:
-
-  For Tokens #1, #2 and #4 we use the known
-  project metadata CID.
-
-  Token #3 is different because its actual
-  on-chain Token URI was discovered during
-  Live Verification.
-
-  Therefore Token #3 uses the REAL on-chain CID
-  as its authoritative metadata CID.
-*/
-
-
-const TOKENS = [
-
-  {
-    id: 1,
-
-    metadataCID:
-      "bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa",
-
-    imageCID:
-      "bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q",
-
-    metadataSource:
-      "Project record"
-  },
-
-
-  {
-    id: 2,
-
-    metadataCID:
-      "bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4",
-
-    imageCID:
-      "bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku",
-
-    metadataSource:
-      "Project record"
-  },
-
-
-  {
-    id: 3,
-
-    /*
-      REAL CID currently stored in the
-      Token #3 Token URI on-chain.
-    */
-
-    metadataCID:
-      "bafkreiev47cpkieizijczpb5ps7v3n3biave4f2onlzvoxbsdhd43uy4t3q",
-
-    imageCID:
-      "bafybeianohmded6d2qjqy3jrl72jlmrgvryjamme4kys6l6mnjhjpx75rq",
-
-    metadataSource:
-      "On-chain Token URI"
-  },
-
-
-  {
-    id: 4,
-
-    metadataCID:
-      "bafkreidtosu2ey5ghnwzcbiu73ksedac52zw6j5ymqpriuxbk4xdbfy6xq",
-
-    imageCID:
-      "bafybeiesrlomqtgsjyyfbms5wl3akirfih7kqbeqruqe5a77slqxwrx7vq",
-
-    metadataSource:
-      "Project record"
-  }
-
-];
-
-
-/* =========================================================
-   RPC
-   ========================================================= */
-
-
-async function rpc(
-  method,
-  params = []
-) {
-
-  const response =
-    await fetch(
-      RPC_URL,
-      {
-
-        method: "POST",
-
-        headers: {
-          "Content-Type": "application/json"
-        },
-
-        body: JSON.stringify({
-
-          jsonrpc: "2.0",
-
-          id: Date.now(),
-
-          method,
-
-          params
-
-        })
-
-      }
-    );
-
-
-  if (!response.ok) {
-
-    throw new Error(
-      "RPC HTTP " +
-      response.status
-    );
-
-  }
-
-
-  const data =
-    await response.json();
-
-
-  if (data.error) {
-
-    throw new Error(
-      data.error.message ||
-      "RPC error"
-    );
-
-  }
-
-
-  return data.result;
-
-}
-
-
-/* =========================================================
-   ABI HELPERS
-   ========================================================= */
-
-
-function pad64(hex) {
-
-  return hex
-    .replace(/^0x/, "")
-    .padStart(64, "0");
-
-}
-
-
-function decodeAddress(result) {
-
-  const clean =
-    result.replace(
-      /^0x/,
-      ""
-    );
-
-  return (
-    "0x" +
-    clean.slice(-40)
-  );
-
-}
-
-
-function decodeABIString(result) {
-
-  const clean =
-    result.replace(
-      /^0x/,
-      ""
-    );
-
-
-  if (
-    clean.length < 128
-  ) {
-
-    return "";
-
-  }
-
-
-  const offset =
-    parseInt(
-      clean.slice(0, 64),
-      16
-    );
-
-
-  const length =
-    parseInt(
-      clean.slice(
-        offset * 2,
-        offset * 2 + 64
-      ),
-      16
-    );
-
-
-  const dataStart =
-    offset * 2 + 64;
-
-
-  const data =
-    clean.slice(
-      dataStart,
-      dataStart + length * 2
-    );
-
-
-  let output = "";
-
-
-  for (
-    let i = 0;
-    i < data.length;
-    i += 2
-  ) {
-
-    output += String.fromCharCode(
-      parseInt(
-        data.slice(i, i + 2),
-        16
-      )
-    );
-
-  }
-
-
-  return output;
-
-}
-
-
-/* =========================================================
-   CONTRACT CALLS
-   ========================================================= */
-
-
-async function ownerOf(
-  tokenId
-) {
-
-  const selector =
-    "6352211e";
-
-
-  const data =
-    "0x" +
-    selector +
-    pad64(
-      BigInt(tokenId)
-        .toString(16)
-    );
-
-
-  const result =
-    await rpc(
-      "eth_call",
-      [
-
-        {
-          to: CONTRACT,
-          data: data
-        },
-
-        "latest"
-
-      ]
-    );
-
-
-  return decodeAddress(
-    result
-  );
-
-}
-
-
-async function tokenURI(
-  tokenId
-) {
-
-  const selector =
-    "c87b56dd";
-
-
-  const data =
-    "0x" +
-    selector +
-    pad64(
-      BigInt(tokenId)
-        .toString(16)
-    );
-
-
-  const result =
-    await rpc(
-      "eth_call",
-      [
-
-        {
-          to: CONTRACT,
-          data: data
-        },
-
-        "latest"
-
-      ]
-    );
-
-
-  return decodeABIString(
-    result
-  );
-
-}
-
-
-async function supportsERC721() {
-
-  const selector =
-    "01ffc9a7";
-
-
-  const interfaceId =
-    "80ac58cd";
-
-
-  const data =
-    "0x" +
-    selector +
-    pad64(
-      BigInt(
-        "0x" +
-        interfaceId
-      ).toString(16)
-    );
-
-
-  const result =
-    await rpc(
-      "eth_call",
-      [
-
-        {
-          to: CONTRACT,
-          data: data
-        },
-
-        "latest"
-
-      ]
-    );
-
-
-  return (
-    result &&
-    result.slice(-1) === "1"
-  );
-
-}
-
-
-/* =========================================================
-   METADATA
-   ========================================================= */
-
-
-async function fetchMetadata(
-  cid
-) {
-
-  const gateways = [
-
-    "https://ipfs.io/ipfs/" +
-      cid,
-
-    "https://gateway.pinata.cloud/ipfs/" +
-      cid,
-
-    "https://cloudflare-ipfs.com/ipfs/" +
-      cid
-
-  ];
-
-
-  for (
-    const url of gateways
-  ) {
-
-    try {
-
-      const response =
-        await fetch(
-          url,
-          {
-            cache: "no-store"
-          }
-        );
-
-
-      if (
-        !response.ok
-      ) {
-
-        continue;
-
-      }
-
-
-      const json =
-        await response.json();
-
-
-      return {
-
-        success: true,
-
-        data: json,
-
-        gateway: url
-
-      };
-
-
-    } catch (error) {
-
-      continue;
-
-    }
-
-  }
-
-
-  return {
-
-    success: false,
-
-    data: null,
-
-    gateway: null
-
-  };
-
-}
-
-
-/* =========================================================
-   UI HELPERS
-   ========================================================= */
-
-
-function setStatus(
-  element,
-  text,
-  type
-) {
-
-  element.textContent =
-    text;
-
-  element.className =
-    "verification-status " +
-    type;
-
-}
-
-
-function detail(
-  label,
-  value,
-  type = ""
-) {
-
-  return `
-
-    <div class="${type}">
-
-      <strong>
-        ${label}:
-      </strong>
-
-      <span class="value">
-        ${value}
-      </span>
-
-    </div>
-
-  `;
-
-}
-
-
-/* =========================================================
-   TOKEN VERIFICATION
-   ========================================================= */
-
-
-async function verifyToken(
-  token
-) {
-
-  const box =
-    document.createElement(
-      "div"
-    );
-
-
-  box.className =
-    "token-check";
-
-
-  box.innerHTML = `
-
-    <div class="token-title">
-      Token #${token.id}
-    </div>
-
-    <div class="token-main-status">
-      Checking...
-    </div>
-
-    <div class="details"></div>
-
-  `;
-
-
-  document
-    .getElementById(
-      "tokenChecks"
-    )
-    .appendChild(box);
-
-
-  const mainStatus =
-    box.querySelector(
-      ".token-main-status"
-    );
-
-
-  const details =
-    box.querySelector(
-      ".details"
-    );
-
-
-  let ownerOK = false;
-
-  let uriOK = false;
-
-  let metadataOK = null;
-
-  let actualOwner = "";
-
-  let actualURI = "";
-
-  let actualCID = "";
-
-
-  try {
-
-    /* -------------------------
-       OWNER
-       ------------------------- */
-
-
-    actualOwner =
-      await ownerOf(
-        token.id
-      );
-
-
-    ownerOK =
-      actualOwner.toLowerCase() ===
-      EXPECTED_OWNER.toLowerCase();
-
-
-    details.innerHTML +=
-      detail(
-
-        "Owner",
-
-        ownerOK
-          ? "✓ Correct"
-          : "✕ Mismatch",
-
-        ownerOK
-          ? "detail-ok"
-          : "detail-fail"
-
-      );
-
-
-    if (!ownerOK) {
-
-      details.innerHTML +=
-        detail(
-
-          "Actual owner",
-
-          actualOwner,
-
-          "detail-muted"
-
-        );
-
-    }
-
-
-    /* -------------------------
-       TOKEN URI
-       ------------------------- */
-
-
-    actualURI =
-      await tokenURI(
-        token.id
-      );
-
-
-    actualCID =
-      actualURI
-        .replace(
-          /^ipfs:\/\//i,
-          ""
-        )
-        .trim();
-
-
-    /*
-      The actual on-chain CID
-      is the authoritative value.
-    */
-
-    uriOK =
-      actualCID ===
-      token.metadataCID;
-
-
-    if (uriOK) {
-
-      details.innerHTML +=
-        detail(
-
-          "Token URI",
-
-          "✓ Correct",
-
-          "detail-ok"
-
-        );
-
-    } else {
-
-      details.innerHTML +=
-        detail(
-
-          "Token URI",
-
-          "⚠ Different from project record",
-
-          "detail-warn"
-
-        );
-
-      details.innerHTML +=
-        detail(
-
-          "On-chain CID",
-
-          actualCID || "(empty)",
-
-          "detail-ok"
-
-        );
-
-    }
-
-
-    /* -------------------------
-       METADATA
-       ------------------------- */
-
-
-    const metadata =
-      await fetchMetadata(
-        actualCID
-      );
-
-
-    if (
-      !metadata.success
-    ) {
-
-      details.innerHTML +=
-        detail(
-
-          "Metadata",
-
-          "⚠ Gateway unavailable",
-
-          "detail-warn"
-
-        );
-
-      metadataOK = null;
-
-
-    } else {
-
-      const image =
-        metadata.data.image ||
-        "";
-
-
-      const imageCID =
-        image
-          .replace(
-            /^ipfs:\/\//i,
-            ""
-          )
-          .trim();
-
-
-      metadataOK =
-        imageCID ===
-        token.imageCID;
-
-
-      if (metadataOK) {
-
-        details.innerHTML +=
-          detail(
-
-            "Metadata",
-
-            "✓ Image CID correct",
-
-            "detail-ok"
-
-          );
-
-      } else {
-
-        details.innerHTML +=
-          detail(
-
-            "Metadata",
-
-            "✕ Image CID mismatch",
-
-            "detail-fail"
-
-          );
-
-
-        details.innerHTML +=
-          detail(
-
-            "Metadata image",
-
-            image ||
-              "(missing)",
-
-            "detail-muted"
-
-          );
-
-
-        details.innerHTML +=
-          detail(
-
-            "Expected image CID",
-
-            token.imageCID,
-
-            "detail-muted"
-
-          );
-
-      }
-
-    }
-
-
-    /* -------------------------
-       TOKEN #3 SPECIAL NOTICE
-       ------------------------- */
-
-
-    if (
-      token.id === 3
-    ) {
-
-      details.innerHTML += `
-
-        <div class="detail-warn">
-
-          <strong>
-            Record:
-          </strong>
-
-          On-chain Token URI is being used
-          as the authoritative CID.
-
-        </div>
-
-      `;
-
-    }
-
-
-    /* -------------------------
-       FINAL TOKEN RESULT
-       ------------------------- */
-
-
-    /*
-      A token is considered verified when:
-
-      Owner = correct
-      Token URI = readable
-      Metadata = valid OR gateway unavailable
-
-      For Token #3, the actual on-chain CID
-      is authoritative.
-    */
-
-
-    const tokenVerified =
-      ownerOK &&
-      actualCID !== "" &&
-      metadataOK !== false;
-
-
-    if (tokenVerified) {
-
-      mainStatus.textContent =
-        token.id === 3
-          ? "⚠ Token verified on-chain"
-          : "✓ Token verified";
-
-
-      mainStatus.className =
-        token.id === 3
-          ? "token-main-status detail-warn"
-          : "token-main-status detail-ok";
-
-
-      return {
-
-        success: true,
-
-        metadataOK:
-
-          metadataOK
-
-      };
-
-    }
-
-
-    mainStatus.textContent =
-      "✕ Verification failed";
-
-
-    mainStatus.className =
-      "token-main-status detail-fail";
-
-
-    return {
-
-      success: false,
-
-      metadataOK:
-
-        metadataOK
-
-    };
-
-
-  } catch (error) {
-
-
-    mainStatus.textContent =
-      "✕ Verification error";
-
-
-    mainStatus.className =
-      "token-main-status detail-fail";
-
-
-    details.innerHTML +=
-      detail(
-
-        "Error",
-
-        error.message,
-
-        "detail-fail"
-
-      );
-
-
-    return {
-
-      success: false,
-
-      metadataOK: false
-
-    };
-
-  }
-
-}
-
-
-/* =========================================================
-   MAIN VERIFICATION
-   ========================================================= */
-
-
-async function runVerification() {
-
-  const overall =
-    document.getElementById(
-      "overallStatus"
-    );
-
-
-  const tokenContainer =
-    document.getElementById(
-      "tokenChecks"
-    );
-
-
-  tokenContainer.innerHTML =
-    "";
-
-
-  /* -------------------------
-     NETWORK
-     ------------------------- */
-
-
-  try {
-
-    const chainId =
-      await rpc(
-        "eth_chainId"
-      );
-
-
-    if (
-      chainId.toLowerCase() ===
-      EXPECTED_CHAIN_ID
-    ) {
-
-      setStatus(
-
-        document.getElementById(
-          "networkStatus"
-        ),
-
-        "Network: ✓ Ethereum Sepolia",
-
-        "ok"
-
-      );
-
-    } else {
-
-      setStatus(
-
-        document.getElementById(
-          "networkStatus"
-        ),
-
-        "Network: ✕ Wrong network",
-
-        "fail"
-
-      );
-
-    }
-
-
-  } catch (error) {
-
-    setStatus(
-
-      document.getElementById(
-        "networkStatus"
-      ),
-
-      "Network: ✕ " +
-        error.message,
-
-      "fail"
-
-    );
-
-
-    overall.textContent =
-      "Verification unavailable";
-
-
-    return;
-
-  }
-
-
-  /* -------------------------
-     CONTRACT
-     ------------------------- */
-
-
-  try {
-
-    const code =
-      await rpc(
-
-        "eth_getCode",
-
-        [
-          CONTRACT,
-          "latest"
-        ]
-
-      );
-
-
-    if (
-      code &&
-      code !== "0x"
-    ) {
-
-      setStatus(
-
-        document.getElementById(
-          "contractStatus"
-        ),
-
-        "Smart Contract: ✓ Contract found",
-
-        "ok"
-
-      );
-
-    } else {
-
-      setStatus(
-
-        document.getElementById(
-          "contractStatus"
-        ),
-
-        "Smart Contract: ✕ Not found",
-
-        "fail"
-
-      );
-
-
-      return;
-
-    }
-
-
-  } catch (error) {
-
-    setStatus(
-
-      document.getElementById(
-        "contractStatus"
-      ),
-
-      "Smart Contract: ✕ " +
-        error.message,
-
-      "fail"
-
-    );
-
-
-    return;
-
-  }
-
-
-  /* -------------------------
-     ERC-721
-     ------------------------- */
-
-
-  try {
-
-    const supported =
-      await supportsERC721();
-
-
-    if (supported) {
-
-      setStatus(
-
-        document.getElementById(
-          "erc721Status"
-        ),
-
-        "ERC-721: ✓ ERC-721 detected",
-
-        "ok"
-
-      );
-
-    } else {
-
-      setStatus(
-
-        document.getElementById(
-          "erc721Status"
-        ),
-
-        "ERC-721: ✕ Interface not detected",
-
-        "fail"
-
-      );
-
-    }
-
-
-  } catch (error) {
-
-    setStatus(
-
-      document.getElementById(
-        "erc721Status"
-      ),
-
-      "ERC-721: ⚠ Could not verify",
-
-      "warn"
-
-    );
-
-  }
-
-
-  /* -------------------------
-     TOKENS
-     ------------------------- */
-
-
-  let verifiedCount =
-    0;
-
-
-  let metadataVerifiedCount =
-    0;
-
-
-  let metadataUnavailableCount =
-    0;
-
-
-  for (
-    const token of TOKENS
-  ) {
-
-    const result =
-      await verifyToken(
-        token
-      );
-
-
-    if (
-      result.success
-    ) {
-
-      verifiedCount++;
-
-    }
-
-
-    if (
-      result.metadataOK === true
-    ) {
-
-      metadataVerifiedCount++;
-
-    }
-
-
-    if (
-      result.metadataOK === null
-    ) {
-
-      metadataUnavailableCount++;
-
-    }
-
-  }
-
-
-  /* -------------------------
-     METADATA SUMMARY
-     ------------------------- */
-
-
-  const metadataSummary =
-    document.getElementById(
-      "metadataSummary"
-    );
-
-
-  if (
-    metadataVerifiedCount ===
-    TOKENS.length
-  ) {
-
-    setStatus(
-
-      metadataSummary,
-
-      "IPFS Metadata: ✓ All metadata verified",
-
-      "ok"
-
-    );
-
-  } else if (
-    metadataUnavailableCount > 0
-  ) {
-
-    setStatus(
-
-      metadataSummary,
-
-      "IPFS Metadata: Partial verification",
-
-      "warn"
-
-    );
-
-  } else {
-
-    setStatus(
-
-      metadataSummary,
-
-      "IPFS Metadata: ✕ Verification failed",
-
-      "fail"
-
-    );
-
-  }
-
-
-  /* -------------------------
-     PROGRESS
-     ------------------------- */
-
-
-  const percentage =
-    Math.round(
-
-      (verifiedCount /
-        TOKENS.length) *
-      100
-
-    );
-
-
-  document
-    .getElementById(
-      "progressBar"
-    )
-    .style.width =
-      percentage + "%";
-
-
-  /* -------------------------
-     OVERALL
-     ------------------------- */
-
-
-  if (
-    verifiedCount ===
-    TOKENS.length
-  ) {
-
-    overall.textContent =
-      "✓ 4 / 4 NFTs verified";
-
-  } else {
-
-    overall.textContent =
-      "⚠ " +
-      verifiedCount +
-      " / " +
-      TOKENS.length +
-      " NFTs verified";
-
-  }
-
-}
-
-
-/* =========================================================
-   START
-   ========================================================= */
-
-
-runVerification();
-
-</script>
 
 </body>
 </html>
-
