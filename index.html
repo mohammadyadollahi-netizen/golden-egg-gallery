@@ -4,41 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Golden-Egg NFT Gallery</title>
+  <title>Golden-Egg — NFT Gallery</title>
 
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
       background: #0b0b0b;
       color: #eee;
-    }
-
-    a {
-      color: #d4af37;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     header {
       padding: 28px 20px;
-      border-bottom: 1px solid #252525;
+      border-bottom: 1px solid #222;
       text-align: center;
     }
 
-    header h1 {
-      margin: 0 0 8px;
+    .brand {
+      display: inline-block;
+      margin-bottom: 18px;
       color: #d4af37;
-      font-size: 34px;
-    }
-
-    header p {
-      margin: 0;
-      color: #aaa;
+      text-decoration: none;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
     }
 
     nav {
-      margin-top: 22px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -54,6 +50,7 @@
       color: #eee;
       text-decoration: none;
       transition: 0.2s ease;
+      font-size: 14px;
     }
 
     .btn:hover {
@@ -70,63 +67,102 @@
       cursor: default;
     }
 
-    .container {
-      width: min(1180px, 92%);
+    .btn.primary {
+      background: #d4af37;
+      color: #111;
+      border-color: #d4af37;
+      font-weight: bold;
+    }
+
+    .btn.primary:hover {
+      background: #e6c75a;
+      color: #111;
+    }
+
+    main {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 0 70px;
+      padding: 60px 20px 80px;
     }
 
     .hero {
       text-align: center;
-      margin-bottom: 45px;
+      margin-bottom: 60px;
     }
 
-    .hero h2 {
-      margin-bottom: 10px;
-      font-size: 30px;
+    .hero h1 {
+      margin: 0 0 16px;
+      font-size: 48px;
       color: #d4af37;
+      letter-spacing: 1px;
     }
 
     .hero p {
+      max-width: 720px;
+      margin: 0 auto 28px;
       color: #aaa;
-      max-width: 760px;
-      margin: 0 auto;
+      font-size: 17px;
       line-height: 1.7;
     }
 
-    .hero-actions {
-      margin-top: 24px;
+    .collection-info {
       display: flex;
       justify-content: center;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
     }
 
-    .btn.primary {
-      border-color: #d4af37;
-      color: #d4af37;
+    .info {
+      padding: 10px 15px;
+      border: 1px solid #292929;
+      border-radius: 8px;
+      background: #111;
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    .info strong {
+      color: #eee;
+    }
+
+    .section-title {
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .section-title h2 {
+      margin: 0 0 8px;
+      color: #fff;
+      font-size: 30px;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: #888;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 24px;
     }
 
     .card {
+      overflow: hidden;
       background: #111;
       border: 1px solid #292929;
       border-radius: 14px;
-      overflow: hidden;
-      transition: 0.2s ease;
+      transition: 0.25s ease;
     }
 
     .card:hover {
+      transform: translateY(-4px);
       border-color: #d4af37;
-      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
     }
 
-    .card img {
+    .card-image {
       width: 100%;
       aspect-ratio: 1 / 1;
       object-fit: cover;
@@ -139,90 +175,84 @@
     }
 
     .card h3 {
-      margin-top: 0;
+      margin: 0 0 10px;
       color: #d4af37;
+      font-size: 21px;
     }
 
-    .description {
-      color: #aaa;
-      line-height: 1.7;
+    .card p {
+      margin: 6px 0;
+      color: #999;
       font-size: 14px;
-      margin-bottom: 18px;
+      line-height: 1.5;
     }
 
-    .card-links {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
+    .card p strong {
+      color: #ccc;
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 14px;
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .card-link:hover {
+      text-decoration: underline;
     }
 
     .collection-preview {
-      margin-top: 55px;
-      background: #101010;
+      margin-top: 70px;
+      padding: 35px 25px;
+      text-align: center;
       border: 1px solid #292929;
       border-radius: 14px;
-      padding: 28px;
-      text-align: center;
+      background: #101010;
     }
 
     .collection-preview h2 {
+      margin: 0 0 12px;
       color: #d4af37;
-      margin-top: 0;
     }
 
     .collection-preview p {
       max-width: 700px;
-      margin: 0 auto 22px;
-      color: #aaa;
+      margin: 0 auto 25px;
+      color: #999;
       line-height: 1.7;
     }
 
-    .collection-stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-
-    .stat {
-      background: #151515;
-      border: 1px solid #333;
-      border-radius: 10px;
-      padding: 16px;
-    }
-
-    .stat strong {
-      display: block;
-      color: #d4af37;
-      font-size: 22px;
-      margin-bottom: 4px;
-    }
-
-    .stat span {
-      color: #999;
-      font-size: 13px;
-    }
-
     footer {
-      border-top: 1px solid #252525;
-      padding: 25px 20px;
+      padding: 30px 20px;
+      border-top: 1px solid #222;
       text-align: center;
-      color: #777;
+      color: #666;
       font-size: 13px;
     }
 
     footer a {
-      color: #d4af37;
+      color: #888;
       text-decoration: none;
     }
 
+    footer a:hover {
+      color: #d4af37;
+    }
+
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 28px;
+      .hero h1 {
+        font-size: 38px;
       }
 
-      .container {
-        width: 94%;
+      main {
+        padding-top: 40px;
+      }
+
+      .btn {
+        padding: 10px 14px;
       }
     }
   </style>
@@ -230,265 +260,213 @@
 
 <body>
 
-<header>
+  <header>
+    <a class="brand" href="index.html">Golden-Egg</a>
 
-  <h1>Golden-Egg</h1>
-  <p>ERC-721 Digital Art Collection</p>
+    <nav>
+      <span class="btn current" aria-current="page">Gallery</span>
+      <a class="btn" href="collection.html">Collection</a>
+      <a class="btn" href="about.html">About</a>
+      <a
+        class="btn"
+        href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
+    </nav>
+  </header>
 
-  <nav>
+  <main>
 
-    <span class="btn current" aria-current="page">
-      Gallery
-    </span>
+    <section class="hero">
+      <h1>Golden-Egg</h1>
 
-    <a class="btn" href="collection.html">
-      Collection
-    </a>
+      <p>
+        A digital art collection built as an ERC-721 NFT project
+        on the Ethereum Sepolia Testnet.
+      </p>
 
-    <a class="btn" href="about.html">
-      About
-    </a>
+      <div class="collection-info">
+        <div class="info">
+          <strong>Collection:</strong> Golden-Egg
+        </div>
 
-    <a
-      class="btn"
-      href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
-      target="_blank"
-      rel="noopener noreferrer">
-      GitHub
-    </a>
+        <div class="info">
+          <strong>Standard:</strong> ERC-721
+        </div>
 
-  </nav>
+        <div class="info">
+          <strong>Network:</strong> Ethereum Sepolia
+        </div>
 
-</header>
+        <div class="info">
+          <strong>Minted:</strong> 4 NFTs
+        </div>
+      </div>
+    </section>
 
+    <section>
+      <div class="section-title">
+        <h2>Gallery</h2>
+        <p>Explore the Golden-Egg digital artworks.</p>
+      </div>
 
-<main class="container">
+      <div class="gallery">
 
-  <section class="hero">
+        <!-- Golden-Egg #1 -->
+        <article class="card">
+          <img
+            class="card-image"
+            src="golden-egg-1.png"
+            alt="Golden-Egg #1"
+          >
 
-    <h2>Golden-Egg NFT Gallery</h2>
+          <div class="card-content">
+            <h3>Golden-Egg #1</h3>
 
-    <p>
-      A small ERC-721 digital art collection created and documented
-      on the Ethereum Sepolia Testnet.
-    </p>
+            <p>
+              <strong>Token:</strong> #1
+            </p>
 
-    <div class="hero-actions">
+            <p>
+              <strong>Standard:</strong> ERC-721
+            </p>
+
+            <p>
+              <strong>Network:</strong> Ethereum Sepolia
+            </p>
+
+            <a class="card-link" href="golden-egg-1.html">
+              View NFT Details →
+            </a>
+          </div>
+        </article>
+
+        <!-- Golden-Egg #2 -->
+        <article class="card">
+          <img
+            class="card-image"
+            src="golden-egg-2.png"
+            alt="Golden-Egg #2"
+          >
+
+          <div class="card-content">
+            <h3>Golden-Egg #2</h3>
+
+            <p>
+              <strong>Token:</strong> #2
+            </p>
+
+            <p>
+              <strong>Standard:</strong> ERC-721
+            </p>
+
+            <p>
+              <strong>Network:</strong> Ethereum Sepolia
+            </p>
+
+            <a class="card-link" href="golden-egg-2.html">
+              View NFT Details →
+            </a>
+          </div>
+        </article>
+
+        <!-- Golden-Egg #3 -->
+        <article class="card">
+          <img
+            class="card-image"
+            src="golden-egg-3.png"
+            alt="Golden-Egg #3"
+          >
+
+          <div class="card-content">
+            <h3>Golden-Egg #3</h3>
+
+            <p>
+              <strong>Token:</strong> #3
+            </p>
+
+            <p>
+              <strong>Standard:</strong> ERC-721
+            </p>
+
+            <p>
+              <strong>Network:</strong> Ethereum Sepolia
+            </p>
+
+            <a class="card-link" href="golden-egg-3.html">
+              View NFT Details →
+            </a>
+          </div>
+        </article>
+
+        <!-- Golden-Egg #4 -->
+        <article class="card">
+          <img
+            class="card-image"
+            src="golden-egg-4.png"
+            alt="Golden-Egg #4"
+          >
+
+          <div class="card-content">
+            <h3>Golden-Egg #4</h3>
+
+            <p>
+              <strong>Token:</strong> #4
+            </p>
+
+            <p>
+              <strong>Standard:</strong> ERC-721
+            </p>
+
+            <p>
+              <strong>Network:</strong> Ethereum Sepolia
+            </p>
+
+            <a class="card-link" href="golden-egg-4.html">
+              View NFT Details →
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="collection-preview">
+
+      <h2>Golden-Egg Collection</h2>
+
+      <p>
+        View the complete collection, smart contract information,
+        token ownership, Token URI records, and live blockchain
+        verification.
+      </p>
 
       <a class="btn primary" href="collection.html">
         View Collection &amp; Verify
       </a>
 
-      <a class="btn" href="about.html">
-        About the Project
-      </a>
+    </section>
 
-    </div>
+  </main>
 
-  </section>
-
-
-  <section class="gallery">
-
-    <!-- TOKEN #1 -->
-
-    <article class="card">
-
-      <img
-        src="golden-egg-1.png"
-        alt="Golden-Egg #1">
-
-      <div class="card-content">
-
-        <h3>Golden-Egg #1</h3>
-
-        <p class="description">
-          The first artwork in the Golden-Egg ERC-721 collection.
-        </p>
-
-        <div class="card-links">
-
-          <a class="btn" href="golden-egg-1.html">
-            View NFT
-          </a>
-
-          <a
-            class="btn"
-            href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=1"
-            target="_blank"
-            rel="noopener noreferrer">
-            Etherscan
-          </a>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- TOKEN #2 -->
-
-    <article class="card">
-
-      <img
-        src="golden-egg-2.png"
-        alt="Golden-Egg #2">
-
-      <div class="card-content">
-
-        <h3>Golden-Egg #2</h3>
-
-        <p class="description">
-          The second artwork in the Golden-Egg ERC-721 collection.
-        </p>
-
-        <div class="card-links">
-
-          <a class="btn" href="golden-egg-2.html">
-            View NFT
-          </a>
-
-          <a
-            class="btn"
-            href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=2"
-            target="_blank"
-            rel="noopener noreferrer">
-            Etherscan
-          </a>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- TOKEN #3 -->
-
-    <article class="card">
-
-      <img
-        src="golden-egg-3.png"
-        alt="Golden-Egg #3">
-
-      <div class="card-content">
-
-        <h3>Golden-Egg #3</h3>
-
-        <p class="description">
-          The third artwork in the Golden-Egg ERC-721 collection.
-        </p>
-
-        <div class="card-links">
-
-          <a class="btn" href="golden-egg-3.html">
-            View NFT
-          </a>
-
-          <a
-            class="btn"
-            href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=3"
-            target="_blank"
-            rel="noopener noreferrer">
-            Etherscan
-          </a>
-
-        </div>
-
-      </div>
-
-    </article>
-
-
-    <!-- TOKEN #4 -->
-
-    <article class="card">
-
-      <img
-        src="golden-egg-4.png"
-        alt="Golden-Egg #4">
-
-      <div class="card-content">
-
-        <h3>Golden-Egg #4</h3>
-
-        <p class="description">
-          The fourth artwork in the Golden-Egg ERC-721 collection.
-        </p>
-
-        <div class="card-links">
-
-          <a class="btn" href="golden-egg-4.html">
-            View NFT
-          </a>
-
-          <a
-            class="btn"
-            href="https://sepolia.etherscan.io/token/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167?a=4"
-            target="_blank"
-            rel="noopener noreferrer">
-            Etherscan
-          </a>
-
-        </div>
-
-      </div>
-
-    </article>
-
-  </section>
-
-
-  <section class="collection-preview">
-
-    <h2>Golden-Egg Collection</h2>
-
+  <footer>
     <p>
-      Four ERC-721 artworks are currently minted on Ethereum Sepolia.
-      Visit the Collection page for blockchain details, Token URIs,
-      metadata references, ownership information, and Live Verification.
+      Golden-Egg NFT Collection · Ethereum Sepolia Testnet
     </p>
 
-    <div class="collection-stats">
-
-      <div class="stat">
-        <strong>4 / 4</strong>
-        <span>NFTs Minted</span>
-      </div>
-
-      <div class="stat">
-        <strong>ERC-721</strong>
-        <span>Token Standard</span>
-      </div>
-
-      <div class="stat">
-        <strong>Sepolia</strong>
-        <span>Network</span>
-      </div>
-
-      <div class="stat">
-        <strong>GEGG</strong>
-        <span>Collection Symbol</span>
-      </div>
-
-    </div>
-
-    <a class="btn primary" href="collection.html">
-      View Collection &amp; Live Verification
-    </a>
-
-  </section>
-
-</main>
-
-
-<footer>
-
-  Golden-Egg · ERC-721 · Ethereum Sepolia Testnet
-
-</footer>
+    <p>
+      <a
+        href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub Repository
+      </a>
+    </p>
+  </footer>
 
 </body>
 </html>
-
