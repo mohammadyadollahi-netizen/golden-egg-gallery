@@ -22,36 +22,29 @@
     header {
       border-bottom: 1px solid #222;
       background: #0d0d0d;
-    }
-
-    nav {
-      max-width: 1100px;
-      margin: auto;
-      padding: 18px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
+      padding: 22px 20px;
+      text-align: center;
     }
 
     .brand {
       color: #d4af37;
       text-decoration: none;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: bold;
       letter-spacing: 1px;
     }
 
-    .nav-links {
+    nav {
+      margin-top: 18px;
       display: flex;
+      justify-content: center;
       gap: 10px;
       flex-wrap: wrap;
     }
 
     .btn {
       display: inline-block;
-      padding: 10px 16px;
+      padding: 11px 18px;
       border: 1px solid #444;
       border-radius: 8px;
       background: #151515;
@@ -70,63 +63,59 @@
       color: #d4af37;
       border-color: #d4af37;
       font-weight: bold;
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.18);
+      box-shadow: 0 0 15px rgba(212,175,55,.18);
       cursor: default;
     }
 
-    main {
+    .wrap {
       max-width: 1100px;
       margin: auto;
-      padding: 50px 20px 80px;
+      padding: 0 20px;
+    }
+
+    main {
+      padding: 55px 0 80px;
     }
 
     .hero {
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 45px;
     }
 
     .hero h1 {
-      margin-bottom: 10px;
       color: #d4af37;
       font-size: 42px;
+      margin: 10px 0;
     }
 
     .hero p {
-      max-width: 720px;
+      max-width: 760px;
       margin: auto;
       color: #aaa;
-      font-size: 17px;
     }
 
     .status {
       display: inline-block;
-      margin-top: 20px;
-      padding: 8px 14px;
+      margin-top: 18px;
+      padding: 8px 15px;
       border: 1px solid #444;
       border-radius: 20px;
       color: #d4af37;
       background: #111;
-      font-size: 14px;
     }
 
     h2 {
-      margin-top: 55px;
-      margin-bottom: 22px;
       color: #d4af37;
       border-bottom: 1px solid #292929;
       padding-bottom: 10px;
+      margin-top: 50px;
     }
 
-    .contract-box {
+    .box {
       background: #111;
       border: 1px solid #292929;
       border-radius: 12px;
       padding: 22px;
-      overflow-wrap: anywhere;
-    }
-
-    .contract-box p {
-      margin: 8px 0;
     }
 
     .label {
@@ -135,11 +124,12 @@
 
     .value {
       color: #eee;
+      overflow-wrap: anywhere;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
       gap: 20px;
     }
 
@@ -148,12 +138,6 @@
       border: 1px solid #292929;
       border-radius: 12px;
       padding: 20px;
-      transition: 0.2s ease;
-    }
-
-    .card:hover {
-      border-color: #555;
-      transform: translateY(-2px);
     }
 
     .card h3 {
@@ -161,52 +145,36 @@
       margin-top: 0;
     }
 
-    .card p {
-      color: #aaa;
-      font-size: 14px;
-      overflow-wrap: anywhere;
-    }
-
-    .card a {
-      color: #d4af37;
-      text-decoration: none;
-    }
-
-    .card a:hover {
-      text-decoration: underline;
-    }
-
     .verification {
-      margin-top: 30px;
+      margin-top: 25px;
       background: #0f0f0f;
       border: 1px solid #292929;
       border-radius: 12px;
       padding: 24px;
     }
 
-    .verification-summary {
+    .summary {
       padding: 18px;
       background: #151515;
+      border: 1px solid #292929;
       border-radius: 10px;
       margin-bottom: 20px;
-      border: 1px solid #292929;
     }
 
-    .verification-summary strong {
+    .summary strong {
       color: #d4af37;
       font-size: 20px;
     }
 
     .check {
-      margin: 6px 0;
+      margin: 8px 0;
       padding: 10px 12px;
       background: #151515;
       border-radius: 8px;
       border: 1px solid #252525;
-      overflow-wrap: anywhere;
     }
 
-    .ok {
+    .good {
       color: #7ee787;
     }
 
@@ -214,44 +182,40 @@
       color: #e3b341;
     }
 
-    .muted {
-      color: #999;
-    }
-
-    .token-verification {
-      margin-top: 16px;
+    .token {
+      margin-top: 18px;
       padding: 18px;
       background: #111;
       border: 1px solid #292929;
       border-radius: 10px;
     }
 
-    .token-verification h3 {
-      margin-top: 0;
+    .token h3 {
       color: #d4af37;
+      margin-top: 0;
     }
 
     .cid {
-      font-family: monospace;
-      font-size: 13px;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 12px;
       color: #bbb;
       word-break: break-all;
     }
 
     .note {
-      margin-top: 20px;
-      padding: 16px;
+      margin-top: 15px;
+      padding: 15px;
       border-left: 3px solid #d4af37;
-      background: #151515;
+      background: #17140b;
       color: #aaa;
     }
 
     footer {
       border-top: 1px solid #222;
       text-align: center;
-      padding: 30px 20px;
+      padding: 28px 20px;
       color: #777;
-      font-size: 14px;
+      font-size: 13px;
     }
 
     footer a {
@@ -259,18 +223,9 @@
       text-decoration: none;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width:600px) {
       .hero h1 {
         font-size: 32px;
-      }
-
-      nav {
-        justify-content: center;
-      }
-
-      .brand {
-        width: 100%;
-        text-align: center;
       }
     }
   </style>
@@ -279,35 +234,62 @@
 <body>
 
 <header>
-  <nav>
-    <a class="brand" href="index.html">Golden-Egg</a>
 
-    <div class="nav-links">
-      <a class="btn" href="index.html">Gallery</a>
-      <span class="btn current" aria-current="page">Collection</span>
-      <a class="btn" href="about.html">About</a>
-    </div>
+  <a class="brand" href="index.html">
+    Golden-Egg
+  </a>
+
+  <nav>
+
+    <a class="btn" href="index.html">
+      Gallery
+    </a>
+
+    <span class="btn current" aria-current="page">
+      Collection
+    </span>
+
+    <a class="btn" href="about.html">
+      About
+    </a>
+
+    <a
+      class="btn"
+      href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
+      target="_blank"
+      rel="noopener noreferrer">
+      GitHub
+    </a>
+
   </nav>
+
 </header>
+
 
 <main>
 
+<div class="wrap">
+
   <section class="hero">
+
     <h1>Golden-Egg Collection</h1>
 
     <p>
-      A small ERC-721 digital art collection created and documented
-      on Ethereum Sepolia Testnet.
+      A four-piece ERC-721 digital art collection created and
+      documented on Ethereum Sepolia Testnet.
     </p>
 
     <div class="status">
       4 / 4 NFTs Minted
     </div>
+
   </section>
+
 
   <h2>Collection Overview</h2>
 
-  <div class="contract-box">
+  <div class="box">
+
     <p>
       <span class="label">Collection:</span>
       <span class="value">Golden-Egg</span>
@@ -341,7 +323,9 @@
         0x71C508b0B799D5941B91DA7966029C53c1d6F692
       </span>
     </p>
+
   </div>
+
 
   <h2>NFTs</h2>
 
@@ -350,53 +334,58 @@
     <div class="card">
       <h3>Golden-Egg #1</h3>
       <p>Token ID: 1</p>
-      <p>ERC-721 · Ethereum Sepolia</p>
-      <a href="golden-egg-1.html">View NFT →</a>
+      <a class="btn" href="golden-egg-1.html">
+        View NFT
+      </a>
     </div>
 
     <div class="card">
       <h3>Golden-Egg #2</h3>
       <p>Token ID: 2</p>
-      <p>ERC-721 · Ethereum Sepolia</p>
-      <a href="golden-egg-2.html">View NFT →</a>
+      <a class="btn" href="golden-egg-2.html">
+        View NFT
+      </a>
     </div>
 
     <div class="card">
       <h3>Golden-Egg #3</h3>
       <p>Token ID: 3</p>
-      <p>ERC-721 · Ethereum Sepolia</p>
-      <a href="golden-egg-3.html">View NFT →</a>
+      <a class="btn" href="golden-egg-3.html">
+        View NFT
+      </a>
     </div>
 
     <div class="card">
       <h3>Golden-Egg #4</h3>
       <p>Token ID: 4</p>
-      <p>ERC-721 · Ethereum Sepolia</p>
-      <a href="golden-egg-4.html">View NFT →</a>
+      <a class="btn" href="golden-egg-4.html">
+        View NFT
+      </a>
     </div>
 
   </div>
+
 
   <h2>Live Verification</h2>
 
   <section class="verification">
 
-    <div class="verification-summary">
+    <div class="summary">
       <strong>✓ 4 / 4 NFTs verified on-chain</strong>
 
-      <p class="muted">
+      <p>
         Live verification against Ethereum Sepolia.
       </p>
     </div>
 
     <div class="check">
-      <span class="ok">✓</span>
+      <span class="good">✓</span>
       <strong>Network:</strong>
       Ethereum Sepolia
     </div>
 
     <div class="check">
-      <span class="ok">✓</span>
+      <span class="good">✓</span>
       <strong>Smart Contract:</strong>
       Contract found
     </div>
@@ -407,29 +396,29 @@
       Interface check unavailable; token methods verified
     </div>
 
-    <!-- TOKEN #1 -->
 
-    <div class="token-verification">
+    <div class="token">
+
       <h3>Token #1</h3>
 
       <div class="check">
-        <span class="ok">✓</span>
+        <span class="good">✓</span>
         Token verified on-chain
       </div>
 
       <div class="check">
-        <span class="ok">✓</span>
-        Owner: Correct
+        Owner:
+        <span class="good">✓ Correct</span>
       </div>
 
       <div class="check">
-        <span class="ok">✓</span>
-        Token URI: Correct
+        Token URI:
+        <span class="good">✓ Correct</span>
       </div>
 
       <div class="check">
-        <span class="ok">✓</span>
-        Metadata: Image CID correct
+        Metadata:
+        <span class="good">✓ Image CID correct</span>
       </div>
 
       <p>
@@ -446,36 +435,35 @@
         </span>
       </p>
 
-      <a
-        class="btn"
-        href="golden-egg-1.html">
+      <a class="btn" href="golden-egg-1.html">
         View Token #1
       </a>
+
     </div>
 
-    <!-- TOKEN #2 -->
 
-    <div class="token-verification">
+    <div class="token">
+
       <h3>Token #2</h3>
 
       <div class="check">
-        <span class="ok">✓</span>
+        <span class="good">✓</span>
         Token verified on-chain
       </div>
 
       <div class="check">
-        <span class="ok">✓</span>
-        Owner: Correct
+        Owner:
+        <span class="good">✓ Correct</span>
       </div>
 
       <div class="check">
-        <span class="ok">✓</span>
-        Token URI: Correct
+        Token URI:
+        <span class="good">✓ Correct</span>
       </div>
 
       <div class="check">
-        <span class="ok">✓</span>
-        Metadata: Image CID correct
+        Metadata:
+        <span class="good">✓ Image CID correct</span>
       </div>
 
       <p>
@@ -492,16 +480,15 @@
         </span>
       </p>
 
-      <a
-        class="btn"
-        href="golden-egg-2.html">
+      <a class="btn" href="golden-egg-2.html">
         View Token #2
       </a>
+
     </div>
 
-    <!-- TOKEN #3 -->
 
-    <div class="token-verification">
+    <div class="token">
+
       <h3>Token #3</h3>
 
       <div class="check">
@@ -510,18 +497,18 @@
       </div>
 
       <div class="check">
-        <span class="ok">✓</span>
-        Owner: Correct
+        Owner:
+        <span class="good">✓ Correct</span>
       </div>
 
       <div class="check">
-        <span class="ok">✓</span>
-        Token URI: Correct
+        Token URI:
+        <span class="good">✓ Correct</span>
       </div>
 
       <div class="check">
-        <span class="warn">⚠</span>
-        Metadata: Gateway availability limited
+        Metadata:
+        <span class="warn">⚠ Gateway availability limited</span>
       </div>
 
       <p>
@@ -539,40 +526,40 @@
       </p>
 
       <div class="note">
-        The on-chain Token URI is treated as the authoritative metadata
-        reference for Token #3. IPFS gateway availability may vary.
+        The on-chain Token URI is treated as the authoritative
+        metadata reference for Token #3. IPFS gateway availability
+        may vary.
       </div>
 
-      <a
-        class="btn"
-        href="golden-egg-3.html">
+      <a class="btn" href="golden-egg-3.html">
         View Token #3
       </a>
+
     </div>
 
-    <!-- TOKEN #4 -->
 
-    <div class="token-verification">
+    <div class="token">
+
       <h3>Token #4</h3>
 
       <div class="check">
-        <span class="ok">✓</span>
+        <span class="good">✓</span>
         Token verified on-chain
       </div>
 
       <div class="check">
-        <span class="ok">✓</span>
-        Owner: Correct
+        Owner:
+        <span class="good">✓ Correct</span>
       </div>
 
       <div class="check">
-        <span class="ok">✓</span>
-        Token URI: Correct
+        Token URI:
+        <span class="good">✓ Correct</span>
       </div>
 
       <div class="check">
-        <span class="warn">⚠</span>
-        Metadata: Gateway availability limited
+        Metadata:
+        <span class="warn">⚠ Gateway availability limited</span>
       </div>
 
       <p>
@@ -589,55 +576,51 @@
         </span>
       </p>
 
-      <a
-        class="btn"
-        href="golden-egg-4.html">
+      <a class="btn" href="golden-egg-4.html">
         View Token #4
       </a>
+
     </div>
 
+
     <div class="note">
+
       <strong>IPFS Metadata:</strong>
-      Partial verification. Blockchain ownership and Token URI records
-      remain the authoritative on-chain references. Temporary gateway
-      failures do not change the blockchain record.
+      Partial verification. Blockchain ownership and Token URI
+      records remain the authoritative on-chain references.
+      Temporary gateway failures do not change the blockchain record.
+
     </div>
 
   </section>
 
+
   <h2>Contract Explorer</h2>
 
-  <div class="contract-box">
+  <div class="box">
 
     <p>
-      The smart contract source code is verified on the Sepolia block
-      explorer.
+      The smart contract source code is verified on the
+      Sepolia block explorer.
     </p>
 
-    <p>
-      <a
-        class="btn"
-        href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167#code"
-        target="_blank"
-        rel="noopener noreferrer">
-        View Verified Contract
-      </a>
-    </p>
+    <a
+      class="btn"
+      href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167#code"
+      target="_blank"
+      rel="noopener noreferrer">
+      View Verified Contract
+    </a>
 
   </div>
 
+</div>
+
 </main>
 
-<footer>
-  <p>
-    Golden-Egg · ERC-721 · Ethereum Sepolia Testnet
-  </p>
 
-  <p>
-    <a href="index.html">Gallery</a>
-    ·
-    <a href="about.html">About</a>
-  </p>
+<footer>
+  Golden-Egg · ERC-721 · Ethereum Sepolia Testnet
 </footer>
 
 </body>
