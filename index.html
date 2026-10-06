@@ -2,13 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Golden-Egg — NFT Gallery</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Golden-Egg is a digital art collection built as an ERC-721 NFT project on the Ethereum Sepolia Testnet."
+  >
+
+  <meta
+    name="keywords"
+    content="Golden-Egg, NFT, digital art, ERC-721, Ethereum, IPFS, blockchain"
+  >
+
+  <meta name="author" content="Golden-Egg">
+
+  <meta name="theme-color" content="#0b0b0b">
+
+  <link
+    rel="canonical"
+    href="https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/"
+  >
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Golden-Egg — Digital Art Collection">
+  <meta
+    property="og:description"
+    content="Explore the Golden-Egg digital art collection. ERC-721 NFTs on Ethereum Sepolia with IPFS-based metadata."
+  >
+  <meta
+    property="og:url"
+    content="https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/"
+  >
+  <meta
+    property="og:image"
+    content="https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/golden-egg-1.png"
+  >
+  <meta property="og:image:alt" content="Golden-Egg digital artwork">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta
+    name="twitter:title"
+    content="Golden-Egg — Digital Art Collection"
+  >
+  <meta
+    name="twitter:description"
+    content="Explore Golden-Egg, an ERC-721 digital art collection on Ethereum Sepolia."
+  >
+  <meta
+    name="twitter:image"
+    content="https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/golden-egg-1.png"
+  >
+
+  <title>Golden-Egg — Digital Art Collection</title>
 
   <style>
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -16,6 +75,7 @@
       background: #0b0b0b;
       color: #eee;
       font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
     }
 
     header {
@@ -32,6 +92,10 @@
       font-size: 28px;
       font-weight: bold;
       letter-spacing: 1px;
+    }
+
+    .brand:hover {
+      color: #e6c75a;
     }
 
     nav {
@@ -144,7 +208,10 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(240px, 1fr)
+      );
       gap: 24px;
     }
 
@@ -261,12 +328,37 @@
 <body>
 
   <header>
-    <a class="brand" href="index.html">Golden-Egg</a>
+    <a
+      class="brand"
+      href="index.html"
+      aria-label="Golden-Egg home"
+    >
+      Golden-Egg
+    </a>
 
-    <nav>
-      <span class="btn current" aria-current="page">Gallery</span>
-      <a class="btn" href="collection.html">Collection</a>
-      <a class="btn" href="about.html">About</a>
+    <nav aria-label="Main navigation">
+
+      <span
+        class="btn current"
+        aria-current="page"
+      >
+        Gallery
+      </span>
+
+      <a
+        class="btn"
+        href="collection.html"
+      >
+        Collection
+      </a>
+
+      <a
+        class="btn"
+        href="about.html"
+      >
+        About
+      </a>
+
       <a
         class="btn"
         href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
@@ -275,20 +367,24 @@
       >
         GitHub
       </a>
+
     </nav>
   </header>
 
   <main>
 
     <section class="hero">
+
       <h1>Golden-Egg</h1>
 
       <p>
         A digital art collection built as an ERC-721 NFT project
-        on the Ethereum Sepolia Testnet.
+        on the Ethereum Sepolia Testnet, with IPFS-based metadata
+        and blockchain-verifiable records.
       </p>
 
       <div class="collection-info">
+
         <div class="info">
           <strong>Collection:</strong> Golden-Egg
         </div>
@@ -304,26 +400,40 @@
         <div class="info">
           <strong>Minted:</strong> 4 NFTs
         </div>
+
       </div>
+
     </section>
 
-    <section>
+    <section aria-labelledby="gallery-title">
+
       <div class="section-title">
-        <h2>Gallery</h2>
-        <p>Explore the Golden-Egg digital artworks.</p>
+
+        <h2 id="gallery-title">
+          Gallery
+        </h2>
+
+        <p>
+          Explore the Golden-Egg digital artworks.
+        </p>
+
       </div>
 
       <div class="gallery">
 
         <!-- Golden-Egg #1 -->
+
         <article class="card">
+
           <img
             class="card-image"
             src="golden-egg-1.png"
-            alt="Golden-Egg #1"
+            alt="Golden-Egg #1 digital artwork"
+            loading="lazy"
           >
 
           <div class="card-content">
+
             <h3>Golden-Egg #1</h3>
 
             <p>
@@ -338,21 +448,31 @@
               <strong>Network:</strong> Ethereum Sepolia
             </p>
 
-            <a class="card-link" href="golden-egg-1.html">
+            <a
+              class="card-link"
+              href="golden-egg-1.html"
+              aria-label="View Golden-Egg #1 details"
+            >
               View NFT Details →
             </a>
+
           </div>
+
         </article>
 
         <!-- Golden-Egg #2 -->
+
         <article class="card">
+
           <img
             class="card-image"
             src="golden-egg-2.png"
-            alt="Golden-Egg #2"
+            alt="Golden-Egg #2 digital artwork"
+            loading="lazy"
           >
 
           <div class="card-content">
+
             <h3>Golden-Egg #2</h3>
 
             <p>
@@ -367,21 +487,31 @@
               <strong>Network:</strong> Ethereum Sepolia
             </p>
 
-            <a class="card-link" href="golden-egg-2.html">
+            <a
+              class="card-link"
+              href="golden-egg-2.html"
+              aria-label="View Golden-Egg #2 details"
+            >
               View NFT Details →
             </a>
+
           </div>
+
         </article>
 
         <!-- Golden-Egg #3 -->
+
         <article class="card">
+
           <img
             class="card-image"
             src="golden-egg-3.png"
-            alt="Golden-Egg #3"
+            alt="Golden-Egg #3 digital artwork"
+            loading="lazy"
           >
 
           <div class="card-content">
+
             <h3>Golden-Egg #3</h3>
 
             <p>
@@ -396,21 +526,31 @@
               <strong>Network:</strong> Ethereum Sepolia
             </p>
 
-            <a class="card-link" href="golden-egg-3.html">
+            <a
+              class="card-link"
+              href="golden-egg-3.html"
+              aria-label="View Golden-Egg #3 details"
+            >
               View NFT Details →
             </a>
+
           </div>
+
         </article>
 
         <!-- Golden-Egg #4 -->
+
         <article class="card">
+
           <img
             class="card-image"
             src="golden-egg-4.png"
-            alt="Golden-Egg #4"
+            alt="Golden-Egg #4 digital artwork"
+            loading="lazy"
           >
 
           <div class="card-content">
+
             <h3>Golden-Egg #4</h3>
 
             <p>
@@ -425,18 +565,30 @@
               <strong>Network:</strong> Ethereum Sepolia
             </p>
 
-            <a class="card-link" href="golden-egg-4.html">
+            <a
+              class="card-link"
+              href="golden-egg-4.html"
+              aria-label="View Golden-Egg #4 details"
+            >
               View NFT Details →
             </a>
+
           </div>
+
         </article>
 
       </div>
+
     </section>
 
-    <section class="collection-preview">
+    <section
+      class="collection-preview"
+      aria-labelledby="collection-title"
+    >
 
-      <h2>Golden-Egg Collection</h2>
+      <h2 id="collection-title">
+        Golden-Egg Collection
+      </h2>
 
       <p>
         View the complete collection, smart contract information,
@@ -444,7 +596,10 @@
         verification.
       </p>
 
-      <a class="btn primary" href="collection.html">
+      <a
+        class="btn primary"
+        href="collection.html"
+      >
         View Collection &amp; Verify
       </a>
 
@@ -453,6 +608,7 @@
   </main>
 
   <footer>
+
     <p>
       Golden-Egg NFT Collection · Ethereum Sepolia Testnet
     </p>
@@ -466,7 +622,9 @@
         GitHub Repository
       </a>
     </p>
+
   </footer>
 
 </body>
 </html>
+
