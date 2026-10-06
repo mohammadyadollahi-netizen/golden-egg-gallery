@@ -2,13 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Golden-Egg Collection</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Explore the Golden-Egg ERC-721 NFT collection on Ethereum Sepolia, including token records, ownership, Token URIs, IPFS metadata, and verified contract information."
+  >
+
+  <meta
+    name="keywords"
+    content="Golden-Egg, NFT Collection, ERC-721, Ethereum Sepolia, IPFS, digital art, blockchain"
+  >
+
+  <meta name="author" content="Golden-Egg">
+
+  <meta name="theme-color" content="#0a0a0a">
+
+  <link
+    rel="canonical"
+    href="https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/collection.html"
+  >
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+
+  <meta
+    property="og:title"
+    content="Golden-Egg Collection — ERC-721 NFT Collection"
+  >
+
+  <meta
+    property="og:description"
+    content="Explore Golden-Egg #1–#4, their blockchain records, IPFS metadata, ownership information, and verified smart contract."
+  >
+
+  <meta
+    property="og:url"
+    content="https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/collection.html"
+  >
+
+  <meta
+    property="og:image"
+    content="https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/golden-egg-1.png"
+  >
+
+  <meta
+    property="og:image:alt"
+    content="Golden-Egg digital art collection"
+  >
+
+  <!-- Twitter / X -->
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Golden-Egg Collection"
+  >
+
+  <meta
+    name="twitter:description"
+    content="ERC-721 digital art collection on Ethereum Sepolia with IPFS-based metadata."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/golden-egg-1.png"
+  >
+
+  <title>Golden-Egg Collection — ERC-721 NFT Collection</title>
 
   <style>
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -34,6 +110,10 @@
       letter-spacing: 1px;
     }
 
+    .brand:hover {
+      color: #e6c75a;
+    }
+
     nav {
       margin-top: 18px;
       display: flex;
@@ -51,6 +131,7 @@
       color: #eee;
       text-decoration: none;
       transition: 0.2s ease;
+      font-size: 14px;
     }
 
     .btn:hover {
@@ -65,6 +146,18 @@
       font-weight: bold;
       box-shadow: 0 0 15px rgba(212,175,55,.18);
       cursor: default;
+    }
+
+    .btn.primary {
+      background: #d4af37;
+      color: #111;
+      border-color: #d4af37;
+      font-weight: bold;
+    }
+
+    .btn.primary:hover {
+      background: #e6c75a;
+      color: #111;
     }
 
     .wrap {
@@ -102,6 +195,7 @@
       border-radius: 20px;
       color: #d4af37;
       background: #111;
+      font-weight: bold;
     }
 
     h2 {
@@ -129,7 +223,8 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
     }
 
@@ -223,9 +318,21 @@
       text-decoration: none;
     }
 
-    @media (max-width:600px) {
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
       .hero h1 {
         font-size: 32px;
+      }
+
+      .wrap {
+        padding: 0 15px;
+      }
+
+      .btn {
+        padding: 10px 14px;
       }
     }
   </style>
@@ -235,17 +342,24 @@
 
 <header>
 
-  <a class="brand" href="index.html">
+  <a
+    class="brand"
+    href="index.html"
+    aria-label="Golden-Egg home"
+  >
     Golden-Egg
   </a>
 
-  <nav>
+  <nav aria-label="Main navigation">
 
     <a class="btn" href="index.html">
       Gallery
     </a>
 
-    <span class="btn current" aria-current="page">
+    <span
+      class="btn current"
+      aria-current="page"
+    >
       Collection
     </span>
 
@@ -257,14 +371,14 @@
       class="btn"
       href="https://github.com/mohammadyadollahi-netizen/golden-egg-gallery"
       target="_blank"
-      rel="noopener noreferrer">
+      rel="noopener noreferrer"
+    >
       GitHub
     </a>
 
   </nav>
 
 </header>
-
 
 <main>
 
@@ -276,7 +390,7 @@
 
     <p>
       A four-piece ERC-721 digital art collection created and
-      documented on Ethereum Sepolia Testnet.
+      documented on the Ethereum Sepolia Testnet.
     </p>
 
     <div class="status">
@@ -332,70 +446,120 @@
   <div class="cards">
 
     <div class="card">
+
       <h3>Golden-Egg #1</h3>
+
       <p>Token ID: 1</p>
-      <a class="btn" href="golden-egg-1.html">
+
+      <a
+        class="btn"
+        href="golden-egg-1.html"
+      >
         View NFT
       </a>
+
     </div>
 
+
     <div class="card">
+
       <h3>Golden-Egg #2</h3>
+
       <p>Token ID: 2</p>
-      <a class="btn" href="golden-egg-2.html">
+
+      <a
+        class="btn"
+        href="golden-egg-2.html"
+      >
         View NFT
       </a>
+
     </div>
 
+
     <div class="card">
+
       <h3>Golden-Egg #3</h3>
+
       <p>Token ID: 3</p>
-      <a class="btn" href="golden-egg-3.html">
+
+      <a
+        class="btn"
+        href="golden-egg-3.html"
+      >
         View NFT
       </a>
+
     </div>
 
+
     <div class="card">
+
       <h3>Golden-Egg #4</h3>
+
       <p>Token ID: 4</p>
-      <a class="btn" href="golden-egg-4.html">
+
+      <a
+        class="btn"
+        href="golden-egg-4.html"
+      >
         View NFT
       </a>
+
     </div>
 
   </div>
 
 
-  <h2>Live Verification</h2>
+  <h2>On-Chain Verification</h2>
 
   <section class="verification">
 
     <div class="summary">
-      <strong>✓ 4 / 4 NFTs verified on-chain</strong>
+
+      <strong>
+        ✓ 4 / 4 Token records documented
+      </strong>
 
       <p>
-        Live verification against Ethereum Sepolia.
+        The collection records below reference the Ethereum
+        Sepolia blockchain and the verified smart contract.
       </p>
+
     </div>
 
+
     <div class="check">
+
       <span class="good">✓</span>
+
       <strong>Network:</strong>
       Ethereum Sepolia
+
     </div>
 
+
     <div class="check">
+
       <span class="good">✓</span>
+
       <strong>Smart Contract:</strong>
-      Contract found
+      Verified contract available on the Sepolia block explorer
+
     </div>
+
 
     <div class="check">
+
       <span class="warn">⚠</span>
-      <strong>ERC-721 Interface:</strong>
-      Interface check unavailable; token methods verified
+
+      <strong>Interface:</strong>
+      ERC-721 token methods documented for the collection
+
     </div>
 
+
+    <!-- Token #1 -->
 
     <div class="token">
 
@@ -403,7 +567,7 @@
 
       <div class="check">
         <span class="good">✓</span>
-        Token verified on-chain
+        Token record verified on-chain
       </div>
 
       <div class="check">
@@ -418,7 +582,7 @@
 
       <div class="check">
         Metadata:
-        <span class="good">✓ Image CID correct</span>
+        <span class="good">✓ IPFS reference documented</span>
       </div>
 
       <p>
@@ -435,12 +599,17 @@
         </span>
       </p>
 
-      <a class="btn" href="golden-egg-1.html">
+      <a
+        class="btn"
+        href="golden-egg-1.html"
+      >
         View Token #1
       </a>
 
     </div>
 
+
+    <!-- Token #2 -->
 
     <div class="token">
 
@@ -448,7 +617,7 @@
 
       <div class="check">
         <span class="good">✓</span>
-        Token verified on-chain
+        Token record verified on-chain
       </div>
 
       <div class="check">
@@ -463,7 +632,7 @@
 
       <div class="check">
         Metadata:
-        <span class="good">✓ Image CID correct</span>
+        <span class="good">✓ IPFS reference documented</span>
       </div>
 
       <p>
@@ -480,20 +649,25 @@
         </span>
       </p>
 
-      <a class="btn" href="golden-egg-2.html">
+      <a
+        class="btn"
+        href="golden-egg-2.html"
+      >
         View Token #2
       </a>
 
     </div>
 
 
+    <!-- Token #3 -->
+
     <div class="token">
 
       <h3>Token #3</h3>
 
       <div class="check">
-        <span class="warn">⚠</span>
-        Token verified on-chain
+        <span class="good">✓</span>
+        Token record verified on-chain
       </div>
 
       <div class="check">
@@ -508,13 +682,13 @@
 
       <div class="check">
         Metadata:
-        <span class="warn">⚠ Gateway availability limited</span>
+        <span class="warn">⚠ Gateway availability may vary</span>
       </div>
 
       <p>
         <strong>On-Chain Metadata CID:</strong><br>
         <span class="cid">
-          bafkreiev47cpkieizijczpb5ps7v3n3biave4f2onlzvoxbsdhd43uy4t3q
+          bafkreiev47cpkieizijczpb5ps7v3nbiave4f2onlzvoxbsdhd43uy4t3q
         </span>
       </p>
 
@@ -526,25 +700,32 @@
       </p>
 
       <div class="note">
-        The on-chain Token URI is treated as the authoritative
-        metadata reference for Token #3. IPFS gateway availability
-        may vary.
+
+        The on-chain Token URI is the authoritative metadata
+        reference for Token #3. IPFS gateway availability can
+        vary independently of the blockchain record.
+
       </div>
 
-      <a class="btn" href="golden-egg-3.html">
+      <a
+        class="btn"
+        href="golden-egg-3.html"
+      >
         View Token #3
       </a>
 
     </div>
 
 
+    <!-- Token #4 -->
+
     <div class="token">
 
-      <h3>Token #4</h3>
+      <h3>Golden-Egg #4</h3>
 
       <div class="check">
         <span class="good">✓</span>
-        Token verified on-chain
+        Token record verified on-chain
       </div>
 
       <div class="check">
@@ -559,7 +740,7 @@
 
       <div class="check">
         Metadata:
-        <span class="warn">⚠ Gateway availability limited</span>
+        <span class="warn">⚠ Gateway availability may vary</span>
       </div>
 
       <p>
@@ -576,7 +757,10 @@
         </span>
       </p>
 
-      <a class="btn" href="golden-egg-4.html">
+      <a
+        class="btn"
+        href="golden-egg-4.html"
+      >
         View Token #4
       </a>
 
@@ -586,9 +770,10 @@
     <div class="note">
 
       <strong>IPFS Metadata:</strong>
-      Partial verification. Blockchain ownership and Token URI
-      records remain the authoritative on-chain references.
-      Temporary gateway failures do not change the blockchain record.
+
+      IPFS gateway availability can vary between providers.
+      The blockchain Token URI remains the authoritative
+      on-chain metadata reference.
 
     </div>
 
@@ -600,15 +785,16 @@
   <div class="box">
 
     <p>
-      The smart contract source code is verified on the
-      Sepolia block explorer.
+      The Golden-Egg smart contract source code is verified
+      on the Ethereum Sepolia block explorer.
     </p>
 
     <a
-      class="btn"
+      class="btn primary"
       href="https://sepolia.etherscan.io/address/0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167#code"
       target="_blank"
-      rel="noopener noreferrer">
+      rel="noopener noreferrer"
+    >
       View Verified Contract
     </a>
 
@@ -620,7 +806,21 @@
 
 
 <footer>
-  Golden-Egg · ERC-721 · Ethereum Sepolia Testnet
+
+  <p>
+    Golden-Egg · ERC-721 · Ethereum Sepolia Testnet
+  </p>
+
+  <p>
+    <a href="index.html">
+      Gallery
+    </a>
+    ·
+    <a href="about.html">
+      About
+    </a>
+  </p>
+
 </footer>
 
 </body>
