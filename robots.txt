@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/sitemap.xml
