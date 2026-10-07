@@ -1,423 +1,214 @@
 # 🥚 Golden-Egg
 
-### A Digital Art Collection on Ethereum Sepolia
+### Digital Art · NFTs · Web3 · Blockchain Verification
 
-Golden-Egg is a digital art NFT project built using the ERC-721 standard, Ethereum Sepolia Testnet, and IPFS.
+**Golden-Egg** is a hands-on Web3 digital art project exploring the complete NFT workflow — from digital artwork and metadata creation to IPFS storage, ERC-721 smart contract minting, on-chain verification, and the development of a public NFT gallery.
 
-The project combines digital artwork, blockchain-based NFT records, decentralized metadata, and a public web gallery.
-
-> **Network:** Ethereum Sepolia Testnet
-> **Token Standard:** ERC-721
-> **Collection:** Golden-Egg
-> **Symbol:** GEGG
-> **Minted NFTs:** 4 / 4
-> **Collection Status:** Complete
+> **Current status:** 4 NFTs minted on **Ethereum Sepolia Testnet**
 
 ---
 
-# ✨ Project Overview
+## 🌐 Live Project
 
-The Golden-Egg project explores the technical process of creating and presenting NFTs using blockchain technology.
+### 🎨 Golden-Egg Gallery
 
-The project includes:
+https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/
 
-* Digital artwork
-* ERC-721 smart contract
-* Ethereum Sepolia deployment
-* IPFS artwork storage
-* IPFS metadata
-* Blockchain ownership records
-* NFT token URIs
-* Mint transactions
-* Public NFT gallery
-* Individual NFT pages
-* Technical documentation
-
-The current collection contains four minted artworks.
+Explore the collection, individual NFT pages, project information, and blockchain records through the public gallery.
 
 ---
 
-# 🖼️ Collection
+## ✨ Project Overview
 
-| NFT           | Token ID | Status   |
-| ------------- | -------: | -------- |
-| Golden-Egg #1 |      `1` | ✅ Minted |
-| Golden-Egg #2 |      `2` | ✅ Minted |
-| Golden-Egg #3 |      `3` | ✅ Minted |
-| Golden-Egg #4 |      `4` | ✅ Minted |
+Golden-Egg was created as a practical exploration of Web3 technologies and the NFT ecosystem.
 
-## Collection Progress
+The project covers the complete workflow:
 
 ```text
-4 / 4
+Digital Artwork
+      ↓
+Metadata Creation
+      ↓
+IPFS Storage
+      ↓
+ERC-721 Smart Contract
+      ↓
+NFT Minting
+      ↓
+Blockchain Verification
+      ↓
+Public Web Gallery
 ```
 
-**Collection Status:** Complete
+The goal is to understand how digital artwork can be connected to blockchain technology through decentralized metadata, smart contracts, and verifiable on-chain records.
 
 ---
 
-# 🔗 Smart Contract
+## 🥚 Collection
 
-## Contract Address
+| Token | Artwork       | Standard | Network          |
+| ----- | ------------- | -------- | ---------------- |
+| #1    | Golden-Egg #1 | ERC-721  | Ethereum Sepolia |
+| #2    | Golden-Egg #2 | ERC-721  | Ethereum Sepolia |
+| #3    | Golden-Egg #3 | ERC-721  | Ethereum Sepolia |
+| #4    | Golden-Egg #4 | ERC-721  | Ethereum Sepolia |
+
+**Total Minted:** 4 / 4
+
+---
+
+## ⛓️ Blockchain
+
+**Network:** Ethereum Sepolia Testnet
+**Token Standard:** ERC-721
+**Collection:** Golden-Egg
+**Symbol:** GEGG
+
+### Smart Contract
 
 ```text
 0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167
 ```
 
-## Network
+The contract source code is verified on the Sepolia blockchain explorer.
+
+---
+
+## 🧩 Technology Stack
+
+* **Solidity**
+* **ERC-721**
+* **Ethereum**
+* **Ethereum Sepolia Testnet**
+* **IPFS**
+* **Remix**
+* **MetaMask**
+* **GitHub Pages**
+* **HTML / CSS**
+
+---
+
+## 📦 NFT Architecture
+
+Each Golden-Egg NFT connects several components:
 
 ```text
-Ethereum Sepolia Testnet
+NFT
+├── Digital Artwork
+├── IPFS Image
+├── Metadata JSON
+├── Token URI
+├── ERC-721 Token ID
+├── Smart Contract
+└── Blockchain Transaction
 ```
 
-## Standard
-
-```text
-ERC-721
-```
-
-## Symbol
-
-```text
-GEGG
-```
-
-## Contract Owner
-
-```text
-0x71C508b0B799D5941B91DA7966029C53c1d6F692
-```
-
-The smart contract is verified on the Sepolia blockchain explorer.
-
-The current contract is a Sepolia Testnet deployment and should not be represented as an Ethereum Mainnet collection.
+The NFT metadata and image assets are associated with IPFS content identifiers (CIDs), while ownership and minting records are recorded on-chain.
 
 ---
 
-# 🧬 NFT Records
+## 🔎 Verification
 
-## Golden-Egg #1
+The public gallery provides access to:
 
-* Token ID: `1`
-* Metadata CID: `bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa`
-* Image CID: `bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q`
-* Mint Transaction:
-  `0x21c4076fc356d0aee014c1d1696da73fc54fcb3e9be5aebf0aef851ccf6bb8b3`
-
-## Golden-Egg #2
-
-* Token ID: `2`
-* Metadata CID: `bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4`
-* Image CID: `bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku`
-* Mint Transaction:
-  `0xcf29b6aee1de1efb2e6e28710c0f97c2d1781ad2543483ee047499c109c33794`
-
-## Golden-Egg #3
-
-* Token ID: `3`
-* Metadata CID: `bafkreiev47cpkieizijczpb5ps7v3nbiave4f2onlzvoxbsdhd43uy4t3q`
-* Image CID: `bafybeianohmded6d2qjqy3jrl72jlmrgvryjamme4kys6l6mnjhjpx75rq`
-* Mint Transaction:
-  `0x8e65b06da7e5672397805856f965c95443ada1d0c380cc6e31f4a1cc954b2e7b`
-
-## Golden-Egg #4
-
-* Token ID: `4`
-* Metadata CID: `bafkreidtosu2ey5ghnwzcbiu73ksedac52zw6j5ymqpriuxbk4xdbfy6xq`
-* Image CID: `bafybeiesrlomqtgsjyyfbms5wl3akirfih7kqbeqruqe5a77slqxwrx7vq`
-* Mint Transaction:
-  `0xfd77c19db022adc6ee8ddcf733205a4880d7362cdf5e726d3266261b43a0546b`
-
----
-
-# 📦 IPFS Assets
-
-Each NFT references metadata and artwork using IPFS.
-
-| NFT | Metadata CID                                                  | Image CID                                                     |
-| --- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| #1  | `bafkreickagoqhrpskvqyww4awlm66xmljibtpjeeawo3dzc6jdxz5yr2xa` | `bafybeibahee5qhjn5zh6x4xmx2lno26j3goqx2rschijikx4eig3sd5r6q` |
-| #2  | `bafkreihytiwjjsw4nr3dvgh5dyyzxw3qqs6jrbmomhxdioxrbhtblgw4t4` | `bafybeihra6q5yvnyitntkpt3gd5eynkuzjhmsqfsvcbmuopvapmyqz6dku` |
-| #3  | `bafkreiev47cpkieizijczpb5ps7v3nbiave4f2onlzvoxbsdhd43uy4t3q` | `bafybeianohmded6d2qjqy3jrl72jlmrgvryjamme4kys6l6mnjhjpx75rq` |
-| #4  | `bafkreidtosu2ey5ghnwzcbiu73ksedac52zw6j5ymqpriuxbk4xdbfy6xq` | `bafybeiesrlomqtgsjyyfbms5wl3akirfih7kqbeqruqe5a77slqxwrx7vq` |
-
-The canonical NFT references use the `ipfs://` URI format.
-
-Public HTTP gateways may be used to view IPFS content, but gateway availability can vary.
-
----
-
-# 🛠️ Technology Stack
-
-* **Blockchain:** Ethereum Sepolia
-* **NFT Standard:** ERC-721
-* **Smart Contract:** Solidity
-* **Metadata Storage:** IPFS
-* **Artwork Storage:** IPFS
-* **Frontend:** HTML / CSS / JavaScript
-* **Web Hosting:** GitHub Pages
-* **Blockchain Explorer:** Sepolia Etherscan
-* **Development Environment:** Remix
-* **Wallet:** MetaMask
-
----
-
-# 📚 Documentation
-
-Detailed technical documentation is available in the `docs/` directory.
-
-### Collection
-
-`docs/collection.md`
-
-Contains:
-
-* collection overview
-* Token #1–#4
-* ownership information
-* metadata CIDs
-* image CIDs
-* mint transactions
-* contract information
-
-### Smart Contract
-
-`docs/contract.md`
-
-Contains:
-
-* contract information
-* ERC-721 functions
-* mint function
-* token URI records
-* ownership records
-* testnet deployment information
-
-### Metadata
-
-`docs/metadata.md`
-
-Contains:
-
-* metadata architecture
-* token URIs
-* metadata CIDs
-* artwork/image CIDs
-* metadata examples
-* IPFS structure
-
-### Artwork Rights
-
-`ARTWORK-RIGHTS.md`
-
-Describes the intended rights and usage policy for the project's artwork and creative assets.
-
-### Code License
-
-`CODE-LICENSE.md`
-
-Contains the MIT License for applicable project source code.
-
----
-
-# 🌐 Public Gallery
-
-The Golden-Egg project includes a public static gallery with:
-
-* Gallery page
-* Collection page
-* About page
+* Contract information
+* Token IDs
+* Ownership information
+* Token URI / metadata references
+* IPFS CIDs
+* Mint transactions
 * Individual NFT pages
-* Blockchain references
-* IPFS references
-* Project documentation
+* Collection overview
 
-Official Gallery:
+This makes the project independently inspectable through the blockchain and public gallery.
 
+---
+
+## 🖼️ NFT Gallery
+
+### Golden-Egg #1
+
+[View NFT #1](https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/golden-egg-1.html)
+
+### Golden-Egg #2
+
+[View NFT #2](https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/golden-egg-2.html)
+
+### Golden-Egg #3
+
+[View NFT #3](https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/golden-egg-3.html)
+
+### Golden-Egg #4
+
+[View NFT #4](https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/golden-egg-4.html)
+
+---
+
+## 📚 Project Pages
+
+* [Gallery](https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/)
+* [Collection](https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/collection.html)
+* [About the Project](https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/about.html)
+
+---
+
+## 🛠️ What This Project Demonstrates
+
+Golden-Egg demonstrates practical experience with:
+
+* Creating NFT digital assets
+* Preparing NFT metadata
+* Working with IPFS CIDs
+* Understanding ERC-721
+* Deploying a smart contract
+* Minting NFTs on Ethereum
+* Verifying blockchain transactions
+* Building NFT collection pages
+* Building individual NFT pages
+* Connecting blockchain records with a public website
+* Publishing a Web3 project through GitHub Pages
+* Applying basic technical SEO to a Web3 project
+
+---
+
+## 🎯 Project Goals
+
+The current project focuses on learning and demonstrating the technical workflow behind NFTs and Web3.
+
+Future development may include:
+
+* Mainnet deployment research
+* Improved collection presentation
+* Additional digital artworks
+* Advanced smart-contract features
+* Marketplace integration research
+* Expanded Web3 portfolio development
+
+---
+
+## ⚠️ Current Network Status
+
+**Golden-Egg is currently deployed on Ethereum Sepolia Testnet.**
+
+The NFTs in this repository are **testnet assets** and should not be represented as mainnet assets or financial investments.
+
+The project is primarily intended as a **Web3 learning, experimentation, and portfolio project**.
+
+---
+
+## 📄 License
+
+The project source code and website structure are provided for educational and portfolio purposes.
+
+Individual artwork and collection assets may have separate usage rights and should not be reproduced or redistributed without permission.
+
+---
+
+## 🥚 Golden-Egg
+
+**Digital Art. Blockchain. On-Chain Verification.**
+
+Built as a hands-on exploration of NFTs and Web3 technology.
+
+🌐 **Live Gallery:**
 https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/
-
----
-
-# 📁 Project Structure
-
-```text
-golden-egg-gallery/
-│
-├── index.html
-├── collection.html
-├── about.html
-│
-├── golden-egg-1.html
-├── golden-egg-2.html
-├── golden-egg-3.html
-├── golden-egg-4.html
-│
-├── golden-egg-1.png
-├── golden-egg-2.png
-├── golden-egg-3.png
-├── golden-egg-4.png
-│
-├── README.md
-├── ARTWORK-RIGHTS.md
-├── CODE-LICENSE.md
-│
-└── docs/
-    ├── collection.md
-    ├── contract.md
-    └── metadata.md
-```
-
----
-
-# 🔍 Verification
-
-The Golden-Egg project can be independently inspected through several layers.
-
-### 1. Smart Contract
-
-The ERC-721 contract can be inspected on the Sepolia blockchain explorer.
-
-### 2. Token Ownership
-
-Each token has an associated blockchain ownership record.
-
-### 3. Token URI
-
-Each NFT has a token URI referencing its metadata.
-
-### 4. IPFS Metadata
-
-The token metadata is identified by an IPFS CID.
-
-### 5. Artwork
-
-The metadata references the corresponding artwork through an IPFS image CID.
-
-### 6. Mint Transaction
-
-Each NFT has a blockchain transaction associated with its mint operation.
-
-This creates the following verification chain:
-
-```text
-Blockchain
-    ↓
-Contract
-    ↓
-Token ID
-    ↓
-Token URI
-    ↓
-IPFS Metadata
-    ↓
-Image CID
-    ↓
-Artwork
-```
-
----
-
-# 🗺️ Project Milestones
-
-The current four-token development milestone has been completed.
-
-* [x] Create ERC-721 smart contract
-* [x] Deploy contract on Ethereum Sepolia
-* [x] Verify smart contract
-* [x] Create Golden-Egg #1
-* [x] Mint Token #1
-* [x] Create Golden-Egg #2
-* [x] Mint Token #2
-* [x] Create Golden-Egg #3
-* [x] Mint Token #3
-* [x] Create Golden-Egg #4
-* [x] Mint Token #4
-* [x] Store artwork using IPFS
-* [x] Store metadata using IPFS
-* [x] Build Gallery page
-* [x] Build Collection page
-* [x] Build About page
-* [x] Build individual NFT pages
-* [x] Add blockchain references
-* [x] Add IPFS references
-* [x] Complete project documentation
-* [x] Publish the public gallery
-
----
-
-# 📊 Current Status
-
-```text
-Golden-Egg Collection
-
-ERC-721 Contract     ✓
-Sepolia Deployment   ✓
-Contract Verification ✓
-NFT #1               ✓
-NFT #2               ✓
-NFT #3               ✓
-NFT #4               ✓
-IPFS Metadata        ✓
-IPFS Artwork         ✓
-Public Gallery       ✓
-Documentation        ✓
-```
-
-## Final Collection Status
-
-```text
-4 / 4
-COMPLETE
-```
-
----
-
-# ⚠️ Testnet Notice
-
-Golden-Egg currently operates on the Ethereum Sepolia Testnet.
-
-Sepolia is a test network intended for development, experimentation, and testing.
-
-The current Golden-Egg NFTs and smart contract should not be represented as Ethereum Mainnet assets.
-
-Any future Ethereum Mainnet deployment would be a separate production deployment with:
-
-* a new contract address
-* new deployment records
-* new transaction records
-* potentially updated metadata and collection configuration
-
----
-
-# 📄 License
-
-Applicable project source code is licensed under the MIT License.
-
-See:
-
-```text
-CODE-LICENSE.md
-```
-
-Artwork and other creative assets are subject to separate rights.
-
-See:
-
-```text
-ARTWORK-RIGHTS.md
-```
-
----
-
-# 🥚 Golden-Egg
-
-**Digital Art · ERC-721 · IPFS · Ethereum Sepolia**
-
-```text
-4 Tokens
-4 Artworks
-1 ERC-721 Contract
-1 Collection
-```
-
-**Collection Status: 4 / 4 Complete**
