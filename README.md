@@ -4,7 +4,7 @@
 
 **Golden-Egg** is a hands-on Web3 digital art project exploring the complete NFT workflow — from digital artwork and metadata creation to IPFS storage, ERC-721 smart contract minting, on-chain verification, and the development of a public NFT gallery.
 
-> **Current status:** 4 NFTs minted on **Ethereum Sepolia Testnet**
+> **Current status:** 4 featured artworks (#1–#4); 5 token IDs (0–4) minted on **Ethereum Sepolia Testnet**
 
 ---
 
@@ -46,14 +46,37 @@ The goal is to understand how digital artwork can be connected to blockchain tec
 
 ## 🥚 Collection
 
-| Token | Artwork       | Standard | Network          |
-| ----- | ------------- | -------- | ---------------- |
-| #1    | Golden-Egg #1 | ERC-721  | Ethereum Sepolia |
-| #2    | Golden-Egg #2 | ERC-721  | Ethereum Sepolia |
-| #3    | Golden-Egg #3 | ERC-721  | Ethereum Sepolia |
-| #4    | Golden-Egg #4 | ERC-721  | Ethereum Sepolia |
+Golden-Egg currently features four selected artworks, Token IDs 1–4. The original ERC-721 contract also contains a legacy Token ID 0, documented separately below.
 
-**Total Minted:** 4 / 4
+| Token ID | Artwork | Standard | Network |
+|---:|---|---|---|
+| 1 | Golden-Egg #1 | ERC-721 | Ethereum Sepolia |
+| 2 | Golden-Egg #2 | ERC-721 | Ethereum Sepolia |
+| 3 | Golden-Egg #3 | ERC-721 | Ethereum Sepolia |
+| 4 | Golden-Egg #4 | ERC-721 | Ethereum Sepolia |
+
+- **Featured artworks:** 4 (Token IDs 1–4)
+- **Minted token IDs on-chain:** 5 (Token IDs 0–4)
+
+## Legacy Token ID 0
+
+Token ID `0` was minted on the original Golden-Egg ERC-721 contract deployed on the Ethereum Sepolia Testnet.
+
+**Original Token URI**
+
+```text
+ipfs://bafkreibs54kb2i76zh77fc3iyyikk773viuehc5owqkjih47k5qllmfxwi
+```
+
+**Original Mint Transaction**
+
+[View Token ID 0 Mint Transaction on Sepolia Etherscan](https://sepolia.etherscan.io/tx/0x2a9b252d9cb1a84200411654c19e083862e515e675cb9f59cb9b13041186111d)
+
+**Metadata recovery status:** The original metadata could not be retrieved from the IPFS gateways and storage locations checked during this review. The original JSON has not been recovered, and no replacement metadata is being presented as the original.
+
+Token ID `0` remains an on-chain legacy record and is not included among the four featured artworks displayed in the gallery. The original Token URI remains recorded on the blockchain.
+
+This record documents the current investigation status. Failure to retrieve the metadata from the sources checked does not prove that no other copy exists.
 
 ---
 
