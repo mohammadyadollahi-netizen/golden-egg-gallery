@@ -212,3 +212,16 @@ Built as a hands-on exploration of NFTs and Web3 technology.
 
 🌐 **Live Gallery:**
 https://mohammadyadollahi-netizen.github.io/golden-egg-gallery/
+
+## GoldenEggEscrow — Sepolia Testnet
+
+- Network: Ethereum Sepolia
+- NFT Contract: `0x389C1Dc0Df1eE889ac9EefCE84787E83F9069167`
+- Escrow Contract: `0x615439b215e32c735725add4f9d3cf14a16803d0`
+- Fixed Test Price: 0.01 ETH
+- Supported Token IDs: 1–4
+- Source Verification: Etherscan bytecode and ABI match confirmed
+
+[View Escrow Contract and Source Code](https://sepolia.etherscan.io/address/0x615439b215e32c735725add4f9d3cf14a16803d0#code)
+
+**Note:** This deployment is on Sepolia testnet and is intended for testing and development, not production sales.
