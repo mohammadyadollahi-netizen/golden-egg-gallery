@@ -26,6 +26,36 @@ The blockchain stores the token URI reference, while the metadata and artwork ar
 
 ---
 
+---
+
+## Token ID 0 — Legacy Record
+
+Token ID `0` exists on the original Golden-Egg ERC-721 contract deployed on the Ethereum Sepolia Testnet.
+
+### On-Chain Token URI
+
+```text
+ipfs://bafkreibs54kb2i76zh77fc3iyyikk773viuehc5owqkjih47k5qllmfxwi
+```
+
+### Original Mint Transaction
+
+[View Token ID 0 Mint Transaction on Sepolia Etherscan](https://sepolia.etherscan.io/tx/0x2a9b252d9cb1a84200411654c19e083862e515e675cb9f59cb9b13041186111d)
+
+### Metadata Recovery Status
+
+The original metadata content could not be retrieved through the IPFS gateways and storage locations checked during this review.
+
+The Token URI remains recorded on-chain. The original metadata JSON has not been recovered, and no replacement metadata has been created or presented as the original.
+
+Token ID `0` is documented as a legacy record and is not included among the four featured artworks displayed in the Golden-Egg gallery.
+
+The four featured artworks remain Token IDs `1`, `2`, `3`, and `4`.
+
+This record documents the current investigation status. Failure to retrieve the metadata from the sources checked does not prove that no other copy exists.
+
+---
+
 # Golden-Egg #1
 
 ## Token ID
